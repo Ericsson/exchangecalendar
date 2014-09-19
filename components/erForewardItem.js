@@ -135,12 +135,12 @@ erForewardItemRequest.prototype = {
 			else {
 				messageText = messageText[0].value;
 			}
-			response="Event forewarding not successful!:"+messageText+"("+responseCode+")";
+			response="Event forwarding not successful!:"+messageText+"("+responseCode+")";
 			//this.onSendError(aExchangeRequest, this.parent.ER_ERROR_SOAP_ERROR, "Event forewarding not successful!:"+messageText+"("+responseCode+")" );
 			messageText = null;
 		}
 		else{
-			response = "Event forewarding successful!";
+			response = "Event forwarding successful!";
 		}
 	
 		if (this.mCbOk) {
