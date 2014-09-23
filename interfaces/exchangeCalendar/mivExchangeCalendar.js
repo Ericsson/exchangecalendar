@@ -2142,7 +2142,8 @@ calExchangeCalendar.prototype = {
 		}
 
 		if (this.debug) this.logInfo("Found item in cache with Status:"+item.getProperty("STATUS"));
-
+		
+		if ( item.getProperty("STATUS") != 'NONE' )
 		aListener.onGetResult (this, 
                                Cr.NS_OK,
                                item_iid, null,
