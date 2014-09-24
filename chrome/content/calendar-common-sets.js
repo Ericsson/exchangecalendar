@@ -80,18 +80,18 @@ exchForewardEvent.prototype = {
 	},
 
 	callOnRightClick : function(attendee,organizer,startTime,endTime){		
-		var item = this.currentView().getSelectedItems({})[0];
+		var item = tmpForewardEvent.currentView().getSelectedItems({})[0];
 		var calendar = item.calendar;
 		var calId = calendar.id;
 		var calPrefs = Cc["@mozilla.org/preferences-service;1"]
 		            .getService(Ci.nsIPrefService)
 			    .getBranch("extensions.exchangecalendar@extensions.1st-setup.nl."+calId+".");
 		var tmpObject = new erForewardItemRequest(
-			{user: this.globalFunctions.safeGetCharPref(calPrefs, "ecDomain")+"\\"+this.globalFunctions.safeGetCharPref(calPrefs, "ecUser"), 
-			 mailbox: this.globalFunctions.safeGetCharPref(calPrefs, "ecMailbox"),
-			 serverUrl: this.globalFunctions.safeGetCharPref(calPrefs, "ecServer"), item: item, attendees: attendee, 
+			{user: tmpForewardEvent.globalFunctions.safeGetCharPref(calPrefs, "ecDomain")+"\\"+tmpForewardEvent.globalFunctions.safeGetCharPref(calPrefs, "ecUser"), 
+			 mailbox: tmpForewardEvent.globalFunctions.safeGetCharPref(calPrefs, "ecMailbox"),
+			 serverUrl: tmpForewardEvent.globalFunctions.safeGetCharPref(calPrefs, "ecServer"), item: item, attendees: attendee, 
 			changeKey :  item.changeKey, description : item.getProperty("description")}, 		
-			this.erForewardItemRequestOK, this.erForewardItemRequestError);
+			tmpForewardEvent.erForewardItemRequestOK, tmpForewardEvent.erForewardItemRequestError);
 		return true;
 	},
 
