@@ -1,3 +1,32 @@
+toolbarbutton.bold-button ,toolbarbutton.italic-button ,toolbarbutton.underline-button ,toolbarbutton.underline-button ,
+toolbarbutton.indent-button , toolbarbutton.outdent-button,
+toolbarbutton.orderedlist-button ,toolbarbutton.unorderedlist-button , toolbarbutton.decreaseFont-button ,
+toolbarbutton.decreaseFont-button, toolbarbutton.increaseFont-button ,toolbarbutton.align-left-button ,
+toolbarbutton.align-center-button, toolbarbutton.align-right-button,toolbarbutton.align-justify-button ,
+toolbarbutton.addlink-button ,toolbarbutton.removelink-button , toolbarbutton.editlink-button 
+{
+	 -moz-appearance: none;
+	 box-shadow: 1px 1px .5px #888888; 
+	 background:yellow; 
+	-moz-border-radius: 2px; 
+	 margin: 1px 1px  1px 1px ;
+	 background:-moz-radial-gradient(center, ellipse cover, #f1da36 13%, #fefcea 100%);
+ }
+
+toolbarbutton.bold-button:hover ,toolbarbutton.italic-button:hover ,toolbarbutton.underline-button:hover ,toolbarbutton.underline-button:hover ,
+toolbarbutton.indent-button:hover , toolbarbutton.outdent-button:hover,
+toolbarbutton.orderedlist-button:hover ,toolbarbutton.unorderedlist-button:hover , toolbarbutton.decreaseFont-button:hover ,
+toolbarbutton.decreaseFont-button:hover, toolbarbutton.increaseFont-button:hover ,toolbarbutton.align-left-button:hover ,
+toolbarbutton.align-center-button:hover, toolbarbutton.align-right-button:hover,toolbarbutton.align-justify-button:hover ,
+toolbarbutton.addlink-button:hover ,toolbarbutton.removelink-button:hover , toolbarbutton.editlink-button:hover
+{   
+     -GtkMenu-horizontal-padding: 1 px; -GtkMenu-vertical-padding: 1 px; -GtkMenuBar-internal-padding: 0; -GtkMenuItem-arrow-scaling: 0.6;
+   -moz-border-radius: 100% ;  
+     margin-right: 1px; 
+        border-style: outset;
+        border-color: shade (mix (rgb (34, 255, 120), #fff, 0.5), 0.9);
+}
+
 toolbarbutton.bold-button { 
   list-style-image: url("chrome://exchangecalendar/skin/edit-bold.png");
   height: 32px;
