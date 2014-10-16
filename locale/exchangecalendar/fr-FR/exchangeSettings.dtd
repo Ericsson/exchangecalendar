@@ -30,11 +30,7 @@
 <!ENTITY treecol.label.userid "Utilisateur">
 <!ENTITY treecol.label.email "Email">
 
-<!--
-written by deepak
 
-start
--->
 <!ENTITY ecsettings.tab.offlineCachingproperties "Cache hors connection">
 
 <!ENTITY label.offlineCacheproperties.cachingStartDate "Date de début du cache:">
@@ -42,8 +38,10 @@ start
 <!ENTITY label.offlineCacheproperties.totalEvents "Nombre total d'évènements dans le cache:">
 <!ENTITY label.offlineCacheproperties.totalTasks "Nombre total de tâches dans le cache:">
 
-<!ENTITY label.offlineCacheproperties.monthsBeforeStartDate "Taille du cache en nombre de mois avant aujourd'hui:">
-<!ENTITY label.offlineCacheproperties.monthsBeforeEndDate "Taille du cache en nombre de mois après aujourd'hui:">
+<!ENTITY label.offlineCacheproperties.monthsBeforeStartDate "Nombre de mois en cache avant aujourd'hui:">
+<!ENTITY label.offlineCacheproperties.monthsBeforeEndDate "Nombre de mois en cache après aujourd'hui:">
 
-<!ENTITY button.offlineCacheproperties.clearCache "Supprimer les données hors connection cachées">
+<!ENTITY button.offlineCacheproperties.clearCache "Supprimer les données hors connection (cache)">
 
+<!ENTITY ecsettings.tab.autoprocessingproperties "Traitement automatique">
+<!ENTITY label.autoprocessingproperties.deletecancelleditems "Supression automatique des évènements annulés">
