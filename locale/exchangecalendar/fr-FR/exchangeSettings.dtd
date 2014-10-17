@@ -44,4 +44,4 @@
 <!ENTITY button.offlineCacheproperties.clearCache "Supprimer les données hors connection (cache)">
 
 <!ENTITY ecsettings.tab.autoprocessingproperties "Traitement automatique">
-<!ENTITY label.autoprocessingproperties.deletecancelleditems "Supression automatique des évènements annulés">
+<!ENTITY label.autoprocessingproperties.deletecancelleditems "Suppression automatique des évènements annulés">
