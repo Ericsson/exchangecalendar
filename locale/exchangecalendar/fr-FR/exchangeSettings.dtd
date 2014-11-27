@@ -30,6 +30,7 @@
 <!ENTITY treecol.label.userid "Utilisateur">
 <!ENTITY treecol.label.email "Email">
 
+
 <!ENTITY ecsettings.tab.offlineCachingproperties "Cache hors connection">
 
 <!ENTITY label.offlineCacheproperties.cachingStartDate "Date de début du cache:">
@@ -41,7 +42,7 @@
 <!ENTITY label.offlineCacheproperties.monthsBeforeEndDate "Nombre de mois en cache après aujourd'hui:">
 
 <!ENTITY button.offlineCacheproperties.clearCache "Supprimer les données hors connection (cache)">
-
 <!ENTITY ecsettings.tab.autoprocessingproperties "Traitement automatique">
-<!ENTITY label.autoprocessingproperties.deletecancelleditems "Suppression automatique des évènements annulés">
 
+<!ENTITY label.autoprocessingproperties.deletecancelleditems "Suppression automatique des invitations annulées">
+<!ENTITY label.autoprocessingproperties.markeventtentative "Marquer automatiquement l'invitation comme possible et envoyer cette réponse à l'organisateur">
