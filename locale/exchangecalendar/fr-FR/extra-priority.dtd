@@ -1,0 +1,17 @@
+<!ENTITY prefwindow.title "Extras">
+<!ENTITY general.label "Général">
+<!ENTITY about.label "A propos">
+
+<!ENTITY about.description.label "Amélioration de fonctionalités pour Thunderbird et SeaMonkey">
+<!ENTITY iconify.label "Afficher seulement les icones de priorité">
+<!ENTITY shadeHigh.label "Couleur de fond pour les messages en haute priorité">
+<!ENTITY shadeLow.label "Couleur de fond pour les messages en basse priorité">
+
+<!ENTITY highestColor.label "Très haute">
+
+<!ENTITY highColor.label "Haute">
+<!ENTITY lowColor.label "Basse">
+<!ENTITY lowestColor.label "Très basse">
+
+<!ENTITY prioritycolor "Couleur spécifique">
+<!ENTITY pref.color "Préférences de couleur:">
