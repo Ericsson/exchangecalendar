@@ -2,5 +2,5 @@
 <!ENTITY calendar.context.exchange.properties.label "Propriétés Exchange (EWS)">
 <!ENTITY calendar.context.exchange.oof.settings.label "Réglages d'absence de bureau">
 <!ENTITY calendar.context.exchange.clone.settings.label "Cloner les propriétés vers le nouveau calendrier">
-
+<!ENTITY calendar.context.exchange.delegate.calendar.settings.label "Delegation de Calendrier">
 
