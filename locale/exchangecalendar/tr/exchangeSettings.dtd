@@ -1,6 +1,6 @@
 <!ENTITY label.acceptbutton “Kaydet”>
 <!ENTITY label.cancelbutton “İptal et“>
-
+<!ENTITY ecsettings.title "EWS Takvim ve Posta ayarları">
 <!ENTITY ecsettings.tab.adsettings "Exchange/Windows AD">
 <!ENTITY ecsettings.tab.meetingrequestsettings “Toplantı teklifleri”>
 <!ENTITY ecsettings.tab.calendarfolderproperties “Klasör özellikleri”>
@@ -15,7 +15,7 @@
 
 <!ENTITY label.autorespond.meetingrequest “Yeni davetlere bu automatic yanıtı ver: ">
 
-<!ENTITY menuitem.label.ec-autorespond-answer.tentative “Katılabilme olasılığım var”>
+<!ENTITY menuitem.label.ec-autorespond-answer.tentative “Belki katılabilirim”>
 <!ENTITY menuitem.label.ec-autorespond-answer.accepted “Katılacağım”>
 <!ENTITY menuitem.label.ec-autorespond-answer.declined “Katılmayacağım”>
 
@@ -43,7 +43,9 @@
 
 <!ENTITY button.offlineCacheproperties.clearCache “Çevrimdışı önbelleklenmiş verileri temizle">
 <!ENTITY ecsettings.tab.autoprocessingproperties “Otomatik İşlemleme">
+<!ENTITY ecsettings.tab.mailitemsProperties "EWS Ayarları (Posta)">
 
+<!ENTITY label.syncmailitems.interval "Postayla ilişkili öğeleri (etiketler vs.) eşitlemeyi geciktir">
 <!ENTITY label.autoprocessingproperties.deletecancelleditems “İptal edilmiş olayları otomatik olarak sil”>
 <!ENTITY label.autoprocessingproperties.markeventtentative “Olayları otomatikman Kesin değil olarak işaretle ve düzenleyene yanıt gönder">
  
