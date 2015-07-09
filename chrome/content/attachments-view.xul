@@ -39,7 +39,7 @@
     %dtd1;
 ]>
 
-<?xml-stylesheet href="chrome://exchangecalendar/content/attachments-view.css" type="text/css"?>
+<?xml-stylesheet type="text/css" href="chrome://exchangecalendar-os/skin/attachments-view.css"?>
 <?xml-stylesheet type="text/css" href="chrome://calendar/skin/calendar-event-dialog.css"?>
 <?xml-stylesheet type="text/css" href="chrome://calendar/content/calendar-event-dialog.css"?>
 
