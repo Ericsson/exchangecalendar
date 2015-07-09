@@ -1,0 +1,21 @@
+#button-url {
+    -moz-image-region: rect(0px 96px 24px 72px);
+}
+#button-url[disabled="true"],
+#button-url[disabled="true"]:hover {
+    -moz-image-region: rect(48px 96px 72px 72px);
+}
+#button-url:hover {
+    -moz-image-region: rect(24px 96px 48px 72px);
+}
+
+toolbar[iconsize="small"] #button-url {
+    -moz-image-region: rect(0px 64px 16px 48px);
+}
+toolbar[iconsize="small"] #button-url[disabled="true"],
+toolbar[iconsize="small"] #button-url[disabled="true"]:hover {
+    -moz-image-region: rect(32px 64px 48px 48px);
+}
+toolbar[iconsize="small"] #button-url:hover {
+    -moz-image-region: rect(16px 64px 32px 48px);
+}
