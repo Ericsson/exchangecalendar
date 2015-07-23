@@ -4885,7 +4885,7 @@ if (this.debug) this.logInfo(" ;;;; rrule:"+rrule.icalProperty.icalString);
 						mailbox.addChildTag("EmailAddress", "nsTypes", tmpEmailAddress);
 					}
 					else {
-						mailbox.addChildTag("EmailAddress", "nsTypes", "unknown@somewhere.com");
+						mailbox.addChildTag("EmailAddress", "nsTypes", "null@null");
 					}
 					if (attendee.role != "CHAIR") {
 						ae.addChildTag("ResponseType", "nsTypes", attendeeStatus[attendee.participationStatus]);
