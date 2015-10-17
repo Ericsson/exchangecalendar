@@ -63,7 +63,7 @@
 					<exchWebService-statusImage id="exchWebService_server_status"/>
 				    <vbox>
 			            	<textbox id="exchWebService_server"
-						disabled="true" 
+						disabled="false" 
 			                  	required="true" oninput="exchWebService.manageEWSAccounts.doServerChanged(this);" 
 						placeholder="https://ews.example.com/ews/exchange.asmx"/>
 				    </vbox>
