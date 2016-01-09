@@ -178,7 +178,7 @@ erSyncContactsFolderRequest.prototype = {
 			}
 			else {
 				if (this.mCbOk) {
-					this.mCbOk(this, this.creations, this.updates, this.deletions, syncState);
+					this.mCbOk(this, [this.creations.contacts, this.updates.contacts, this.deletions.contacts], [this.creations.distlists, this.updates.distlists, this.deletions.distlists]);
 				}
 				this.isRunning = false;
 			}
