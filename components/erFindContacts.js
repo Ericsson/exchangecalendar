@@ -38,7 +38,7 @@ function erFindContactsRequest(aArgument, aCbOk, aCbError, aListener)
 
 	var self = this;
 
-	this.parent = new ExchangeRequest(aArgument, 
+	this.parent = new ExchangeRequest(aArgument,
 		function(aExchangeRequest, aResp) { self.onSendOk(aExchangeRequest, aResp);},
 		function(aExchangeRequest, aCode, aMsg) { self.onSendError(aExchangeRequest, aCode, aMsg);},
 		aListener);
@@ -65,12 +65,12 @@ erFindContactsRequest.prototype = {
 
 	execute: function _execute(offset)
 	{
-//		exchWebService.commonFunctions.LOG("erFindContactsRequest.execute\n");
+		//exchWebService.commonAbFunctions.logInfo("erFindContactsRequest.execute\n");
 
 		var req = exchWebService.commonFunctions.xmlToJxon('<nsMessages:FindItem xmlns:nsMessages="'+nsMessagesStr+'" xmlns:nsTypes="'+nsTypesStr+'"/>');
 		req.setAttribute("Traversal", "Shallow");
 
-		var itemShape = req.addChildTag("ItemShape", "nsMessages", null); 
+		var itemShape = req.addChildTag("ItemShape", "nsMessages", null);
 		itemShape.addChildTag("BaseShape", "nsTypes", "IdOnly");
 
 		// The IndexedPageItemView allows to request a certain range of contacts in the address book
@@ -104,15 +104,15 @@ erFindContactsRequest.prototype = {
 
 		this.parent.xml2jxon = true;
 
-		//exchWebService.commonFunctions.LOG("erFindContactsRequest.execute:"+String(this.parent.makeSoapMessage(req)));
+		//exchWebService.commonAbFunctions.logInfo("erFindContactsRequest.execute:"+String(this.parent.makeSoapMessage(req)));
 
-                this.parent.sendRequest(this.parent.makeSoapMessage(req), this.serverUrl);
+		this.parent.sendRequest(this.parent.makeSoapMessage(req), this.serverUrl);
 		req = null;
 	},
 
 	onSendOk: function _onSendOk(aExchangeRequest, aResp)
 	{
-		exchWebService.commonFunctions.LOG("erFindContactsRequest.onSendOk:"+String(aResp));
+		exchWebService.commonAbFunctions.logInfo("erFindContactsRequest.onSendOk:"+String(aResp));
 
 		var rm = aResp.XPath("/s:Envelope/s:Body/m:FindItemResponse/m:ResponseMessages/m:FindItemResponseMessage/m:ResponseCode");
 
@@ -136,7 +136,7 @@ erFindContactsRequest.prototype = {
 			var includesLastItemInRange = rootFolder[0].getAttribute("IncludesLastItemInRange", "true");
 
 			for each (var contact in rootFolder[0].XPath("/t:Items/t:Contact")) {
-				exchWebService.commonFunctions.LOG("erFindContactsRequest.contacts: id:"+contact.getAttributeByTag("t:ItemId", "Id")+", changekey:"+contact.getAttributeByTag("t:ItemId", "ChangeKey"));
+				exchWebService.commonAbFunctions.logInfo("erFindContactsRequest.contacts: id:"+contact.getAttributeByTag("t:ItemId", "Id")+", changekey:"+contact.getAttributeByTag("t:ItemId", "ChangeKey"));
 				this.contacts.push({Id: contact.getAttributeByTag("t:ItemId", "Id"),
 					  ChangeKey: contact.getAttributeByTag("t:ItemId", "ChangeKey"),
 					  name: contact.getTagValue("t:Subject"),
