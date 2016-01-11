@@ -51,13 +51,19 @@ function erFindContactsRequest(aArgument, aCbOk, aCbError, aListener)
 	this.changeKey = aArgument.changeKey;
 	this.listener = aListener;
 
+	// Arrays containing results of the possible multiple requests
+	this.contacts = [];
+	this.distlists = [];
+
 	this.isRunning = true;
-	this.execute();
+
+	// First request is done with an offset of 0 (actually we don't know the number of contacts)
+	this.execute(0);
 }
 
 erFindContactsRequest.prototype = {
 
-	execute: function _execute()
+	execute: function _execute(offset)
 	{
 //		exchWebService.commonFunctions.LOG("erFindContactsRequest.execute\n");
 
@@ -66,6 +72,14 @@ erFindContactsRequest.prototype = {
 
 		var itemShape = req.addChildTag("ItemShape", "nsMessages", null); 
 		itemShape.addChildTag("BaseShape", "nsTypes", "IdOnly");
+
+		// The IndexedPageItemView allows to request a certain range of contacts in the address book
+		var view = exchWebService.commonFunctions.xmlToJxon('<nsMessages:IndexedPageItemView />');
+		view.setAttribute("MaxEntriesReturned","300"); // Maximum number of entries to receive
+		view.setAttribute("Offset", offset); // Offset from the BasePoint (Beginning or End)
+		view.setAttribute("BasePoint", "Beginning");
+		req.addChildTagObject(view);
+		view = null;
 
 		var additionalProperties = itemShape.addChildTag("AdditionalProperties", "nsTypes", null);
 		additionalProperties.addChildTag("FieldURI", "nsTypes", null).setAttribute("FieldURI", "item:Subject");
@@ -111,38 +125,46 @@ erFindContactsRequest.prototype = {
 
 		if (responseCode == "NoError") {
 
-			var contacts = [];
-			var distlists = [];
-
 			var rootFolder = aResp.XPath("/s:Envelope/s:Body/m:FindItemResponse/m:ResponseMessages/m:FindItemResponseMessage/m:RootFolder");
 			if (rootFolder.length == 0) {
 				this.onSendError(aExchangeRequest, this.parent.ER_ERROR_RESPONS_NOT_VALID, "Did not find a rootfolder element.");
 				return;
 			}
 
-			// For now we do not do anything with the following two values.
+			// These values are used to know if this is the last request (all items are received or not)
 			var totalItemsInView = rootFolder[0].getAttribute("TotalItemsInView", 0);
 			var includesLastItemInRange = rootFolder[0].getAttribute("IncludesLastItemInRange", "true");
 
 			for each (var contact in rootFolder[0].XPath("/t:Items/t:Contact")) {
 				exchWebService.commonFunctions.LOG("erFindContactsRequest.contacts: id:"+contact.getAttributeByTag("t:ItemId", "Id")+", changekey:"+contact.getAttributeByTag("t:ItemId", "ChangeKey"));
-				contacts.push({Id: contact.getAttributeByTag("t:ItemId", "Id"),
+				this.contacts.push({Id: contact.getAttributeByTag("t:ItemId", "Id"),
 					  ChangeKey: contact.getAttributeByTag("t:ItemId", "ChangeKey"),
 					  name: contact.getTagValue("t:Subject"),
 					  displayName: contact.getTagValue("t:DisplayName")});
 			}
-		
+
 			for each (var distlist in rootFolder[0].XPath("/t:Items/t:DistributionList")) {
-				distlists.push({Id: distlist.getAttributeByTag("t:ItemId", "Id"),
+				this.distlists.push({Id: distlist.getAttributeByTag("t:ItemId", "Id"),
 					  ChangeKey: distlist.getAttributeByTag("t:ItemId", "ChangeKey"),
 					  name: distlist.getTagValue("t:Subject"),
 					  displayName: distlist.getTagValue("t:DisplayName")});
 			}
-		
-			if (this.mCbOk) {
-				this.mCbOk(this, contacts, distlists);
+
+			var offset = this.contacts.length + this.distlists.length + 1;
+
+			exchWebService.commonAbFunctions.logInfo("erFindContactsRequest.onSendOk Retrieved: "+offset+" contacts and distlists on a total of "+totalItemsInView+" items available in the view.");
+
+			if (includesLastItemInRange == true || offset >= totalItemsInView) {
+				if (this.mCbOk) {
+					this.mCbOk(this, this.contacts, this.distlists);
+				}
+				this.isRunning = false;
+				this.contacts = [];
+				this.distlists = [];
 			}
-			this.isRunning = false;
+			else {
+				this.execute(offset);
+			}
 		}
 		else {
 			this.onSendError(aExchangeRequest, this.parent.ER_ERROR_SOAP_ERROR, responseCode);
