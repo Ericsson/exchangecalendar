@@ -253,11 +253,7 @@ exchWebService.commonFunctions.LOG("  ** CalendarItemType:"+xml2json.getTagValue
 					exchWebService.commonFunctions.LOG("erFindCalendarItems: retrieved:"+this.itemsFound+" items. TotalItemsInView:"+xml2json.getAttribute(rootFolder, "TotalItemsInView")+" items. Last item not in range so going for another run.");
 					//exchWebService.commonFunctions.LOG("erFindCalendarItems: retrieved:"+this.itemsFound+" items. TotalItemsInView:"+xml2json.getAttribute(rootFolder, "TotalItemsInView")+" items. Last item not in range so going for another run.\n\n");
 					if (this.mCbOk) {
-						var occurrenceList = [];
-						for (var index in this.occurrences) {
-							occurrenceList.push(this.occurrences[index]);
-						}
-						this.mCbOk(this, this.ids, occurrenceList);
+						this.mCbOk(this, this.ids, occurrences.slice());
 					}
 					this.recurringMasters = [];
 					this.occurrences = [];
@@ -294,11 +290,7 @@ exchWebService.commonFunctions.LOG("  ** CalendarItemType:"+xml2json.getTagValue
 		}
 		else {
 			if (this.mCbOk) {
-				var occurrenceList = [];
-				for (var index in this.occurrences) {
-					occurrenceList.push(this.occurrences[index]);
-				}
-				this.mCbOk(this, this.ids, occurrenceList);
+				this.mCbOk(this, this.ids, occurrences.slice());
 			}
 			this.ids = null;
 			this.occurrences = null;
