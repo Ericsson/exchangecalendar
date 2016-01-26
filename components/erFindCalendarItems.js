@@ -193,9 +193,10 @@ erFindCalendarItemsRequest.prototype = {
 					var calendarItems = xml2json.XPath(rootFolder, "/t:Items/t:CalendarItem");
 					this.newStartDate = null;
 					for (var index=0; index < calendarItems.length; index++) {
+						var calItem = calendarItems[index];
 
-						if (xml2json.getTagValue(calendarItems[index], "t:Start").substr(0,10) == xml2json.getTagValue(calendarItems[index], "t:End").substr(0,10)) {
-							var tmpDateStr = xml2json.getTagValue(calendarItems[index], "t:End");
+						if (xml2json.getTagValue(calItem, "t:Start").substr(0,10) == xml2json.getTagValue(calItem, "t:End").substr(0,10)) {
+							var tmpDateStr = xml2json.getTagValue(calItem, "t:End");
 							var tmpDateObj = cal.fromRFC3339(tmpDateStr, exchWebService.commonFunctions.ecTZService().UTC).getInTimezone(exchWebService.commonFunctions.ecDefaultTimeZone());
 							var offset = cal.createDuration();
 							offset.seconds = 1;
@@ -205,38 +206,38 @@ erFindCalendarItemsRequest.prototype = {
 						}
 
 						this.itemsFound++;
-						var uid = xml2json.getTagValue(calendarItems[index], "t:UID", "");
+						var uid = xml2json.getTagValue(calItem, "t:UID", "");
 
-/*exchWebService.commonFunctions.LOG("  ** title:"+xml2json.getTagValue(calendarItems[index], "t:Subject", "<NOP>")+"\n");
-exchWebService.commonFunctions.LOG("  ** Start:"+xml2json.getTagValue(calendarItems[index], "t:Start", "<NOP>")+"\n");
-exchWebService.commonFunctions.LOG("  ** End:"+xml2json.getTagValue(calendarItems[index], "t:End", "<NOP>")+"\n");
-exchWebService.commonFunctions.LOG("  ** CalendarItemType:"+xml2json.getTagValue(calendarItems[index], "t:CalendarItemType", "<NOP>")+"\n");*/
+/*exchWebService.commonFunctions.LOG("  ** title:"+xml2json.getTagValue(calItem, "t:Subject", "<NOP>")+"\n");
+exchWebService.commonFunctions.LOG("  ** Start:"+xml2json.getTagValue(calItem, "t:Start", "<NOP>")+"\n");
+exchWebService.commonFunctions.LOG("  ** End:"+xml2json.getTagValue(calItem, "t:End", "<NOP>")+"\n");
+exchWebService.commonFunctions.LOG("  ** CalendarItemType:"+xml2json.getTagValue(calItem, "t:CalendarItemType", "<NOP>")+"\n");*/
 
-						switch (xml2json.getTagValue(calendarItems[index], "t:CalendarItemType")) {
+						switch (xml2json.getTagValue(calItem, "t:CalendarItemType")) {
 							case "Occurrence" :
 							case "Exception" :
 								if ((this.uid) && (this.uid != uid)) { // Do not select items which do not fit the selected uid.
 									uid = "";
 								}
 								if (uid != "") {
-									this.occurrences[uid] = {Id: xml2json.getAttributeByTag(calendarItems[index], "t:ItemId","Id"),
-										  ChangeKey: xml2json.getAttributeByTag(calendarItems[index], "t:ItemId", "ChangeKey"),
-										  type: xml2json.getTagValue(calendarItems[index], "t:CalendarItemType"),
+									this.occurrences[uid] = {Id: xml2json.getAttributeByTag(calItem, "t:ItemId","Id"),
+										  ChangeKey: xml2json.getAttributeByTag(calItem, "t:ItemId", "ChangeKey"),
+										  type: xml2json.getTagValue(calItem, "t:CalendarItemType"),
 										  uid: uid,
-										  start: xml2json.getTagValue(calendarItems[index], "t:Start"),
-										  end: xml2json.getTagValue(calendarItems[index], "t:End")};
+										  start: xml2json.getTagValue(calItem, "t:Start"),
+										  end: xml2json.getTagValue(calItem, "t:End")};
 								}
 							case "RecurringMaster" :
 							case "Single" :
-								this.ids.push({Id: xml2json.getAttributeByTag(calendarItems[index], "t:ItemId","Id"),
-										  ChangeKey: xml2json.getAttributeByTag(calendarItems[index], "t:ItemId", "ChangeKey"),
-										  type: xml2json.getTagValue(calendarItems[index], "t:CalendarItemType"),
+								this.ids.push({Id: xml2json.getAttributeByTag(calItem, "t:ItemId","Id"),
+										  ChangeKey: xml2json.getAttributeByTag(calItem, "t:ItemId", "ChangeKey"),
+										  type: xml2json.getTagValue(calItem, "t:CalendarItemType"),
 										  uid: uid,
-										  start: xml2json.getTagValue(calendarItems[index], "t:Start"),
-										  end: xml2json.getTagValue(calendarItems[index], "t:End")});
+										  start: xml2json.getTagValue(calItem, "t:Start"),
+										  end: xml2json.getTagValue(calItem, "t:End")});
 								break;
 							default:
-								exchWebService.commonFunctions.LOG("UNKNOWN CalendarItemType:"+xml2json.getTagValue(calendarItems[index], "t:CalendarItemType")+"\n");
+								exchWebService.commonFunctions.LOG("UNKNOWN CalendarItemType:"+xml2json.getTagValue(calItem, "t:CalendarItemType")+"\n");
 								break;
 						}
 					}
