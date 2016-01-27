@@ -156,7 +156,7 @@ erFindContactsRequest.prototype = {
 
 			if (includesLastItemInRange == "true") {
 				if (this.mCbOk) {
-					this.mCbOk(this, this.contacts, this.distlists);
+					this.mCbOk(this, this.contacts.slice(), this.distlists.slice());
 				}
 				this.isRunning = false;
 				this.contacts = [];
