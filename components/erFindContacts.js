@@ -131,10 +131,6 @@ erFindContactsRequest.prototype = {
 				return;
 			}
 
-			// These values are used to know if this is the last request (all items are received or not)
-			var totalItemsInView = rootFolder[0].getAttribute("TotalItemsInView", 0);
-			var includesLastItemInRange = rootFolder[0].getAttribute("IncludesLastItemInRange", "true");
-
 			for each (var contact in rootFolder[0].XPath("/t:Items/t:Contact")) {
 				exchWebService.commonAbFunctions.logInfo("erFindContactsRequest.contacts: id:"+contact.getAttributeByTag("t:ItemId", "Id")+", changekey:"+contact.getAttributeByTag("t:ItemId", "ChangeKey"));
 				this.contacts.push({Id: contact.getAttributeByTag("t:ItemId", "Id"),
@@ -150,13 +146,17 @@ erFindContactsRequest.prototype = {
 					  displayName: distlist.getTagValue("t:DisplayName")});
 			}
 
-			var offset = this.contacts.length + this.distlists.length + 1;
+			// RootFolder attributes received after a FindItem request:
+			// https://msdn.microsoft.com/EN-US/library/office/aa493859%28v=exchg.150%29.aspx
+			var totalItemsInView = rootFolder[0].getAttribute("TotalItemsInView", 0);
+			var includesLastItemInRange = rootFolder[0].getAttribute("IncludesLastItemInRange", "true");
+			var offset = rootFolder[0].getAttribute("IndexedPagingOffset", 0);
 
-			exchWebService.commonAbFunctions.logInfo("erFindContactsRequest.onSendOk Retrieved: "+offset+" contacts and distlists on a total of "+totalItemsInView+" items available in the view.");
+			exchWebService.commonAbFunctions.logInfo("erFindContactsRequest.onSendOk Retrieved: "+(this.distlists.length + this.contacts.length)+" contacts and distlists on a total of "+totalItemsInView+" items available in the view.");
 
-			if (includesLastItemInRange == true || offset >= totalItemsInView) {
+			if (includesLastItemInRange == "true") {
 				if (this.mCbOk) {
-					this.mCbOk(this, this.contacts, this.distlists);
+					this.mCbOk(this, this.contacts.slice(), this.distlists.slice());
 				}
 				this.isRunning = false;
 				this.contacts = [];
