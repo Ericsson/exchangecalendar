@@ -438,9 +438,7 @@ exchangeAbFolderDirectory.prototype = {
 		var result = [];
 
 		if (this.distLists.length > 0) {
-			for each(var distList in this.distLists) {
-				result.push(distList);
-			}
+			result = this.distLists.slice();
 		}
 		return exchWebService.commonFunctions.CreateSimpleEnumerator(result);
 	},
@@ -1407,20 +1405,13 @@ try {
 		}
 
 		var newCards = [];
-		for each(var newCard in creations.contacts) {
-			//exchWebService.commonAbFunctions.logInfo("New Contact card:"+newCard.toString(),2);
-			newCards.push(newCard)
-		}
+		newCards = creations.contacts.slice();
+		newCards = Array.concat(newCards, updates.contacts);
 
-		for each(var updatedCard in updates.contacts) {
-			//exchWebService.commonAbFunctions.logInfo("Updated Contact card:"+updatedCard.toString(),2);
-			newCards.push(updatedCard)
-		}
-		
 		if (newCards.length > 0) {
 			var self = this;
 			this.addToQueue( erGetContactsRequest,
-							{user: this.user, 
+							{user: this.user,
 							 mailbox: this.mailbox,
 							 folderBase: this.folderBase,
 							 serverUrl: this.serverUrl,
@@ -1434,11 +1425,13 @@ try {
 		}
 	
 		for each(var deletedCard in deletions.contacts) {
+			var deletedId = deletedCard.getAttributeByTag("t:ItemId", "Id");
+			var deletedContact = this.contacts[deletedId];
 			//exchWebService.commonAbFunctions.logInfo("Deleted Contact card:"+deletedCard.toString(),2);
-			if (this.contacts[deletedCard.getAttributeByTag("t:ItemId", "Id")]) {
-				MailServices.ab.notifyDirectoryItemDeleted(this, this.contacts[deletedCard.getAttributeByTag("t:ItemId", "Id")]);
-				MailServices.ab.notifyDirectoryDeleted(this, this.contacts[deletedCard.getAttributeByTag("t:ItemId", "Id")]);
-				delete this.contacts[deletedCard.getAttributeByTag("t:ItemId", "Id")];
+			if (deletedContact) {
+				MailServices.ab.notifyDirectoryItemDeleted(this, deletedContact);
+				MailServices.ab.notifyDirectoryDeleted(this, deletedContact);
+				delete this.contacts[deletedId];
 			}
 		}
 
