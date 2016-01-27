@@ -95,8 +95,6 @@ function erFindCalendarItemsRequest(aArgument, aCbOk, aCbError, aListener)
 	this.occurrenceIds = [];
 	this.ids = [];
 
-	this.itemsFound = 0;
-	this.offset = 0;
 	this.isRunning = true;
 	this.execute();
 }
@@ -185,10 +183,6 @@ erFindCalendarItemsRequest.prototype = {
 		if (rm.length > 0) {
 			var rootFolder = xml2json.getTag(rm[0], "m:RootFolder");
 			if (rootFolder) {
-					//this.offset = xml2json.getAttribute(rootFolder, "IndexedPagingOffset");
-					//exchWebService.commonFunctions.LOG(" -- Next IndexedPagingOffset:"+this.offset+".");
-					//exchWebService.commonFunctions.LOG(" -- Next IndexedPagingOffset:"+this.offset+"\n");
-
 					// Process results.
 					var calendarItems = xml2json.XPath(rootFolder, "/t:Items/t:CalendarItem");
 					this.newStartDate = null;
@@ -205,7 +199,6 @@ erFindCalendarItemsRequest.prototype = {
 //		exchWebService.commonFunctions.LOG("  && this.newStartDate:"+this.newStartDate+"\n");
 						}
 
-						this.itemsFound++;
 						var uid = xml2json.getTagValue(calItem, "t:UID", "");
 
 /*exchWebService.commonFunctions.LOG("  ** title:"+xml2json.getTagValue(calItem, "t:Subject", "<NOP>")+"\n");
@@ -241,7 +234,7 @@ exchWebService.commonFunctions.LOG("  ** CalendarItemType:"+xml2json.getTagValue
 								break;
 						}
 					}
-					calendarItems = null;
+				var itemsFound = calendarItems.length;
 
 				// Return the result to be processed.
 				if (this.mCbOk) {
@@ -252,15 +245,16 @@ exchWebService.commonFunctions.LOG("  ** CalendarItemType:"+xml2json.getTagValue
 				this.occurrences = [];
 				this.occurrenceIds = [];
 				this.ids = [];
+				calendarItems = null;
 
 				// Should continue or not
 				if ((xml2json.getAttribute(rootFolder, "IncludesLastItemInRange") == "true")) {
 					// We are done.
-					exchWebService.commonFunctions.LOG("erFindCalendarItems: retrieved:"+this.itemsFound+" items. TotalItemsInView:"+xml2json.getAttribute(rootFolder, "TotalItemsInView")+" items. Includes last item in range.");
+					exchWebService.commonFunctions.LOG("erFindCalendarItems: retrieved:"+itemsFound+" items. TotalItemsInView:"+xml2json.getAttribute(rootFolder, "TotalItemsInView")+" items. Includes last item in range.");
 					this.isRunning = false;
 				}
 				else {
-					exchWebService.commonFunctions.LOG("erFindCalendarItems: retrieved:"+this.itemsFound+" items. TotalItemsInView:"+xml2json.getAttribute(rootFolder, "TotalItemsInView")+" items. Last item not in range so going for another run.");
+					exchWebService.commonFunctions.LOG("erFindCalendarItems: retrieved:"+itemsFound+" items. TotalItemsInView:"+xml2json.getAttribute(rootFolder, "TotalItemsInView")+" items. Last item not in range so going for another run.");
 
 					this.execute();
 					return;
@@ -271,6 +265,9 @@ exchWebService.commonFunctions.LOG("  ** CalendarItemType:"+xml2json.getTagValue
 				aError = true;
 				aMsg = "No RootFolder found in FindItemResponse.";
 			}
+
+			// Ensure data can be cleared
+			rootFolder = null;
 		}
 		else {
 			aMsg = this.parent.getSoapErrorMsg(aResp);
