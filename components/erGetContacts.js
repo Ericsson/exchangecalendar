@@ -130,6 +130,8 @@ erGetContactsRequest.prototype = {
 		if (this.mCbOk) {
 			this.mCbOk(this, contacts);
 		}
+		rm = null;
+		contacts = null;
 		this.isRunning = false;
 	},
 
