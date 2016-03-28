@@ -51,7 +51,7 @@ You will need to install Dom Inspector, Javascript Debugger and some other devel
   
 Now using bash we'll compile the addon we need (which are written in wiki)
 
-    cd ./exchangecalendar_master; chmod +x ./build.sh; ./build.sh;
+    cd ./exchangecalendar; chmod +x ./build.sh; ./build.sh -u;
 
 Now you can install the Exchange EWS Provider addon
 
