@@ -14,5 +14,4 @@ pref("extensions.extras.LowestIcon", "chrome://exchangecalendar-common/skin/imag
 pref("extensions.extras.ShadeHigh", true);
 pref("extensions.extras.ShadeLow", false); 
 pref("calendar.timezone.local.auto", true ); 
-pref("extensions.1st-setup.others.warnAboutPrereleaseVersion", true); 
-user_pref("mailnews.database.global.indexer.enabled", true); 
+pref("extensions.1st-setup.others.warnAboutPrereleaseVersion", true);
