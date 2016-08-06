@@ -431,7 +431,7 @@ exchSettingsOverlay.prototype = {
 	{
 		this.globalFunctions.LOG("exchWebServicesGetFolderOK: aFolderID:"+aFolderID+", aChangeKey:"+aChangeKey+", aFolderClass:"+aFolderClass);
 
-		if (aFolderClass == "IPF.Appointment") {
+		if (aFolderClass == "IPF.Appointment" || aFolderClass == "IPF.Task") {
 			this.exchWebServicesgFolderID = aFolderID;
 			this.exchWebServicesgChangeKey = aChangeKey;
 			this.gexchWebServicesDetailsChecked = true;
