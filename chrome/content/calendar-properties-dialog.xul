@@ -49,8 +49,7 @@
 				align="center">
 				<spacer/>
 				<checkbox id="exchange-cache"
-					hidden="true"
-					label="exchange-cache" 
+					label="Enable Offline Exchange Cache"
 					oncommand="return tmpChangeCalendarProperties.changeCachePref();"/>
 			</row>
 		     
