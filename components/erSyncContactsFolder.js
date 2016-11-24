@@ -166,9 +166,7 @@ erSyncContactsFolderRequest.prototype = {
 				}
 			}
 
-			for each (var deleted in rm[0].XPath("/m:Changes/t:Delete")) {
-				this.deletions.contacts.push(deleted);
-			}
+			this.deletions.contacts = Array.concat(this.deletions.contacts, rm[0].XPath("/m:Changes/t:Delete"));
 
 			rm = null;
 
@@ -180,11 +178,17 @@ erSyncContactsFolderRequest.prototype = {
 				if (this.mCbOk) {
 					this.mCbOk(this, this.creations, this.updates, this.deletions, syncState);
 				}
+				this.creations = null;
+				this.updates = null;
+				this.deletions = null;
 				this.isRunning = false;
 			}
 		}
 		else {
 			rm = null;
+			this.creations = null;
+			this.updates = null;
+			this.deletions = null;
 			this.onSendError(aExchangeRequest, this.parent.ER_ERROR_SYNCFOLDERITEMS_UNKNOWN, "Error during erSyncContactsFolderRequest");
 			return;
 		}

@@ -438,9 +438,7 @@ exchangeAbFolderDirectory.prototype = {
 		var result = [];
 
 		if (this.distLists.length > 0) {
-			for each(var distList in this.distLists) {
-				result.push(distList);
-			}
+			result = this.distLists.slice();
 		}
 		return exchWebService.commonFunctions.CreateSimpleEnumerator(result);
 	},
@@ -732,9 +730,11 @@ try {
 			else {
 				// Non query directories we set the refresh timer for
 				exchWebService.commonAbFunctions.logInfo("exchangeAbFolderDirectory: init. Going to do first sync. aURI:"+aURI+"\n");
-				this.syncFolder();  // First sync to initialize.
 
-			        let self = this;
+				// As we have no cache for address books, we always do a first sync on initialization
+				this.syncFolder();
+
+				let self = this;
 				let timerCallback = {
 					notify: function setTimeout_notify() {
 						self.syncFolder();
@@ -742,8 +742,6 @@ try {
 				};
 
 				this.pollTimer.initWithCallback(timerCallback, exchWebService.commonFunctions.safeGetIntPref(this.prefs, "pollinterval", 300, true) * 1000, this.pollTimer.TYPE_REPEATING_SLACK);
-
-				this.loadContactsFromExchange();
 			}
 
 
@@ -1394,33 +1392,19 @@ try {
 	{
 		exchWebService.commonAbFunctions.logInfo("exchangeAbFolderDirectory: syncFolderOK "+ this.dirName);
 
-		if (!this.syncState) {
-			exchWebService.commonAbFunctions.logInfo("syncFolderOK: First sync we are not going to use the data.");
-			this.syncState = syncState;
-			this.weAreSyncing = false;
-			return;
-		}
-
 		if ((creations.contacts.length > 0) || (updates.contacts.length > 0) || (deletions.contacts.length > 0)) {
 			this.addActivity(exchWebService.commonFunctions.getString("ExchangeContacts","syncFolderEventMessage",[creations.contacts.length, updates.contacts.length, deletions.contacts.length, this.dirName],"exchangecalendar"), "", erSyncContactsFolderRequest.argument.actionStart, Date.now())
 			exchWebService.commonAbFunctions.logInfo(exchWebService.commonFunctions.getString("ExchangeContacts","syncFolderEventMessage",[creations.contacts.length, updates.contacts.length, deletions.contacts.length, this.dirName],"exchangecalendar"));
 		}
 
 		var newCards = [];
-		for each(var newCard in creations.contacts) {
-			//exchWebService.commonAbFunctions.logInfo("New Contact card:"+newCard.toString(),2);
-			newCards.push(newCard)
-		}
+		newCards = creations.contacts.slice();
+		newCards = Array.concat(newCards, updates.contacts);
 
-		for each(var updatedCard in updates.contacts) {
-			//exchWebService.commonAbFunctions.logInfo("Updated Contact card:"+updatedCard.toString(),2);
-			newCards.push(updatedCard)
-		}
-		
 		if (newCards.length > 0) {
 			var self = this;
 			this.addToQueue( erGetContactsRequest,
-							{user: this.user, 
+							{user: this.user,
 							 mailbox: this.mailbox,
 							 folderBase: this.folderBase,
 							 serverUrl: this.serverUrl,
@@ -1434,11 +1418,13 @@ try {
 		}
 	
 		for each(var deletedCard in deletions.contacts) {
+			var deletedId = deletedCard.getAttributeByTag("t:ItemId", "Id");
+			var deletedContact = this.contacts[deletedId];
 			//exchWebService.commonAbFunctions.logInfo("Deleted Contact card:"+deletedCard.toString(),2);
-			if (this.contacts[deletedCard.getAttributeByTag("t:ItemId", "Id")]) {
-				MailServices.ab.notifyDirectoryItemDeleted(this, this.contacts[deletedCard.getAttributeByTag("t:ItemId", "Id")]);
-				MailServices.ab.notifyDirectoryDeleted(this, this.contacts[deletedCard.getAttributeByTag("t:ItemId", "Id")]);
-				delete this.contacts[deletedCard.getAttributeByTag("t:ItemId", "Id")];
+			if (deletedContact) {
+				MailServices.ab.notifyDirectoryItemDeleted(this, deletedContact);
+				MailServices.ab.notifyDirectoryDeleted(this, deletedContact);
+				delete this.contacts[deletedId];
 			}
 		}
 
@@ -1474,10 +1460,7 @@ try {
 		}
 
 		this.syncState = syncState;
-
-		if (newCards.length == 0) {
-			this.weAreSyncing = false;
-		}
+		this.weAreSyncing = false;
 	},
 
 	syncFolderError: function _syncFolderError(erSyncContactsFolderRequest, aCode, aMsg)
@@ -1491,14 +1474,9 @@ try {
 		exchWebService.commonAbFunctions.logInfo("exchangeAbFolderDirectory: contactsLoadOk2: contacts:"+aContacts.length);
 
 		for each(var contact in aContacts) {
-			//exchWebService.commonAbFunctions.logInfo("Contact card:"+contact.toString(),2);
 			exchWebService.commonAbFunctions.logInfo("exchangeAbFolderDirectory: new childCards:"+contact.getTagValue("t:DisplayName"));
 			this.ecUpdateCard(contact);
-
 		}
-
-		this.weAreSyncing = false;
-
 	},
 
 	addActivity: function _addActivity(aTitle, aText, aStartDate, aEndDate)

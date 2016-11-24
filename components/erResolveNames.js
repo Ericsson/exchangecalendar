@@ -127,15 +127,11 @@ erResolveNames.prototype = {
 			var resolutionsSets = rm[0].getTags("m:ResolutionSet");
 
 			for each(var resolutionsSet in resolutionsSets) {
+				// TODO Take into account TotalItemsInView and IncludesLastItemInRange
+				//var totalItemsInView = resolutionsSet.getAttribute("TotalItemsInView", 0);
+				//var includesLastItem = resolutionsSet.getAttribute("IncludesLastItemInRange", "false");
 
-				var totalItemsInView = resolutionsSet.getAttribute("TotalItemsInView", 0);
-				var includesLastItem = resolutionsSet.getAttribute("IncludesLastItemInRange", "false");
-
-				var resList = resolutionsSet.XPath("/t:Resolution");
-				for each(var resolution in resList) {
-					allResolutions.push(resolution);
-				}
-		
+				allResolutions = Array.concat(allResolutions, resolutionsSet.XPath("/t:Resolution"));
 			}
 			resolutionsSets = null;
 		}

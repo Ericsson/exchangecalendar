@@ -125,16 +125,13 @@ erGetContactsRequest.prototype = {
 
 		var rm = aResp.XPath("/s:Envelope/s:Body/m:FindItemResponse/m:ResponseMessages/m:FindItemResponseMessage/m:ResponseCode");
 
-		var contacts = [];
-		var tmpList = aResp.XPath("/s:Envelope/s:Body/m:GetItemResponse/m:ResponseMessages/m:GetItemResponseMessage/m:Items/*");
-		for (var index in tmpList) {
-			contacts.push(tmpList[index]);
-		}
-		tmpList = null;
+		var contacts =  aResp.XPath("/s:Envelope/s:Body/m:GetItemResponse/m:ResponseMessages/m:GetItemResponseMessage/m:Items/*").slice();
 
 		if (this.mCbOk) {
 			this.mCbOk(this, contacts);
 		}
+		rm = null;
+		contacts = null;
 		this.isRunning = false;
 	},
 
