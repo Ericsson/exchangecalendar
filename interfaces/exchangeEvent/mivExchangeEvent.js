@@ -533,7 +533,7 @@ catch(err){
 							mailbox.addChildTag("EmailAddress", "t", tmpEmailAddress);
 						}
 						else {
-							mailbox.addChildTag("EmailAddress", "t", "unknown@somewhere.com");
+							mailbox.addChildTag("EmailAddress", "t", "null@null");
 						}
 						ae.addChildTag("ResponseType", "t", attendeeStatus[attendee.participationStatus]);
 

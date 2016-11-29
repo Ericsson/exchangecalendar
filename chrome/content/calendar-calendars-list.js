@@ -139,7 +139,7 @@ exchCalPopUpMenu.prototype = {
 			var mailbox = { value: exchWebServicesIdentityprefs.getCharPref("useremail")};
 		}
 		else {
-			var mailbox = { value: "someone@somewhere.com"};
+			var mailbox = { value: "null@null"};
 		}
 
 		if (prompts.prompt(null, "Convert Calendar", "Do you want to convert this calendar '"+calName+"' to the new Exchange 2007/2010 Calendar and Tasks add-on? If YES please enter the primarySMTP emailaddress:", mailbox, "", {}))  {
