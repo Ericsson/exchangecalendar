@@ -5569,14 +5569,19 @@ if (this.debug) this.logInfo(" ;;;; rrule:"+rrule.icalProperty.icalString);
 		var proposeStart = this.tryToSetDateValue(input.proposeStart,"");
 		var proposeEnd   = this.tryToSetDateValue(input.proposeEnd,""); 
 	 	var proposeNewTime = false;
-		
+
+		if ( proposeStart ) {
 		input.proposeStart = cal.toRFC3339(proposeStart.getInTimezone(this.globalFunctions.ecUTC()));
+		}
+
+		if ( proposeEnd ) { 
 		input.proposeEnd   = cal.toRFC3339(proposeEnd.getInTimezone(  this.globalFunctions.ecUTC())); 
-		
+		}
+
 		if( input.proposeStart && input.proposeEnd ){
 			proposeNewTime = true;
 		}
-	 
+
 		var self = this;
 		this.addToQueue( erSendMeetingResponsRequest,
 			{user: this.user, 
