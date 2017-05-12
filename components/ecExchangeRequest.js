@@ -109,6 +109,7 @@ function ExchangeRequest(aArgument, aCbOk, aCbError, aListener)
 
 	this.observerService = Cc["@mozilla.org/observer-service;1"]  
 	                          .getService(Ci.nsIObserverService); 
+	this.observerService.addObserver(this, "http-on-modify-request", true);
 
 	this.timeZones = Cc["@1st-setup.nl/exchange/timezones;1"]
 				.getService(Ci.mivExchangeTimeZones);
@@ -155,6 +156,39 @@ ExchangeRequest.prototype = {
 	ER_ERROR_FINDOCCURRENCES_UNKNOWN: -216, // We received an unkown error while trying to get the occurrences. 
 
 	ERR_PASSWORD_ERROR: -300, // To many password errors.
+
+	QueryInterface: XPCOMUtils.generateQI([Ci.nsISupportsWeakReference, Ci.nsIObserver]),
+
+	/*
+	In Mozilla bug 1221320, changes were done to XMLHttpRequest so that the authPrompt dialog only appears
+	if neither username nor password is set in the request URL. So you only asyncPromptAuth called when both
+	are blank. But Exchange calendar sets a username on the first authentication attempt (supporting Basic
+	and Kerberos), expecting a callback to asyncPromptAuth if that fails, which it does for NTLM.
+
+	Further changes to authentication are all controlled through these asyncPromptAuth calls which never occur, hence failure. What we
+	do with the observer is reverse the effect of that bug, adding back the calls to asyncPromptAuth
+	*/
+	observe(aSubject, aTopic, aData) {
+		let channel = aSubject.QueryInterface(Components.interfaces.nsIHttpChannel);
+		this.logInfo("ecExchangeRequest observing http-on-modify-request for URI " + channel.URI.spec +
+		             " originalURI " + (channel.originalURI ? channel.originalURI.spec : "none"));
+
+		// Only respond to our host
+		let myHost = this.xmlReq && this.xmlReq.channel && this.xmlReq.channel.URI.host;
+		let theirHost = channel.URI.host;
+		if (myHost && (myHost != theirHost)) {
+			this.logInfo("Host does not match, theirs: " + theirHost + " mine: " + myHost);
+			return;
+		}
+
+		let internalChannel = channel.QueryInterface(Ci.nsIHttpChannelInternal);
+		if (internalChannel.blockAuthPrompt) {
+			this.logInfo("unblocking request");
+			internalChannel.blockAuthPrompt = false;
+		}
+		else
+			this.logInfo("Already unblocked");
+	},
 
 	get debug()
 	{
@@ -205,7 +239,6 @@ ExchangeRequest.prototype = {
 			return;
 		}
 
-//		this.logInfo(": sendRequest\n");
 		this.mData = aData;
 		this.currentUrl = "";
 
@@ -276,17 +309,9 @@ ExchangeRequest.prototype = {
 			if (password) {
 				if (this.debug) this.logInfo("We have a prePassword: *******");
 				this.xmlReq.open("POST", this.currentUrl, true, openUser, password);
-
-				// If we have full credentials we are going to add a Basic auth header just for the case we support Basic.
-				var tok = openUser + ':' + password;
-				var basicAuthHash = btoa(tok);
-				this.xmlReq.setRequestHeader('Authorization', "Basic " + basicAuthHash);
-				
-				//this.xmlReq.open("POST", this.currentUrl, true, this.mArgument.user, password);
 			}
 			else {
 				this.xmlReq.open("POST", this.currentUrl, true, openUser);
-				//this.xmlReq.open("POST", this.currentUrl, true, this.mArgument.user);
 			}
 
 		}
@@ -836,7 +861,8 @@ try {
 		 				this.fail(this.ER_ERROR_USER_ABORT_AUTHENTICATION,  "User canceled providing a valid password for url="+this.currentUrl+". Aborting this request.");
 					}
 					else {
-		 				this.fail(this.ER_ERROR_HTTP_ERROR4XX, "HTTP Client error "+xmlReq.status+": "+errMsg+"\nURL:"+this.currentUrl+"\n"+xmlReq.responseText.substr(0,300)+"\n\n");
+						this.fail(this.ER_ERROR_HTTP_ERROR4XX, "HTTP Client error "+xmlReq.status+": "+errMsg+
+						            "\nURL:"+this.currentUrl+"\n"+xmlReq.responseText.substr(0,300)+"\n\n");
 					}
 				}
 
@@ -1219,7 +1245,6 @@ ecnsIAuthPrompt2.prototype = {
 			return Cr.NS_NOINTERFACE;  // We do not support this.
 		}
 
-		this.globalFunctions.LOG("  >>>>>>>>>>> SUBMIT THIS LINE TO https://github.com/Ericsson/exchangecalendar/issues: ecnsIAuthPrompt2.getInterface("+iid+")");
 		throw Cr.NS_NOINTERFACE;
 	},
 

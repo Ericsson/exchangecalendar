@@ -208,18 +208,16 @@ function msgHdrGetTags (aMsgHdr) {
 function msgHdrSetTags (aMsgHdr, aTags) {
   let oldTagList = msgHdrGetTags(aMsgHdr);
   let oldTags = {}; // hashmap
-  for each (let [, tag] in Iterator(oldTagList))
+  for (let tag of oldTagList)
     oldTags[tag.key] = null;
 
   let newTags = {};
   let newTagList = aTags;
-  for each (let [, tag] in Iterator(newTagList))
+  for (let tag of newTagList)
     newTags[tag.key] = null;
 
-  let toAdd = [x.key for each ([, x] in Iterator(newTagList))
-    if (!(x.key in oldTags))];
-  let toRemove = [x.key for each ([, x] in Iterator(oldTagList))
-    if (!(x.key in newTags))];
+  let toAdd = newTagList.filter( tag => !(tag.key in oldTags));
+  let toRemove = oldTagList.filter( tag => !(tag.key in newTags));
 
   let folder = aMsgHdr.folder;
   let msgHdr = toXPCOMArray([aMsgHdr], Ci.nsIMutableArray);

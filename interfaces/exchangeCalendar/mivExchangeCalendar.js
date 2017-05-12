@@ -5566,8 +5566,8 @@ if (this.debug) this.logInfo(" ;;;; rrule:"+rrule.icalProperty.icalString);
 		}
 		if (this.debug) this.logInfo("  -------------- messageDisposition="+messageDisposition); 
 	
-		var proposeStart = this.tryToSetDateValue(input.proposeStart,"");
-		var proposeEnd   = this.tryToSetDateValue(input.proposeEnd,""); 
+		var proposeStart = this.tryToSetDateValue(input.proposeStart,cal.now());
+		var proposeEnd   = this.tryToSetDateValue(input.proposeEnd,cal.now()); 
 	 	var proposeNewTime = false;
 		
 		input.proposeStart = cal.toRFC3339(proposeStart.getInTimezone(this.globalFunctions.ecUTC()));
