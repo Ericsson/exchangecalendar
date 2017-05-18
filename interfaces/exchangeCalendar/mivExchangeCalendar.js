@@ -5570,8 +5570,10 @@ if (this.debug) this.logInfo(" ;;;; rrule:"+rrule.icalProperty.icalString);
 		var proposeEnd   = this.tryToSetDateValue(input.proposeEnd,""); 
 	 	var proposeNewTime = false;
 		
-		input.proposeStart = cal.toRFC3339(proposeStart.getInTimezone(this.globalFunctions.ecUTC()));
-		input.proposeEnd   = cal.toRFC3339(proposeEnd.getInTimezone(  this.globalFunctions.ecUTC())); 
+		if (proposeStart) 
+                        input.proposeStart = cal.toRFC3339(proposeStart.getInTimezone(this.globalFunctions.ecUTC()));
+		if (proposeEnd)
+                        input.proposeEnd   = cal.toRFC3339(proposeEnd.getInTimezone(  this.globalFunctions.ecUTC())); 
 		
 		if( input.proposeStart && input.proposeEnd ){
 			proposeNewTime = true;
