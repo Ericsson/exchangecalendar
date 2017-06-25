@@ -50,7 +50,7 @@
 <!ENTITY exchWebServices.UserAvailability.label "Seul le status de disponibilité de l'utilsateur du calendrier de cette BAL sera visible.">
 
 
-<!ENTITY exchWebServices.exchtype.label "Exchange Type">
-<!ENTITY exchWebServices.hostexch.label "Hosted Exchange">
+<!ENTITY exchWebServices.exchtype.label "Infrastructure Exchange">
+<!ENTITY exchWebServices.hostexch.label "Infrastructure Exchange dédiée">
 <!ENTITY exchWebServices.365exch.label "Microsoft Office365">
-<!ENTITY exchWebServices.detail.label "Details">
+<!ENTITY exchWebServices.detail.label "Détails">
