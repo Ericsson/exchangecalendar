@@ -323,7 +323,7 @@ rtews.prototype = {
 	},
 	
 	unsubscribe: function _unsubscribe(){ 
-		exchangeGlobalFunction("Error occured Unsubscribing user.",this.user); 
+		exchangeGlobalFunction("Error occurred Unsubscribing user.",this.user); 
 		this.Running = false; 
 		var that = this; 
 		this.addToQueue( erUnsubscribeRequest,

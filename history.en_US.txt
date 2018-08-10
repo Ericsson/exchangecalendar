@@ -295,7 +295,7 @@ Version 2.1.0:
 - Improved getItems function.
 
 Version 2.0.5:
-- Added: Processing of getItemsFromOfflineCache into a seperate thread.
+- Added: Processing of getItemsFromOfflineCache into a separate thread.
 - Fixed: Problem when turning on offline cache this would only start after restarting TB. 
 
 Version 2.0.4:

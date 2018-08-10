@@ -194,7 +194,7 @@ serverQueue.prototype = {
 	notify: function _notify(aTimer) {
 //dump(this.server+":loadBalancer: starting Job\n");
 try{
-		// Cleanup jobs wich have finished
+		// Cleanup jobs which have finished
 		var newJobList = [];
 		for (var index in this.runningJobs) {
 			if ((this.runningJobs[index].exchangeRequest) && (!this.runningJobs[index].exchangeRequest.isRunning)) {
