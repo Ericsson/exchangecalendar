@@ -1,3 +1,7 @@
+**This fork is not maintained anymore. New fork:** https://github.com/ExchangeCalendar/exchangecalendar
+
+Have a look at [this issue](https://github.com/Ericsson/exchangecalendar/issues/610).
+
 ##Exchange EWS Provider
 =====================
 Thank you for checking out Ericsson's Exchange EWS Provider. Ericsson and the Ericsson QA team are grateful for the help and hard work of many [contributors][contributors] like yourself.
