@@ -1,73 +1,113 @@
-##Exchange EWS Provider
-=====================
-Thank you for checking out Ericsson's Exchange EWS Provider. Ericsson and the Ericsson QA team are grateful for the help and hard work of many [contributors][contributors] like yourself.
+## Introduction
 
-Current Release Vs. Download trend is something like [this](https://rawgit.com/muthusuba/github-tools/master/downloads-trend.html?user=Ericsson&repo=exchangecalendar)
+Exchange Calendar is an add-on for [Thunderbird](https://mozilla.org/thunderbird)
+and [Seamonkey](https://www.seamonkey-project.org/).
 
+It extends the [Lightning](https://addons.mozilla.org/thunderbird/addon/lightning/) add-on to provide
+[Microsoft Exchange](http://microsoft.com/exchange) support.
 
-Getting involved as a contributor
-------------------------------------------
-We love working with contributors for Exchange EWS Provider, but it does require a few skills. You will need to know some Javascript, XUL, some CSS and a basic familiarity with GitHub.
+Exchange Calendar extension can:
+  * Synchronize calendars, tasks, and contacts with a Microsoft Exchange server.
+  * Create, edit and update events and tasks.
+  * Display contacts from your address books and the global address list
+    (they are only readable, they are usable with address autocompletion).
+  * Manage the Exchange « out of office » feature.
 
-If you know some Javascript, it's worth having a look at the Object Oriented Programming to understand the basic concepts of class based coding and especially for xul window objects. 
+This extension requires:
+  * Thunderbird between versions 52 and **[up to 59](https://github.com/ExchangeCalendar/exchangecalendar/issues/277)**.
+    * See the [releases page](https://github.com/ExchangeCalendar/exchangecalendar/releases)
+  for preview builds of ExchangeCalendar version 5 with Thunderbird 60 support.
+  * Lightning extension corresponding to the Thunderbird release.
+  * The targeted Exchange server has to provide an Exchange Web Service (EWS).
 
-If you need to brush-up on programming, but are eager to start contributing immediately, please consider helping us find bugs in Github [Exchange EWS Provider][Exchange EWS Provider] or find bugs in the Issues tested by the [EricssonQA][EricssonQA] team. To brush up on Javascript skills before engaging with us, Dive Into Javascript [mozilla][mozilla] is an excellent resource. W3schools also has [notes on Javascript][w3schools] available through their website.  The programming concepts you will need to know include functions, working with classes, and some object-oriented programming basics. To brush up on XUL, Mozilla [XUL][XUL] is an easy and simple place to learn XUL, More of XUL are dynamically configured and cross-plateform.
+ExchangeCalendar is developed by a community of interested developers. 
+Support is best effort and cannot be guaranteed. Contributions are welcome.
 
-Special thanks to all our [contributors][contributors]
+### Installation
 
-[w3schools]:  http://www.w3schools.com/js/
-[mozilla]:  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide
-[EricssonQA]:  https://github.com/Ericsson/exchangecalendar/
-[Exchange EWS Provider]:  https://github.com/Ericsson/exchangecalendar/issues
-[XUL]:  https://developer.mozilla.org/en-US/Add-ons/Overlay_Extensions/XUL_School
-[contributors]: https://github.com/Ericsson/exchangecalendar/contributors
+Download a pre-built release from our 
+[releases page](https://github.com/ExchangeCalendar/exchangecalendar/releases)
+or build your own release as shown below.
 
-Questions are always welcome
-----------------------------
-While we take pains to keep our documentation updated, the best source of information is those of us who work on the project. We also have the [wiki][wiki] pages to answer your general questions about contributing to Exchange EWS Provider.
+## Development status
 
-[wiki]:   https://github.com/Ericsson/exchangecalendar/wiki
- 
-Getting set up
--------------
-It's easy to get set up: just 2 pieces of software to install and in few command lines you'll be running the addon!
+There is no active development at this time.
 
-### Install Thunderbird
-If you don't already have it installed, please install latest version
-https://support.mozilla.org/en-US/kb/installing-thunderbird
+### Thunderbird 68 compatibility
 
-### Install Lightning
-If you don't already have it installed, please install latest version
-https://support.mozilla.org/en-US/kb/installing-lightning-thunderbird
+Currently not implemented. See issue [#277](https://github.com/ExchangeCalendar/exchangecalendar/issues/277).
 
-### Cloning the test repository with Git
-After you have installed [Git] you will need to clone the project to your hard drive. From your workspace directory run this command which will copy (clone) the project to your hard drive
+A [financial bounty](https://www.bountysource.com/issues/74122217-compatibility-with-thunderbird-67-and-newer-versions) 
+is available for anyone who implements this support. For details and 
+rules see the linked page.
 
-    git clone --recursive git://github.com/Ericsson/exchangecalendar.git
-[Git]: http://en.wikipedia.org/wiki/Git_%28software%29
+## Contributing
 
-### Installing developement tools
-You will need to install Dom Inspector, Javascript Debugger and some other development tools. Fortunately `Thunderbird addons` makes it easy to install all of these: 
-  
-Now using bash we'll compile the addon we need (which are written in wiki)
+This add-on was originally created by Michel Verbraak. It is open source and based 
+on the work of many 
+[contributors](https://github.com/ExchangeCalendar/exchangecalendar/graphs/contributors).
 
-    cd ./exchangecalendar_master; chmod +x ./build.sh; ./build.sh;
+### Report issues
 
-Now you can install the Exchange EWS Provider addon
+Please report any issues that have not previously been reported
+[here](https://github.com/ExchangeCalendar/exchangecalendar/issues).
 
-Writing Code
--------------
-If you want to get involved and add more code, then there's just a few things
-we'd like to ask you to do:
+The more information you can provide about an issue, the easier it becomes to
+reproduce and fix. Examples of helpful information are:
+  * Thunderbird version
+  * Lightning version
+  * List of running Thunderbird add-ons
+  * Log output
 
-1. Use the similar code format for all new developement and window objects 
-2. Follow mozilla's simple [Coding Style Guide][Coding Style Guide] recommendations
-3. Fork this project with your own GitHub account
-4. Make sure all tests are passing and submit a pull request with your changes
+### Patch the code
 
-[Coding Style Guide]: https://developer.mozilla.org/en-US/docs/Mozilla/Developer_guide/Coding_Style
- 
-License
--------
-This software is licensed under the [GNU GPL] Version 3 
-[GNU GPL]: http://www.gnu.org/licenses/gpl.html
+To help us to maintain the code, we will be thankful to follow these main
+guidelines:
+
+* Use indentation with 4 spaces
+* Avoid too long lines, try to break long lines into smaller ones
+* Avoid to write "spaghetti" code with too many if/else imbrications
+* Try to keep code simple to help us maintain it on long term
+
+Note that our `Makefile` has a `beautify` target which will try to beautify
+all JavaScript (requires `jsbeautifier` Debian package) and XML code
+(requires `tidy` package) to help maintain a clean code.
+
+When your patches are ready, you are welcome to do pull requests on our
+repository.
+
+Please help us to review your code by making multiple small pull
+requests instead of big ones modifying big parts of the code.
+
+### Translate
+
+You are welcome to provide translation updates on our Transifex project:
+https://www.transifex.com/ExchangeCalendar/exchangecalendar
+
+## Build instructions
+
+To manually build the add-on, you have to:
+```bash
+# clone this project
+git clone https://github.com/ExchangeCalendar/exchangecalendar.git
+cd exchangecalendar
+# build it
+make build
+```
+Then an `xpi` file is created in the project folder.
+This file is directly installable from the add-on page of Thunderbird.
+
+If it doesn't work, please check you have these tools installed (example for
+Debian):
+```bash
+sudo apt install git-core zip
+```
+
+## License
+
+This software is provided on a best-effort basis without any warranty.
+Please see the [license](http://www.gnu.org/licenses/gpl.html)
+for details.
+
+Some of the icons and images used are from the Fugue Icons Collection made
+by [Yusuke Kamiyamane](http://p.yusukekamiyamane.com/).

@@ -1,0 +1,25 @@
+ 
+<!ENTITY  label.delegateCalendar.cancelbutton "Cancel">
+<!ENTITY  label.delegateCalendar.userEmail "Email">
+<!ENTITY  label.delegateCalendar.deliveryMeetingRerquestControl "Deliver meeting requests">
+
+<!ENTITY  menuitem.delegateCalendar.deliverMeetingRequestslist.delegateOnly "Delegates Only">
+<!ENTITY  menuitem.delegateCalendar.deliverMeetingRequestslist.delegateAndMe "Delegates and Me">
+<!ENTITY  menuitem.delegateCalendar.deliverMeetingRequestslist.delegateAndInfo "Delegates and Send Notifications to Me">
+
+<!ENTITY  label.delegateCalendar.permission "Permission">
+<!ENTITY  menuitem.delegateCalendar.permission.author "Author">
+<!ENTITY  menuitem.delegateCalendar.permission.editor "Editor">
+<!ENTITY  menuitem.delegateCalendar.permission.reviewer "Reviewer">
+<!ENTITY  menuitem.delegateCalendar.permission.none "None">
+
+<!ENTITY  label.delegateCalendar.permission.receiveInvitationCopy "Receive copies Of meeting messages" >
+<!ENTITY  label.delegateCalendar.permission.viewPrivateItems "View private items" >
+
+
+<!ENTITY  delegateCalendar.permission.description.author "Read and create items in the calendar folder." >
+<!ENTITY  delegateCalendar.permission.description.editor "Read, create, and modify items in the calendar folder." >
+<!ENTITY  delegateCalendar.permission.description.reviewer "Read items in the calendar folder." >
+<!ENTITY  delegateCalendar.permission.description.none "No access permissions to the calendar folder." >
+
+<!ENTITY  delegateCalendar.permission.details.label "Permission details: " >

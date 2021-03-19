@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE overlay SYSTEM "chrome://exchangecalendar/locale/rtews.dtd">
-
-<overlay id="rtews-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">  
-	<script type="application/javascript" src="chrome://exchangecalendar/content/rtews.js"/>
-	<stringbundleset id="stringbundleset">
-		<stringbundle id="string-bundle" src="chrome://exchangecalendar/locale/rtews.properties"/>
-	</stringbundleset> 
-</overlay>

@@ -1,0 +1,27 @@
+<!ENTITY label.acceptbutton "Bevestig wijziging">
+<!ENTITY label.cancelbutton "Annuleer wijziging">
+
+<!ENTITY description.invitationResponse "Bevestig wijziging van uw reactie.">
+
+<!ENTITY label.calendarName "Kalender:">
+<!ENTITY label.itemTitle "Onderwerp:">
+<!ENTITY label.itemStart "Begintijd:">
+<!ENTITY label.itemResponse "Je antwoord:">
+<!ENTITY label.meetingOrganiser "Organisator:">
+
+<!ENTITY label.messageReponseBody "Antwoord bericht:">
+
+
+<!ENTITY menuitem.label.ec-autorespond-answer.tentative "Ik zal misschien aanwezig zijn">
+<!ENTITY menuitem.label.ec-autorespond-answer.accepted "Ik zal aanwezig zijn">
+<!ENTITY menuitem.label.ec-autorespond-answer.declined "Ik zal niet aanwezig zijn">
+
+
+
+
+
+
+
+<!ENTITY label.proposenewtime.title "Propose new time (>= Exchange2013)">
+<!ENTITY label.proposenewtime.start "Start time">
+<!ENTITY label.proposenewtime.end "End time">

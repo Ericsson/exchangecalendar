@@ -1,0 +1,26 @@
+<!ENTITY title.oofsettings "Out of office settings">
+<!ENTITY label.acceptbutton "Save">
+<!ENTITY label.cancelbutton "Close">
+<!ENTITY label.oofsettings.title "Out of office settings for:">
+
+<!ENTITY label.oofstatus "Out of office status:">
+
+<!ENTITY label.externalaudience "To which external persons do you want to send out of office messages: ">
+<!ENTITY menuitem.label.exchWebService-oof-externalaudience.none "To nobody">
+<!ENTITY menuitem.label.exchWebService-oof-externalaudience.known "Only to persons in my contact list">
+<!ENTITY menuitem.label.exchWebService-oof-externalaudience.all "To everybody">
+
+<!ENTITY button.label.internal "Internal message">
+<!ENTITY button.label.external "External message">
+<!ENTITY label.internalreply "Message that will be sent to people within my organization:">
+<!ENTITY label.externalreply "Message that will be sent to people outside my organization:">
+
+<!ENTITY menuitem.label.exchWebService-oof-status.disabled "Disabled">
+<!ENTITY menuitem.label.exchWebService-oof-status.enabled "Enabled">
+
+<!ENTITY checkbox.label.exchWebService-oof-scheduled "Only enabled in specified time frame:">
+<!ENTITY label.hbox-oof-scheduled-startTime "Start time:">
+<!ENTITY label.hbox-oof-scheduled-endTime "End time:">
+
+
+

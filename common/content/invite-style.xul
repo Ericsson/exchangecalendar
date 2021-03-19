@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/css" href="chrome://exchangecommon/skin/invite-style.css"?>
+<!DOCTYPE 
+overlay SYSTEM "chrome://exchangecommon/locale/inviteStyle.dtd">
+<overlay xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+    <script src="chrome://exchangecommon/content/invite-style.js" />
+    <tree id="threadTree">
+        <treecols id="threadCols">
+            <treecol id="inviteCol"
+                     name="inviteCol"
+                     class="treecol-image inviteColumnHeader"
+                     persist="hidden ordinal width"
+                     label="&label.inviteCol;"
+                     currentView="unthreaded"
+                     tooltiptext="&tooltip.inviteCol;"
+                     fixed="true"
+                     width="25"
+                     sort="inviteCol"
+                     sortActive="true"
+                     sortDirection="ascending" />
+            <splitter class="tree-splitter" />
+        </treecols>
+    </tree>
+</overlay>

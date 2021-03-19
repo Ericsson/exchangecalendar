@@ -1,6 +1,0 @@
-@import url(chrome://global/skin/);
-
-treechildren:-moz-tree-image(IPFAppointment)
-{
-	list-style-image: url("chrome://exchangecalendar-common/skin/images/browser_calendar.png");
-}

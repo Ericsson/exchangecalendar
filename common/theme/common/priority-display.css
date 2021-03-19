@@ -1,0 +1,564 @@
+.priorityColumnHeaderIcon
+{
+	list-style-image: url("chrome://exchangecommon-common/skin/images/threadCol-PriorityIcon.gif");
+}
+
+#threadTree treechildren::-moz-tree-row(lcolor-FFFFFF), .blcolor-FFFFFF {
+	background-color: #FFFFFF !important;
+}
+.blcolor-FFFFFF {
+	border-color: #FFFFFF;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-CCCCCC), .blcolor-CCCCCC {
+	background-color: #CCCCCC !important;
+
+}
+.blcolor-CCCCCC {
+	border-color: #CCCCCC;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-C0C0C0), .blcolor-C0C0C0 {
+	background-color: #C0C0C0 !important;
+}
+.blcolor-C0C0C0 {
+	border-color: #C0C0C0;
+}
+
+#threadTree treechildren::-moz-tree-row(lcolor-999999), .blcolor-999999 {
+	background-color: #999999 !important;
+}
+.blcolor-999999 {
+	border-color: #999999;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-666666), .blcolor-666666 {
+	background-color: #666666 !important;
+}
+.blcolor-666666 {
+	border-color: #666666;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-333333), .blcolor-333333 {
+	background-color: #333333 !important;
+}
+.blcolor-333333 {
+	border-color: #333333;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-000000), .blcolor-000000 {
+	/* our assumed color is #111111 and !important is needed to override it */
+	color: #FFFFFF !important;
+	text-shadow: 0 1px 0 rgba(46,52,54,0.4) !important; /* Tango Alumninum 6 */
+	background-color: #000000 !important;
+}
+.blcolor-000000 {
+	border-color: #000000;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-FFCCCC), .blcolor-FFCCCC {
+	background-color: #FFCCCC !important;
+}
+.blcolor-FFCCCC {
+	border-color: #FFCCCC;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-FF6666), .blcolor-FF6666 {
+	background-color: #FF6666 !important;
+}
+.blcolor-FF6666 {
+	border-color: #FF6666;
+}
+
+#threadTree treechildren::-moz-tree-row(lcolor-FF0000), .blcolor-FF0000 {
+	background-color: #FF0000 !important;
+}
+.blcolor-FF0000 {
+	border-color: #FF0000;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-CC0000), .blcolor-CC0000 {
+	background-color: #CC0000 !important;
+}
+.blcolor-CC0000 {
+	border-color: #CC0000;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-990000), .blcolor-990000 {
+	background-color: #990000 !important;
+}
+.blcolor-990000 {
+	border-color: #990000;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-660000), .blcolor-660000 {
+	background-color: #660000 !important;
+}
+.blcolor-660000 {
+	border-color: #660000;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-330000), .blcolor-330000 {
+	background-color: #330000 !important;
+}
+.blcolor-330000 {
+	border-color: #330000;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-FFCC99), .blcolor-FFCC99 {
+	background-color: #FFCC99 !important;
+}
+.blcolor-FFCC99 {
+	border-color: #FFCC99;
+}
+
+#threadTree treechildren::-moz-tree-row(lcolor-FF9966), .blcolor-FF9966 {
+	background-color: #FF9966 !important;
+}
+.blcolor-FF9966 {
+	border-color: #FF9966;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-FF9900), .blcolor-FF9900 {
+	background-color: #FF9900 !important;
+}
+.blcolor-FF9900 {
+	border-color: #FF9900;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-FF6600), .blcolor-FF6600 {
+	background-color: #FF6600 !important;
+}
+.blcolor-FF6600 {
+	border-color: #FF6600;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-CC6600 ), .blcolor-CC6600 {
+	background-color: #CC6600 !important;
+}
+.blcolor-CC6600 {
+	border-color: #CC6600;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-993300), .blcolor-993300 {
+	background-color: #993300 !important;
+}
+.blcolor-993300 {
+	border-color: #993300;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-663300), .blcolor-663300 {
+	background-color: #663300 !important;
+}
+.blcolor-663300 {
+	border-color: #663300;
+}
+
+#threadTree treechildren::-moz-tree-row(lcolor-FFFF99), .blcolor-FFFF99 {
+	background-color: #FFFF99 !important;
+}
+.blcolor-FFFF99 {
+	border-color: #FFFF99;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-FFFF66), .blcolor-FFFF66 {
+	background-color: #FFFF66 !important;
+}
+.blcolor-FFFF66 {
+	border-color: #FFFF66;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-FFCC66), .blcolor-FFCC66 {
+	background-color: #FFCC66 !important;
+}
+.blcolor-FFCC66 {
+	border-color: #FFCC66;
+}
+
+#threadTree treechildren::-moz-tree-row(lcolor-FFCC33), .blcolor-FFCC33 {
+	background-color: #FFCC33 !important;
+}
+.blcolor-FFCC33 {
+	border-color: #FFCC33;
+}
+
+#threadTree treechildren::-moz-tree-row(lcolor-CC9933), .blcolor-CC9933 {
+	background-color: #CC9933 !important;
+}
+.blcolor-CC9933 {
+	border-color: #CC9933;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-996633), .blcolor-996633 {
+	background-color: #996633 !important;
+}
+.blcolor-996633 {
+	border-color: #996633;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-663333), .blcolor-663333 {
+	background-color: #663333 !important;
+}
+.blcolor-663333 {
+	border-color: #663333;
+}
+
+#threadTree treechildren::-moz-tree-row(lcolor-FFFFCC), .blcolor-FFFFCC {
+	background-color: #FFFFCC !important;
+}
+.blcolor-FFFFCC {
+	border-color: #FFFFCC;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-FFFF33), .blcolor-FFFF33 {
+	background-color: #FFFF33 !important;
+}
+.blcolor-FFFF33 {
+	border-color: #FFFF33;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-FFFF00), .blcolor-FFFF00 {
+	background-color: #FFFF00 !important;
+}
+.blcolor-FFFF00 {
+	border-color: #FFFF00;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-FFCC00), .blcolor-FFCC00 {
+	background-color: #FFCC00 !important;
+}
+.blcolor-FFCC00 {
+	border-color: #FFCC00;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-999900), .blcolor-999900 {
+	background-color: #999900 !important;
+}
+.blcolor-999900 {
+	border-color: #999900;
+}
+
+#threadTree treechildren::-moz-tree-row(lcolor-666600), .blcolor-666600 {
+	background-color: #666600 !important;
+}
+.blcolor-666600 {
+	border-color: #666600;
+}
+
+#threadTree treechildren::-moz-tree-row(lcolor-333300), .blcolor-333300 {
+	background-color: #333300 !important;
+}
+.blcolor-333300 {
+	border-color: #333300;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-99FF99), .blcolor-99FF99 {
+	background-color: #99FF99 !important;
+}
+.blcolor-99FF99 {
+	border-color: #99FF99;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-66FF99), .blcolor-66FF99 {
+	background-color: #66FF99 !important;
+}
+.blcolor-66FF99 {
+	border-color: #66FF99;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-33FF33), .blcolor-33FF33 {
+	background-color: #33FF33 !important;
+}
+.blcolor-33FF33 {
+	border-color: #33FF33;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-33CC00), .blcolor-33CC00 {
+	background-color: #33CC00 !important;
+}
+.blcolor-33CC00 {
+	border-color: #33CC00;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-009900), .blcolor-009900 {
+	background-color: #009900 !important;
+}
+.blcolor-009900 {
+	border-color: #009900;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-006600), .blcolor-006600 {
+	background-color: #006600 !important;
+}
+.blcolor-006600 {
+	border-color: #006600;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-003300), .blcolor-003300 {
+	background-color: #003300 !important;
+}
+.blcolor-003300 {
+	border-color: #003300;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-99FFFF), .blcolor-99FFFF {
+	background-color: #99FFFF !important;
+}
+.blcolor-99FFFF {
+	border-color: #99FFFF;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-33FFFF), .blcolor-33FFFF {
+	background-color: #33FFFF !important;
+}
+.blcolor-33FFFF {
+	border-color: #33FFFF;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-66CCCC), .blcolor-66CCCC {
+	background-color: #66CCCC !important;
+}
+.blcolor-66CCCC {
+	border-color: #66CCCC;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-00CCCC), .blcolor-00CCCC {
+	background-color: #00CCCC !important;
+}
+.blcolor-00CCCC {
+	border-color: #00CCCC;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-339999), .blcolor-339999 {
+	background-color: #339999 !important;
+}
+.blcolor-339999 {
+	border-color: #339999;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-336666), .blcolor-336666 {
+	background-color: #336666 !important;
+}
+.blcolor-336666 {
+	border-color: #336666;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-003333), .blcolor-003333 {
+	background-color: #003333 !important;
+}
+.blcolor-003333 {
+	border-color: #003333;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-CCFFFF), .blcolor-CCFFFF {
+	background-color: #CCFFFF !important;
+}
+.blcolor-CCFFFF {
+	border-color: #CCFFFF;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-66FFFF), .blcolor-66FFFF {
+	background-color: #66FFFF !important;
+}
+.blcolor-66FFFF {
+	border-color: #66FFFF;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-33CCFF), .blcolor-33CCFF {
+	background-color: #33CCFF !important;
+}
+.blcolor-33CCFF {
+	border-color: #33CCFF;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-3366FF), .blcolor-3366FF {
+	background-color: #3366FF !important;
+}
+.blcolor-3366FF {
+	border-color: #3366FF;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-3333FF), .blcolor-3333FF {
+	background-color: #3333FF !important;
+}
+.blcolor-3333FF {
+	border-color: #3333FF;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-000099), .blcolor-000099 {
+	background-color: #000099 !important;
+}
+.blcolor-000099 {
+	border-color: #000099;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-000066), .blcolor-000066 {
+	background-color: #000066 !important;
+}
+.blcolor-000066 {
+	border-color: #000066;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-CCCCFF), .blcolor-CCCCFF {
+	background-color: #CCCCFF !important;
+}
+.blcolor-CCCCFF {
+	border-color: #CCCCFF;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-9999FF), .blcolor-9999FF {
+	background-color: #9999FF !important;
+}
+.blcolor-9999FF {
+	border-color: #9999FF;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-6666CC), .blcolor-6666CC {
+	background-color: #6666CC !important;
+}
+.blcolor-6666CC {
+	border-color: #6666CC;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-6633FF), .blcolor-6633FF {
+	background-color: #6633FF !important;
+}
+.blcolor-6633FF {
+	border-color: #6633FF;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-6600CC), .blcolor-6600CC {
+	background-color: #6600CC !important;
+}
+.blcolor-6600CC {
+	border-color: #6600CC;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-333399), .blcolor-333399 {
+	background-color: #333399 !important;
+}
+.blcolor-333399 {
+	border-color: #333399;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-330099), .blcolor-330099 {
+	background-color: #330099 !important;
+}
+.blcolor-330099 {
+	border-color: #330099;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-FFCCFF), .blcolor-FFCCFF {
+	background-color: #FFCCFF !important;
+}
+.blcolor-FFCCFF {
+	border-color: #FFCCFF;
+}
+
+#threadTree treechildren::-moz-tree-row(lcolor-FF99FF), .blcolor-FF99FF {
+	background-color: #FF99FF !important;
+}
+.blcolor-FF99FF {
+	border-color: #FF99FF;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-CC66CC), .blcolor-CC66CC {
+	background-color: #CC66CC !important;
+}
+.blcolor-CC66CC {
+	border-color: #CC66CC;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-CC33CC), .blcolor-CC33CC {
+	background-color: #CC33CC !important;
+}
+.blcolor-CC33CC {
+	border-color: #CC33CC;
+}
+
+
+#threadTree treechildren::-moz-tree-row(lcolor-993399), .blcolor-993399 {
+	background-color: #993399 !important;
+}
+.blcolor-993399 {
+	border-color: #993399;
+}
+#threadTree treechildren::-moz-tree-row(n){
+text-shadow: white 0 -2px;}
+}
+#threadTree treechildren::-moz-tree-row(lcolor-663366), .blcolor-663366 {
+	background-color: #663366 !important;
+}
+.blcolor-663366 {
+	border-color: #663366;
+}
+
+#threadTree treechildren::-moz-tree-row(lcolor-330033), .blcolor-330033 {
+	background-color: #330033 !important;
+}
+.blcolor-330033 {
+	border-color: #330033;
+}
+
+#threadTree treechildren::-moz-tree-cell-text(lcolor-white) {
+	color: #FFFFFF;
+}
+#threadTree treechildren::-moz-tree-cell-text(lcolor-black), .blcolor-black {
+	color: #000000;
+}

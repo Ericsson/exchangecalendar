@@ -1,0 +1,9 @@
+<!ENTITY label.acceptbutton "Vybrat">
+<!ENTITY label.cancelbutton "Storno">
+
+<!ENTITY description.selectews "Zvolte ze seznamu EWS server, který je použitelný pro vaše stávající umístění.">
+<!ENTITY label.selectews "Seznam EWS serverů:">
+
+
+
+

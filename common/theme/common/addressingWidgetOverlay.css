@@ -1,0 +1,11 @@
+@import url("chrome://messenger/skin/");
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+treechildren::-moz-tree-image(exchange-abook) {
+	margin-top: 2px;
+	margin-bottom: 2px;
+	-moz-margin-start: 2px;
+	-moz-margin-end: -3px;
+	list-style-image: url("chrome://exchangecommon-common/skin/images/exchange-addrbook.png");
+}

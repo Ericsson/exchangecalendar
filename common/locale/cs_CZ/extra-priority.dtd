@@ -1,0 +1,18 @@
+<!ENTITY prefwindow.title "Extras">
+<!ENTITY general.label  "Obecné"> 
+<!ENTITY about.label "O aplikaci"> 
+ 
+<!ENTITY about.description.label "Enhanced Features for thunderbird and seamonkey applications">
+<!ENTITY iconify.label "Zobrazovat pouze ikony priorit"> 
+<!ENTITY shadeHigh.label "Barevné pozadí pro zprávy s vysokou prioritou">
+<!ENTITY shadeLow.label "Barevné pozadí pro zprávy s nízkou prioritou">
+<!ENTITY tagImportant.label "Automaticky označovat zprávy se štítkem vysoké priority jako důležité">
+ 
+<!ENTITY highestColor.label "Nejvyšší">
+
+<!ENTITY highColor.label "Vysoká">
+<!ENTITY lowColor.label "Nízká">
+<!ENTITY lowestColor.label "Nejnižší">
+ 
+<!ENTITY prioritycolor  "Vlastní barva">
+<!ENTITY pref.color "Předvolby barev:">

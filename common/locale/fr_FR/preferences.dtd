@@ -1,0 +1,52 @@
+<!ENTITY exchangeWebService.paneAccounts.title "Exchange (EWS)">
+<!ENTITY exchangeWebService.paneDebug.title "Log des évènements">
+
+<!ENTITY exchangeWebService.preferences.tab.accounts "Comptes">
+<!ENTITY exchangeWebService.preferences.tab.debug "Logging">
+<!ENTITY exchangeWebService.preference.debug.file "Emplacement du ficher de log:">
+<!ENTITY exchangeWebService.preference.network.debug.caption "Communication avec le serveur Exchange:">
+<!ENTITY exchangeWebService.preference.debug.log.label "Information à transmettre vers la console et/ou un fichier">
+<!ENTITY exchangeWebService.preference.debug.file.button "Parcourir">
+<!ENTITY exchangeWebService.preference.network.debug.label "Communication avec le serveur Exchange">
+<!ENTITY exchangeWebService.preference.network.debuglevel.label1 "Niveau de log">
+<!ENTITY exchangeWebService.preference.network.debuglevel.label2 "1 = Information de base, 2 = Information complete">
+<!ENTITY exchangeWebService.preference.authentication.debug.label "Log de progression de la communication (par ex. Authentification)">
+<!ENTITY exchangeWebService.preference.authentication.showpassword.label "Montrer mot de passe en texte clair dans le fichier journal.">
+
+<!ENTITY exchangeWebService.preference.contacts.debug.caption "Carnet d'addresses/Contacts:">
+<!ENTITY exchangeWebService.preference.contacts.debuglevel.label1 "Niveau de Log">
+<!ENTITY exchangeWebService.preference.contacts.debuglevel.label2 "1 = Information de base, 2 = Information complète">
+<!ENTITY exchangeWebService.preference.contacts.debug.label "Information de log a propos du carnet d'addresses/contacts">
+
+<!ENTITY exchangeWebService.preferences.titleWin "Préférences Exchange (EWS)">
+
+<!ENTITY exchangeWebService.preference.core.debug.caption "Information de log:">
+<!ENTITY exchangeWebService.preference.core.debuglevel.label2 "0 = Aucune, 1 = Information de base, 2 = Information étendue">
+
+<!ENTITY exchangeWebService.preferences.tab.cache "Cache">
+<!ENTITY exchangeWebService.preference.cache.memory.label "Mémoire cache temporaire minimale">
+<!ENTITY exchangeWebService.preference.cache.memory.startupBefore.label "Nombre de jours à charger en cache avant la date présente:">
+<!ENTITY exchangeWebService.preference.cache.memory.startupAfter.label "Nombre de jours à charger en cache après la date présente:">
+
+<!ENTITY exchangeWebService.preferences.tab.others "Autres">
+<!ENTITY exchangeWebService.preference.others.prefs.label "Préférences de communication:">
+<!ENTITY exchangeWebService.preference.others.prefs.retryCount.label "Nombre maximum de tentatives pour l'échange de communication:">
+
+<!ENTITY exchangeWebService.preference.updateFunction.label "Mise à jour de l'Addon:">
+<!ENTITY exchangeWebService.preference.checkForUpdates.label "Vérifier automatiquement la disponibilité d'une nouvelle version de l'addon au démarrage de Thunderbird ou SeaMonkey.">
+<!ENTITY exchangeWebService.preference.warnForUpdates.label "Message d'avertissement de l'existence d'une nouvelle version disponible, pour installation éventuelle.">
+<!ENTITY exchangeWebService.preference.warnForPrereleaseUpdates.label "Message d'avertissement de l'existence d'une nouvelle pre-version disponible (beta, rc, etc...), pour installation éventuelle.">
+
+<!ENTITY exchangeWebService.preference.loadbalancer.debug.caption "Equilibrage de charge:">
+<!ENTITY exchangeWebService.preference.loadbalancer.prefs.label "Equilibrage de charge:">
+<!ENTITY exchangeWebService.preference.loadbalancer.prefs.maxJobs.label "Nombre Max de connexions simultanées vers le serveur Exchange:">
+<!ENTITY exchangeWebService.preference.loadbalancer.prefs.sleepBetweenJobs.label "Temps minimum entre les requètes vers le serveur Exchange:">
+<!ENTITY exchangeWebService.preference.userAgent.label "HTTP user agent:">
+
+<!ENTITY exchangeWebService.preference.globalsearch.caption "Thunderbird Global Search Index">
+<!ENTITY exchangeWebService.preference.globalsearch.label "Enable the Thunderbird Global Search Index">
+<!ENTITY exchangeWebService.preference.globalsearch.explain "If you enable this Thunderbird feature, exchangecalendar would be able to enable the email remote tagging and the invitation column in the mail tree view.">
+
+<!ENTITY exchangeWebService.preference.ntlmv1.label "Préférence Ntlm-v1:">
+<!ENTITY exchangeWebService.preference.ntlmv1.true.label "En service">
+<!ENTITY exchangeWebService.preference.ntlmv1.false.label "Hors service">

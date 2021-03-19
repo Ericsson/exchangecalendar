@@ -1,0 +1,52 @@
+<!ENTITY exchangeWebService.paneAccounts.title "Exchange (EWS)">
+<!ENTITY exchangeWebService.paneDebug.title "Loggning">
+
+<!ENTITY exchangeWebService.preferences.tab.accounts "Konton">
+<!ENTITY exchangeWebService.preferences.tab.debug "Loggning">
+<!ENTITY exchangeWebService.preference.debug.file "Loggfilsmapp:">
+<!ENTITY exchangeWebService.preference.network.debug.caption "Kommunikation med Exchange-server:">
+<!ENTITY exchangeWebService.preference.debug.log.label "Logga till terminal och/eller fil">
+<!ENTITY exchangeWebService.preference.debug.file.button "Bläddra">
+<!ENTITY exchangeWebService.preference.network.debug.label "Logga kommunikation med Exchange-server">
+<!ENTITY exchangeWebService.preference.network.debuglevel.label1 "Loggningsnivå">
+<!ENTITY exchangeWebService.preference.network.debuglevel.label2 "1 = Grundläggande information, 2 = All kommunikation">
+<!ENTITY exchangeWebService.preference.authentication.debug.label "Logga kommunikationsförlopp (t.ex. autentisering)">
+<!ENTITY exchangeWebService.preference.authentication.showpassword.label "Visa lösenord i klartext i loggfilen.">
+
+<!ENTITY exchangeWebService.preference.contacts.debug.caption "Adressbok/kontakter:">
+<!ENTITY exchangeWebService.preference.contacts.debuglevel.label1 "Loggningsnivå">
+<!ENTITY exchangeWebService.preference.contacts.debuglevel.label2 "1 = Grundläggande information, 2 = All kommunikation">
+<!ENTITY exchangeWebService.preference.contacts.debug.label "Logga information om adressbok/kontakter">
+
+<!ENTITY exchangeWebService.preferences.titleWin "Inställningar för Exchange (EWS)">
+
+<!ENTITY exchangeWebService.preference.core.debug.caption "Kärnfunktionalitet:">
+<!ENTITY exchangeWebService.preference.core.debuglevel.label2 "0 = Ingen, 1 = Grundläggande information, 2 = Utökad information">
+
+<!ENTITY exchangeWebService.preferences.tab.cache "Cachning">
+<!ENTITY exchangeWebService.preference.cache.memory.label "Minimal tillfällig minnescache">
+<!ENTITY exchangeWebService.preference.cache.memory.startupBefore.label "Antal dagar före programmets startdatum som ska laddas ner:">
+<!ENTITY exchangeWebService.preference.cache.memory.startupAfter.label "Antal dagar efter programmets startdatum som ska laddas ner:">
+
+<!ENTITY exchangeWebService.preferences.tab.others "Övrigt">
+<!ENTITY exchangeWebService.preference.others.prefs.label "Kommunikationsinställningar:">
+<!ENTITY exchangeWebService.preference.others.prefs.retryCount.label "Maximalt antal försök att kommunicera med Exchange:">
+
+<!ENTITY exchangeWebService.preference.updateFunction.label "Uppdateringsfunktion för tillägg:">
+<!ENTITY exchangeWebService.preference.checkForUpdates.label "Kontrollera automatiskt om en ny version av tillägget finns tillgänglig när Thunderbird startar.">
+<!ENTITY exchangeWebService.preference.warnForUpdates.label "Visa ett varningsmeddelande när en ny version finns tillgänglig.">
+<!ENTITY exchangeWebService.preference.warnForPrereleaseUpdates.label "Show warning when a new pre-release (beta, RC, etc.) is available.">
+
+<!ENTITY exchangeWebService.preference.loadbalancer.debug.caption "Lastbalansering:">
+<!ENTITY exchangeWebService.preference.loadbalancer.prefs.label "Lastbalansering:">
+<!ENTITY exchangeWebService.preference.loadbalancer.prefs.maxJobs.label "Maximalt antal samtidiga förfrågningar mot Exchange-server:">
+<!ENTITY exchangeWebService.preference.loadbalancer.prefs.sleepBetweenJobs.label "Minsta väntetid mellan förfrågningar mot Exchange-server:">
+<!ENTITY exchangeWebService.preference.userAgent.label "HTTP user agent:">
+
+<!ENTITY exchangeWebService.preference.globalsearch.caption "Thunderbird Global Search Index">
+<!ENTITY exchangeWebService.preference.globalsearch.label "Enable the Thunderbird Global Search Index">
+<!ENTITY exchangeWebService.preference.globalsearch.explain "If you enable this Thunderbird feature, exchangecalendar would be able to enable the email remote tagging and the invitation column in the mail tree view.">
+
+<!ENTITY exchangeWebService.preference.ntlmv1.label "Ntlm-v1 Preferences:">
+<!ENTITY exchangeWebService.preference.ntlmv1.true.label "Enable">
+<!ENTITY exchangeWebService.preference.ntlmv1.false.label "Disable">

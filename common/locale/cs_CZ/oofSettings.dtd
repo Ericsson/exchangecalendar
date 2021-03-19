@@ -1,0 +1,26 @@
+<!ENTITY title.oofsettings "Nastavení nepřítomnosti v kanceláři">
+<!ENTITY label.acceptbutton "Uložit">
+<!ENTITY label.cancelbutton "Zavřít">
+<!ENTITY label.oofsettings.title "Mimo kancelář po dobu:">
+
+<!ENTITY label.oofstatus "Stav nepřítomnosti v kanceláři:">
+
+<!ENTITY label.externalaudience "Kterým osobám mimo organizaci posílat zprávy o nepřítomnosti v kanceláři: ">
+<!ENTITY menuitem.label.exchWebService-oof-externalaudience.none "Nikomu">
+<!ENTITY menuitem.label.exchWebService-oof-externalaudience.known "Pouze osobám v mém seznamu kontaktů">
+<!ENTITY menuitem.label.exchWebService-oof-externalaudience.all "Všem">
+
+<!ENTITY button.label.internal "Zpráva pro místí">
+<!ENTITY button.label.external "Zpráva pro ostatní">
+<!ENTITY label.internalreply "Zpráva bude posílána lidem uvnitř organizace:">
+<!ENTITY label.externalreply "Zpráva bude posílání lidem mimo organizaci:">
+
+<!ENTITY menuitem.label.exchWebService-oof-status.disabled "Vypnuto">
+<!ENTITY menuitem.label.exchWebService-oof-status.enabled "Zapnuto">
+
+<!ENTITY checkbox.label.exchWebService-oof-scheduled "Zapnuto pouze v zadaném období:">
+<!ENTITY label.hbox-oof-scheduled-startTime "Čas zahájení:">
+<!ENTITY label.hbox-oof-scheduled-endTime "Čas ukončení:">
+
+
+

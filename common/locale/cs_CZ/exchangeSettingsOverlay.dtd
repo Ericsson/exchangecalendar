@@ -1,0 +1,56 @@
+<!ENTITY ecautodiscover "Použít funkci Exchange automatického zjištění.">
+<!ENTITY ecfolderbase.label "Základ složky:">
+<!ENTITY ecfolderpath.label "Popis umístění pod základem složky:">
+<!ENTITY ecfolderidofshare.label "Identifikátor sdílené složky:">
+<!ENTITY exchWebServices.SharedFolderID.label "Zobrazovaný název sdílení:">
+
+<!ENTITY menuitem.label.ecfolderbase.calendar "Složka s kalendářem">
+<!ENTITY menuitem.label.ecfolderbase.publicfoldersroot "Veřejné složky">
+<!ENTITY menuitem.label.ecfolderbase.inbox "Složka s příchozími zprávami">
+<!ENTITY menuitem.label.ecfolderbase.voicemail "Složka hlasové schránky">
+<!ENTITY menuitem.label.ecfolderbase.msgfolderroot "Kořen složky se zprávami">
+<!ENTITY menuitem.label.ecfolderbase.root "Kořen e-mailové schránky">
+<!ENTITY menuitem.label.ecfolderbase.tasks "Složka s úkoly">
+
+<!ENTITY menuitem.label.ecfolderbase.contacts "Složka s kontakty">
+<!ENTITY menuitem.label.ecfolderbase.deleteditems "Složka se smazanými položkami">
+<!ENTITY menuitem.label.ecfolderbase.drafts "Složka s koncepty">
+<!ENTITY menuitem.label.ecfolderbase.journal "Složka s deníkem">
+<!ENTITY menuitem.label.ecfolderbase.notes "Složka s poznámkami">
+<!ENTITY menuitem.label.ecfolderbase.outbox "Složka s odesílanými zprávami">
+<!ENTITY menuitem.label.ecfolderbase.sentitems "Složka s už odeslanými zprávami">
+<!ENTITY menuitem.label.ecfolderbase.junkemail "Složka s nevyžádanými zprávami">
+<!ENTITY menuitem.label.ecfolderbase.searchfolders "Složka s hledáními">
+<!ENTITY menuitem.label.ecfolderbase.version2010 "-- Níze uvedené předvolby platní pouze pro Exchange2010 --">
+<!ENTITY menuitem.label.ecfolderbase.recoverableitemsroot "Dumpster root folder">
+<!ENTITY menuitem.label.ecfolderbase.recoverableitemsdeletions "Dumpster deletions folder">
+<!ENTITY menuitem.label.ecfolderbase.recoverableitemsversion "Dumpster versions folder">
+<!ENTITY menuitem.label.ecfolderbase.recoverableitemspurges "Dumpster purges folder">
+<!ENTITY menuitem.label.ecfolderbase.archiveroot "Root archive folder">
+<!ENTITY menuitem.label.ecfolderbase.archivemsgfolderroot "Root archive message folder">
+<!ENTITY menuitem.label.ecfolderbase.archivedeleteditems "Archive deleted items folder">
+<!ENTITY menuitem.label.ecfolderbase.archiverecoverableitemsroot "Archive recoverable items root folder">
+<!ENTITY menuitem.label.ecfolderbase.Archiverecoverableitemsdeletions "Archive recoverable items deletions folder">
+<!ENTITY menuitem.label.ecfolderbase.Archiverecoverableitemsversions "Archive recoverable items versions folder">
+<!ENTITY menuitem.label.ecfolderbase.Archiverecoverableitemspurges "Archive recoverable items purges folder">
+
+<!ENTITY button.label.autodiscovercheck "Zjistit automaticky">
+<!ENTITY button.label.serverandmailboxcheck "Zkontrolovat server a schránku">
+<!ENTITY button.label.servercheck "Zkontrolovat server a účet">
+
+<!ENTITY ecmailbox.label "Hlavní e-mailová adresa:">
+<!ENTITY ecmailbox.tooltip "Pokud nezadáte e-mailovou schránku, budete mít přístup pouze do věřejných složek.">
+<!ENTITY ecwindowsuser.label "Uživatelské jméno:">
+<!ENTITY ecwindowsdomain.label "Název domény:">
+<!ENTITY ecwindowspassword.label "Heslo:">
+
+<!ENTITY button.label.folderpathcheck "Zkontrolovat">
+<!ENTITY button.label.folderbrowse "Procházet">
+
+<!ENTITY exchWebServices.UserAvailability.label "Pro kalendář schránky bude viditelný pouze stav dostupnosti uživatele.">
+
+<!ENTITY exchWebServices.exchtype.label "Typ Exchange">
+<!ENTITY exchWebServices.hostexch.label "Vlastní instalace">
+<!ENTITY exchWebServices.365exch.label "Microsoft Office365">
+<!ENTITY exchWebServices.detail.label "Podrobnosti">
+ 

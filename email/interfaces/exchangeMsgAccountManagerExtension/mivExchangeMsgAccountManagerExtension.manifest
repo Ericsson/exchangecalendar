@@ -1,5 +1,0 @@
-interfaces mivExchangeMsgAccountManagerExtension.xpt
-component {9b353ed2-b8c9-42aa-8aad-e2ee853d33b6} mivExchangeMsgAccountManagerExtension.js
-contract @mozilla.org/accountmanager/extension;1?name=exchangeWebServiceMail {9b353ed2-b8c9-42aa-8aad-e2ee853d33b6}
-
-

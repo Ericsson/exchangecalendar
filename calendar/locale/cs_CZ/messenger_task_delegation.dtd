@@ -1,0 +1,6 @@
+<!ENTITY exchWebService.task.delegation.owner.name "Vlastník úkolu">
+<!ENTITY exchWebService.task.delegation.delegator.name "Kdo přiděluje">
+<!ENTITY exchWebService.task.delegation.accept.button "Přijmout">
+<!ENTITY exchWebService.task.delegation.decline.button "Odmítnout">
+<!ENTITY exchWebService.task.delegation.lastUpdateDate "Naposledy změněno">
+

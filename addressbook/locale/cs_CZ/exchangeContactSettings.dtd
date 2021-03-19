@@ -1,0 +1,11 @@
+<!ENTITY label.acceptbutton "Uložit">
+<!ENTITY label.cancelbutton "Storno">
+
+<!ENTITY ecsettings.tab.adsettings "Exchange/Windows AD">
+<!ENTITY ecsettings.tab.meetingrequestsettings "Žádost o schůzku">
+
+<!ENTITY label.ecExchangeSettings.title "Název v seznamu:">
+<!ENTITY exchangeWebService.preference.contacts.pollinterval "Interval obnovování (v sekundách):">
+
+<!ENTITY exchWebService.add.globaladdresslist.label "Zahrnout globální adresář kontaktů do výsledků vyhledávání.">
+

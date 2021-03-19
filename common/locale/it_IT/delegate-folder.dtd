@@ -1,0 +1,45 @@
+
+<!ENTITY  label.delegatefolder.cancelbutton "Annulla">
+<!ENTITY  label.delegatefolder.userEmail "Indirizzo di posta elettronica">
+
+<!ENTITY  label.delegatefolder.permissionLevel "Livello autorizzazioni">
+<!ENTITY  label.delegatefolder.userboxcolumn1 "Utente">
+<!ENTITY  label.delegatefolder.userboxcolumn2 "Permessi">
+
+<!ENTITY  menuitem.delegatefolder.permission.author "Autore">
+<!ENTITY  menuitem.delegatefolder.permission.editor "Editor">
+<!ENTITY  menuitem.delegatefolder.permission.reviewer "Revisore">
+<!ENTITY  menuitem.delegatefolder.permission.none "Nessuno">
+<!ENTITY  menuitem.delegatefolder.permission.owner "Proprietario" >
+<!ENTITY  menuitem.delegatefolder.permission.publishingEditor "Supervisore pubblicazione" >
+<!ENTITY  menuitem.delegatefolder.permission.publishingAuthor "Autore pubblicazione" >
+<!ENTITY  menuitem.delegatefolder.permission.noneditingAuthor "Autore nonediting" >
+<!ENTITY  menuitem.delegatefolder.permission.contributor "Collaboratore" >
+<!ENTITY  menuitem.delegatefolder.permission.custom "Personalizzato" >
+
+<!ENTITY  delegatefolder.permission.description.author "Leggi e crea elementi nella cartella." >
+<!ENTITY  delegatefolder.permission.description.editor "Leggi, crea e modifica elementi nella cartella." >
+<!ENTITY  delegatefolder.permission.description.reviewer "Leggi elementi nella cartella." >
+<!ENTITY  delegatefolder.permission.description.none "Nessuna autorizzazione di accesso alla cartella." >
+
+<!ENTITY  delegatefolder.permission.details.caption "Autorizzazioni ">
+
+<!ENTITY  delegatefolder.tab.msg.label  "Calendario e Attività non trovati per questo account di posta.">
+<!ENTITY  delegatefolder.tab.name  "Condivisione cartelle Exchange">
+
+<!ENTITY  delegatefolder.permissions.none  "Nessuno">
+<!ENTITY  delegatefolder.permissions.own  "Propri elementi">
+<!ENTITY  delegatefolder.permissions.all  "Tutti gli elementi">
+<!ENTITY  delegatefolder.permissions.full  "Dettagli completi">
+
+<!ENTITY  delegatefolder.permissions.cancreateitems  "Creazione elementi">
+<!ENTITY  delegatefolder.permissions.cancreatesubfolders  "Creazione sottocartelle">
+<!ENTITY  delegatefolder.permissions.isfolderowner  "Proprietario cartella">
+<!ENTITY  delegatefolder.permissions.isfoldervisible  "Cartella visibile">
+<!ENTITY  delegatefolder.permissions.isfoldercontact  "Cartella contatti">
+<!ENTITY  delegatefolder.permissions.edititems  "Modifica elementi">
+<!ENTITY  delegatefolder.permissions.deleteitems  "Eliminazione elementi">
+<!ENTITY  delegatefolder.permissions.readitems  "Lettura elementi">
+
+<!ENTITY  delegatefolder.permissions.true  "Vero">
+<!ENTITY  delegatefolder.permissions.false  "Falso">

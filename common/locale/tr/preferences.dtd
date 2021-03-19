@@ -1,0 +1,52 @@
+<!ENTITY exchangeWebService.paneAccounts.title "Exchange (EWS)">
+<!ENTITY exchangeWebService.paneDebug.title "Günlük kaydı">
+
+<!ENTITY exchangeWebService.preferences.tab.accounts "Hesaplar">
+<!ENTITY exchangeWebService.preferences.tab.debug "Günlük kaydı">
+<!ENTITY exchangeWebService.preference.debug.file "Günlük dosyasının yeri:">
+<!ENTITY exchangeWebService.preference.network.debug.caption "Exchange sunucusu ile iletişim:">
+<!ENTITY exchangeWebService.preference.debug.log.label "Konsola ve/veya bir dosyaya bilgi günlükleme">
+<!ENTITY exchangeWebService.preference.debug.file.button "Tara">
+<!ENTITY exchangeWebService.preference.network.debug.label "Exchange sunucusu ile iletişim günlükle">
+<!ENTITY exchangeWebService.preference.network.debuglevel.label1 "Günlükleme seviyesi">
+<!ENTITY exchangeWebService.preference.network.debuglevel.label2 "1 = Temel bilgiler, 2 = Eksiksiz iletişim">
+<!ENTITY exchangeWebService.preference.authentication.debug.label "İletişimde başarı bilgilerini günlükle (örn. Kimlik doğrulama)">
+<!ENTITY exchangeWebService.preference.authentication.showpassword.label "Parolayı günlük dosyasında açık metin olarak göster.">
+
+<!ENTITY exchangeWebService.preference.contacts.debug.caption "Adres defteri/Kişiler:">
+<!ENTITY exchangeWebService.preference.contacts.debuglevel.label1 "Günlükleme seviyesi">
+<!ENTITY exchangeWebService.preference.contacts.debuglevel.label2 "1 = Temel bilgiler, 2 = Eksiksiz iletişim">
+<!ENTITY exchangeWebService.preference.contacts.debug.label "Adres defteri/Kişiler kısmı hakkında bilgileri günlükle">
+
+<!ENTITY exchangeWebService.preferences.titleWin "Exchange (EWS) Seçenekleri">
+
+<!ENTITY exchangeWebService.preference.core.debug.caption "Ana sağlayıcı nesnesi:">
+<!ENTITY exchangeWebService.preference.core.debuglevel.label2 "0 = Hiç, 1 = Temel bilgiler, 2 = Ek bilgiler">
+
+<!ENTITY exchangeWebService.preferences.tab.cache "Önbellekleme">
+<!ENTITY exchangeWebService.preference.cache.memory.label "En az geçici hafıza önbelleği">
+<!ENTITY exchangeWebService.preference.cache.memory.startupBefore.label "Programın başladığı günden kaç gün öncesine kadar indirmeli:">
+<!ENTITY exchangeWebService.preference.cache.memory.startupAfter.label "Programın başladığı günden kaç gün sonrasına kadar indirmeli:">
+
+<!ENTITY exchangeWebService.preferences.tab.others "Diğerleri">
+<!ENTITY exchangeWebService.preference.others.prefs.label "İletişim Seçenekleri:">
+<!ENTITY exchangeWebService.preference.others.prefs.retryCount.label "Exchange iletişimleri için en çok yeniden deneme sayısı:">
+
+<!ENTITY exchangeWebService.preference.updateFunction.label "Eklenti güncelleme işlevi:">
+<!ENTITY exchangeWebService.preference.checkForUpdates.label "Thunderbird başlarken yen bir eklenti sürümü olup olmadığını otomatik olarak denetle.">
+<!ENTITY exchangeWebService.preference.warnForUpdates.label "Sürümleri kolayca yükleyebilmeniz için, yeni bir sürüm olduğunda bir uyarı göster.">
+<!ENTITY exchangeWebService.preference.warnForPrereleaseUpdates.label "Beta, rc, vs. gibi yeni bir ön sürüm mevcut olduğunda bir uyarı göster.">
+
+<!ENTITY exchangeWebService.preference.loadbalancer.debug.caption "YükDengeleyici:">
+<!ENTITY exchangeWebService.preference.loadbalancer.prefs.label "YükDengeleyici:">
+<!ENTITY exchangeWebService.preference.loadbalancer.prefs.maxJobs.label "Exchange sunucuna aynı anda gönderilebilecek en yüksek istek sayısı:">
+<!ENTITY exchangeWebService.preference.loadbalancer.prefs.sleepBetweenJobs.label "Exchange sunucuna gönderilen istekler arasındaki en kısa bekleme süresi:">
+<!ENTITY exchangeWebService.preference.userAgent.label "HTTP kullanıcı aracısı:">
+
+<!ENTITY exchangeWebService.preference.globalsearch.caption "Thunderbird Küresel Arama Dizini">
+<!ENTITY exchangeWebService.preference.globalsearch.label "Thunderbird Küresel Arama Dizinini Etkinleştir">
+<!ENTITY exchangeWebService.preference.globalsearch.explain "Eğer bu Thunderbird özelliğini etkinleştirirseniz, exchangecalendar, uzaktan eposta etiketlemeyi ve posta ağacı görüntüsünde davet sütununu göstermeyi açabilme yeteneklerini kazanacaktır.">
+
+<!ENTITY exchangeWebService.preference.ntlmv1.label "Ntlm-v1 Tercihleri:">
+<!ENTITY exchangeWebService.preference.ntlmv1.true.label "Etkinleştir">
+<!ENTITY exchangeWebService.preference.ntlmv1.false.label "Etkisizleştir">

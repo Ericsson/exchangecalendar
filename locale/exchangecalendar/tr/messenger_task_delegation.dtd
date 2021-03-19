@@ -1,6 +1,0 @@
-<!ENTITY exchWebService.task.delegation.owner.name “Görev sahibi”>
-<!ENTITY exchWebService.task.delegation.delegator.name “Görev yetkilisi”>
-<!ENTITY exchWebService.task.delegation.accept.button “Kabul et”>
-<!ENTITY exchWebService.task.delegation.decline.button “Reddet”>
-<!ENTITY exchWebService.task.delegation.lastUpdateDate “Son değişikliğin yapıldığı zaman:“>
-

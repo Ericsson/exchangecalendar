@@ -1,0 +1,15 @@
+ <!ENTITY rtews.selectaccountdesc "Selezionare l'account di posta elettronica da configurare. L'account deve essere basato su Microsoft Exchange">
+ <!ENTITY rtews.accconfigured "Account già configurato">
+ <!ENTITY rtews.dicoverdesc "È possibile scegliere di ricercare automaticamente l'URL del server Microsoft Exchange (EWS) URL o configurarlo manualmente">
+ <!ENTITY rtews.dicoverdesc2 "Per configurarlo manualmente, immettere l'URL nel campo sottostante.">
+ <!ENTITY rtews.autodiscover "Ricerca automatica">
+ <!ENTITY rtews.doautodicover "Esegui ricerca automatica">
+ <!ENTITY rtews.manual "Manuale">
+ <!ENTITY rtews.test "Fare clic qui per verificare l'URL EWS">
+ <!ENTITY rtews.msexchewsurl "URL EWS Microsoft Exchange EWS verificato. Cliccare Fine per completare la configurazione">
+ <!ENTITY rtews.selectaccount "Seleziona account">
+ <!ENTITY rtews.configure.label "Configura...">
+ <!ENTITY rtews.rtforexch "Contrassegni remoti per Microsoft Exchange">
+ <!ENTITY rtews.confirmAccDetail "Confermare i seguenti dettagli dell'account">
+ <!ENTITY rtews.username "Nome utente">
+ <!ENTITY rtews.domain "Dominio">

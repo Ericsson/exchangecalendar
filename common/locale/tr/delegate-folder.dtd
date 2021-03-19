@@ -1,0 +1,45 @@
+ 
+<!ENTITY  label.delegatefolder.cancelbutton "İptal Et">
+<!ENTITY  label.delegatefolder.userEmail "E-posta">
+ 
+<!ENTITY  label.delegatefolder.permissionLevel "İzin Seviyesi">
+<!ENTITY  label.delegatefolder.userboxcolumn1 "Kullanıcı"> 
+<!ENTITY  label.delegatefolder.userboxcolumn2 "İzinler"> 
+
+<!ENTITY  menuitem.delegatefolder.permission.author "Yazıcı">
+<!ENTITY  menuitem.delegatefolder.permission.editor "Düzenleyici">
+<!ENTITY  menuitem.delegatefolder.permission.reviewer "Okuyucu">
+<!ENTITY  menuitem.delegatefolder.permission.none "Yok">
+<!ENTITY  menuitem.delegatefolder.permission.owner "Sahip" > 
+<!ENTITY  menuitem.delegatefolder.permission.publishingEditor "YayınlayanDüzenleyici" >
+<!ENTITY  menuitem.delegatefolder.permission.publishingAuthor "YayınlayanYazıcı" >
+<!ENTITY  menuitem.delegatefolder.permission.noneditingAuthor "DüzenleyemeyenYazıcı" >
+<!ENTITY  menuitem.delegatefolder.permission.contributor "Yardımcı" >
+<!ENTITY  menuitem.delegatefolder.permission.custom "Özel" >
+                            
+<!ENTITY  delegatefolder.permission.description.author "Dizindeki maddeleri okuyabilir ve yaratabilir." >
+<!ENTITY  delegatefolder.permission.description.editor "Dizindeki maddeleri okuyabilir, yaratabilir ve değiştirebilir." >
+<!ENTITY  delegatefolder.permission.description.reviewer "Dizindeki maddeleri okuyabilir." >
+<!ENTITY  delegatefolder.permission.description.none "Bu dizine erişim izni yok." >
+
+ <!ENTITY  delegatefolder.permission.details.caption "İzin "> 
+
+<!ENTITY  delegatefolder.tab.msg.label  "Bu posta hesabı için bir Takvim ya da Görev Listesi bulunamadı.">
+<!ENTITY  delegatefolder.tab.name  "Exchange Dizin Paylaşımı">
+
+<!ENTITY  delegatefolder.permissions.none  "Yok">
+<!ENTITY  delegatefolder.permissions.own  "Kendi maddeleri">
+<!ENTITY  delegatefolder.permissions.all  "Bütün maddeler">
+<!ENTITY  delegatefolder.permissions.full  "Tüm detaylar">
+
+<!ENTITY  delegatefolder.permissions.cancreateitems  "Madde Yarat">
+<!ENTITY  delegatefolder.permissions.cancreatesubfolders  "Altdizinler Yarat">
+<!ENTITY  delegatefolder.permissions.isfolderowner  "Dizin Sahibi">
+<!ENTITY  delegatefolder.permissions.isfoldervisible  "Dizin Görülebiliyor">
+<!ENTITY  delegatefolder.permissions.isfoldercontact  "Dizinle İlişkili Kişi">
+<!ENTITY  delegatefolder.permissions.edititems  "Maddeleri Düzenleyebilir">
+<!ENTITY  delegatefolder.permissions.deleteitems  "Maddeleri Silebilir">
+<!ENTITY  delegatefolder.permissions.readitems  "Maddeleri Okuyabilir">  
+ 
+<!ENTITY  delegatefolder.permissions.true  "Doğru">
+<!ENTITY  delegatefolder.permissions.false  "Yanlış">

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: GPL 3.0
+ *
+ * The contents of this file are subject to the General Public License
+ * 3.0 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ * http://www.gnu.org/licenses/gpl.html
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * ## Exchange 2007/2010 Calendar and Tasks Provider.
+ * ## For Thunderbird with the Lightning add-on.
+ *
+ * This work is a combination of the Storage calendar, part of the default Lightning add-on, and 
+ * the "Exchange Data Provider for Lightning" add-on currently, october 2011, maintained by Simon Schubert.
+ * Primarily made because the "Exchange Data Provider for Lightning" add-on is a continuation 
+ * of old code and this one is build up from the ground. It still uses some parts from the 
+ * "Exchange Data Provider for Lightning" project.
+ *
+ * Author: Michel Verbraak (info@1st-setup.nl)
+ * Website: http://www.1st-setup.nl/wordpress/?page_id=133
+ * email: exchangecalendar@extensions.1st-setup.nl
+ *
+ *
+ * This code uses parts of the Microsoft Exchange Calendar Provider code on which the
+ * "Exchange Data Provider for Lightning" was based.
+ * The Initial Developer of the Microsoft Exchange Calendar Provider Code is
+ *   Andrea Bittau <a.bittau@cs.ucl.ac.uk>, University College London
+ * Portions created by the Initial Developer are Copyright (C) 2009
+ * the Initial Developer. All Rights Reserved.
+ *
+ * ***** BEGIN LICENSE BLOCK *****/
+-->
+<!DOCTYPE overlay
+[
+    <!ENTITY % lightningDTD SYSTEM "chrome://lightning/locale/lightning.dtd">
+    <!ENTITY % preferencesDTD SYSTEM "chrome://calendar/locale/preferences/preferences.dtd">
+    <!ENTITY % dtd1 SYSTEM "chrome://exchangecommon/locale/preferences.dtd" >
+    %lightningDTD;
+    %preferencesDTD;
+    %dtd1;
+]>
+<?xml-stylesheet type="text/css" href="chrome://exchangecommon/skin/preferences.css"?>
+<overlay id="exchangeWebService_debug_preferences_overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+    <script type="application/javascript"
+            src="chrome://exchangecommon/content/debugPreferences.js" />
+    <vbox id="exchangeWebService_debug_preferences_vbox">
+        <preferences>
+            <preference id="extensions.1st-setup.debug.log"
+                        name="extensions.1st-setup.debug.log"
+                        type="bool" />
+            <preference id="extensions.1st-setup.debug.file"
+                        name="extensions.1st-setup.debug.file"
+                        type="string" />
+            <preference id="extensions.1st-setup.network.debug"
+                        name="extensions.1st-setup.network.debug"
+                        type="bool" />
+            <preference id="extensions.1st-setup.network.debuglevel"
+                        name="extensions.1st-setup.network.debuglevel"
+                        type="int" />
+            <preference id="extensions.1st-setup.authentication.debug"
+                        name="extensions.1st-setup.authentication.debug"
+                        type="bool" />
+            <preference id="extensions.1st-setup.authentication.showpassword"
+                        name="extensions.1st-setup.authentication.showpassword"
+                        type="bool" />
+            <preference id="extensions.1st-setup.core.debuglevel"
+                        name="extensions.1st-setup.core.debuglevel"
+                        type="int" />
+            <preference id="extensions.1st-setup.contacts.debug"
+                        name="extensions.1st-setup.contacts.debug"
+                        type="bool" />
+            <preference id="extensions.1st-setup.contacts.debuglevel"
+                        name="extensions.1st-setup.contacts.debuglevel"
+                        type="int" />
+            <preference id="extensions.1st-setup.exchangecalendar.loadbalancer.debuglevel"
+                        name="extensions.1st-setup.exchangecalendar.loadbalancer.debuglevel"
+                        type="int" />
+        </preferences>
+        <checkbox id="exchangeWebService_debug_log"
+                  preference="extensions.1st-setup.debug.log"
+                  label="&exchangeWebService.preference.debug.log.label;"
+                  oncommand="exchWebService.debugPreferences.debugLogChanged(this);" />
+        <groupbox id="exchangeWebService_debug_groupbox1">
+            <caption label="&exchangeWebService.preference.debug.file;" />
+            <vbox>
+                <hbox align="center"
+                      flex="1">
+                    <textbox id="exchangeWebService_preference_debug_file_filefield"
+                             flex="1"
+                             preference="extensions.1st-setup.debug.file"
+                             preference-editable="true"
+                             onsyncfrompreference="return exchWebService.debugPreferences.readLogLocation();" />
+                </hbox>
+                <hbox pack="end">
+                    <button id="exchangeWebService_preference_debug_file_button"
+                            label="&exchangeWebService.preference.debug.file.button;"
+                            oncommand="exchWebService.debugPreferences.browseDebugFile()" />
+                </hbox>
+            </vbox>
+        </groupbox>
+        <groupbox id="exchangeWebService_debug_groupbox3">
+            <caption label="&exchangeWebService.preference.core.debug.caption;" />
+            <hbox>
+                <label value="&exchangeWebService.preference.network.debuglevel.label1;" />
+                <textbox id="exchangeWebService_preference_core_debuglevel_textbox"
+                         preference="extensions.1st-setup.core.debuglevel"
+                         increment="1"
+                         min="0"
+                         max="2"
+                         type="number" />
+            </hbox>
+            <hbox pack="end">
+                <label value="&exchangeWebService.preference.core.debuglevel.label2;" />
+            </hbox>
+        </groupbox>
+        <groupbox id="exchangeWebService_debug_groupbox2">
+            <caption label="&exchangeWebService.preference.network.debug.caption;" />
+            <hbox align="center"
+                  flex="1">
+                <checkbox id="exchangeWebService_preference_network_debug_checkbox"
+                          preference="extensions.1st-setup.network.debug"
+                          label="&exchangeWebService.preference.network.debug.label;" />
+            </hbox>
+            <hbox>
+                <label value="&exchangeWebService.preference.network.debuglevel.label1;" />
+                <textbox id="exchangeWebService_preference_network_debuglevel_textbox"
+                         preference="extensions.1st-setup.network.debuglevel"
+                         increment="1"
+                         min="1"
+                         max="2"
+                         type="number" />
+            </hbox>
+            <hbox pack="end">
+                <label value="&exchangeWebService.preference.network.debuglevel.label2;" />
+            </hbox>
+            <hbox align="center"
+                  flex="1">
+                <checkbox id="exchangeWebService_preference_authentication_debug_checkbox"
+                          preference="extensions.1st-setup.authentication.debug"
+                          label="&exchangeWebService.preference.authentication.debug.label;" />
+            </hbox>
+            <hbox align="center"
+                  flex="1">
+                <checkbox id="exchangeWebService_preference_authentication_showpassword_checkbox"
+                          preference="extensions.1st-setup.authentication.showpassword"
+                          label="&exchangeWebService.preference.authentication.showpassword.label;" />
+            </hbox>
+        </groupbox>
+        <groupbox id="exchangeWebService_contacts_groupbox4">
+            <caption label="&exchangeWebService.preference.contacts.debug.caption;" />
+            <hbox align="center"
+                  flex="1">
+                <checkbox id="exchangeWebService_preference_contacts_debug_checkbox"
+                          preference="extensions.1st-setup.contacts.debug"
+                          label="&exchangeWebService.preference.contacts.debug.label;" />
+            </hbox>
+            <hbox>
+                <label value="&exchangeWebService.preference.contacts.debuglevel.label1;" />
+                <textbox id="exchangeWebService_preference_contacts_debuglevel_textbox"
+                         preference="extensions.1st-setup.contacts.debuglevel"
+                         increment="1"
+                         min="0"
+                         max="2"
+                         type="number" />
+            </hbox>
+            <hbox pack="end">
+                <label value="&exchangeWebService.preference.network.debuglevel.label2;" />
+            </hbox>
+        </groupbox>
+        <groupbox id="exchangeWebService_loadbalancer_groupbox5">
+            <caption label="&exchangeWebService.preference.loadbalancer.debug.caption;" />
+            <hbox>
+                <label value="&exchangeWebService.preference.contacts.debuglevel.label1;" />
+                <textbox id="exchangeWebService_preference_loadbalancer_debuglevel_textbox"
+                         preference="extensions.1st-setup.exchangecalendar.loadbalancer.debuglevel"
+                         increment="1"
+                         min="0"
+                         max="2"
+                         type="number" />
+            </hbox>
+            <hbox pack="end">
+                <label value="&exchangeWebService.preference.core.debuglevel.label2;" />
+            </hbox>
+        </groupbox>
+    </vbox>
+</overlay>

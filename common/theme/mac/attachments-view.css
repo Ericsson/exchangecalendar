@@ -1,0 +1,20 @@
+/*
+ * Should be synced with chrome://calendar/skin/calendar-event-dialog.css
+ * especially the #button-url rules (as it displays the attachment icon)
+ */
+
+@media not all and (-moz-mac-yosemite-theme) {
+  #exchWebService-add-attachment-button  {
+    list-style-image: url(chrome://calendar-common/skin/calendar-toolbar-osxlion.svg#attach);
+  }
+}
+
+@media (-moz-mac-yosemite-theme) {
+  #exchWebService-add-attachment-button  {
+    list-style-image: url(chrome://calendar-common/skin/calendar-toolbar.svg#attach);
+  }
+
+toolbar[brighttext] #exchWebService-add-attachment-button {
+  list-style-image: url(chrome://calendar-common/skin/calendar-toolbar.svg#attach-inverted);
+}
+

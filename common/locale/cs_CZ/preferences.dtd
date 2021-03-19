@@ -1,0 +1,52 @@
+<!ENTITY exchangeWebService.paneAccounts.title "Exchange (EWS)">
+<!ENTITY exchangeWebService.paneDebug.title "Záznam událostí">
+
+<!ENTITY exchangeWebService.preferences.tab.accounts "Účty">
+<!ENTITY exchangeWebService.preferences.tab.debug "Záznam událostí">
+<!ENTITY exchangeWebService.preference.debug.file "Umístění souboru se záznamem událostí:">
+<!ENTITY exchangeWebService.preference.network.debug.caption "Komuniace s Exchange serverem:">
+<!ENTITY exchangeWebService.preference.debug.log.label "Zaznamenávat informace na konzoli a/nebo do souboru">
+<!ENTITY exchangeWebService.preference.debug.file.button "Procházet">
+<!ENTITY exchangeWebService.preference.network.debug.label "Zaznamenávat události komunikace s Exchange serverem">
+<!ENTITY exchangeWebService.preference.network.debuglevel.label1 "Stupeň podrobnosti zaznamenávání">
+<!ENTITY exchangeWebService.preference.network.debuglevel.label2 "1 = Základní informace, 2 = Úplná komunikace">
+<!ENTITY exchangeWebService.preference.authentication.debug.label "Zaznamenávat údaje o průběhu komunikace (např. ověřování)">
+<!ENTITY exchangeWebService.preference.authentication.showpassword.label "Hesla v souboru se záznamem zobrazovat v čitelné podobě.">
+
+<!ENTITY exchangeWebService.preference.contacts.debug.caption "Adresář kontaktů / kontakty:">
+<!ENTITY exchangeWebService.preference.contacts.debuglevel.label1 "Stupeň podrobnosti zaznamenávání">
+<!ENTITY exchangeWebService.preference.contacts.debuglevel.label2 "1 = Základní informace, 2 = Úplná komunikace">
+<!ENTITY exchangeWebService.preference.contacts.debug.label "Zaznamenávat informace o části týkající se adresáře kontaktů / kontaktů">
+
+<!ENTITY exchangeWebService.preferences.titleWin "Předvolby Exchange (EWS)">
+
+<!ENTITY exchangeWebService.preference.core.debug.caption "Objekt hlavního poskytovatele:">
+<!ENTITY exchangeWebService.preference.core.debuglevel.label2 "0 = Žádný, 1 = Základní informace, 2 = Rozšířené informace">
+
+<!ENTITY exchangeWebService.preferences.tab.cache "Ukládání do mezipaměti">
+<!ENTITY exchangeWebService.preference.cache.memory.label "V dočasné mezipaměti nejméně">
+<!ENTITY exchangeWebService.preference.cache.memory.startupBefore.label "Stáhnout dnů před datem spuštění aplikace:">
+<!ENTITY exchangeWebService.preference.cache.memory.startupAfter.label "Stáhnout dnů od data spuštění aplikace:">
+
+<!ENTITY exchangeWebService.preferences.tab.others "Ostatní">
+<!ENTITY exchangeWebService.preference.others.prefs.label "Předvolby komunikace:">
+<!ENTITY exchangeWebService.preference.others.prefs.retryCount.label "O komunikaci s exchange se pokoušet nejvýše tolikrát:">
+
+<!ENTITY exchangeWebService.preference.updateFunction.label "Funkce automatické aktualizace přídavku:">
+<!ENTITY exchangeWebService.preference.checkForUpdates.label "Automaticky zjišťovat dostupnost nové verze přídavku při spouštění aplikace Thunderbird.">
+<!ENTITY exchangeWebService.preference.warnForUpdates.label "Zobrazit varování když je k dispozici nová verze. Takže jí budete moci snadno nainstalovat.">
+<!ENTITY exchangeWebService.preference.warnForPrereleaseUpdates.label "Zobrazit varování když je k dispozici verze před vydáním (zkušební, kandidát na vydání, atd.).">
+
+<!ENTITY exchangeWebService.preference.loadbalancer.debug.caption "Rozdělování zátěže:">
+<!ENTITY exchangeWebService.preference.loadbalancer.prefs.label "Rozdělování zátěže:">
+<!ENTITY exchangeWebService.preference.loadbalancer.prefs.maxJobs.label "Souběžných požadavků na exchange server nejvýše:">
+<!ENTITY exchangeWebService.preference.loadbalancer.prefs.sleepBetweenJobs.label "Mezi jednotlivými požadavky na exchange server počkat alespoň:">
+<!ENTITY exchangeWebService.preference.userAgent.label "HTTP user agent:">
+
+<!ENTITY exchangeWebService.preference.globalsearch.caption "Rejstřík globálního vyhledávání v Thunderbird">
+<!ENTITY exchangeWebService.preference.globalsearch.label "Zapnout rejstřík globálního vyhledávání v Thunderbird">
+<!ENTITY exchangeWebService.preference.globalsearch.explain "Pokud zapnete tuto funkci Thunderbird, exchangecalendar bude schopné zapnout vzdálené štítkování e-mailů a zvací sloupec ve stromovém pohledu na e-maily.">
+
+<!ENTITY exchangeWebService.preference.ntlmv1.label "Předvolby Ntlm-v1:">
+<!ENTITY exchangeWebService.preference.ntlmv1.true.label "Zapnout">
+<!ENTITY exchangeWebService.preference.ntlmv1.false.label "Vypnout">

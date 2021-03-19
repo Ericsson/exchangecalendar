@@ -1,0 +1,54 @@
+<!ENTITY label.acceptbutton "Uložit a resetovat">
+<!ENTITY label.cancelbutton "Storno">
+<!ENTITY ecsettings.title "Nastavení EWS kalendáře a e-mailu">
+<!ENTITY ecsettings.tab.adsettings "Exchange/Windows AD">
+<!ENTITY ecsettings.tab.meetingrequestsettings "Žádosti o schůzku">
+<!ENTITY ecsettings.tab.calendarfolderproperties "Vlastnosti složky">
+
+<!ENTITY label.ecExchangeSettings.title "Nastavení pro kalendář:">
+
+<!ENTITY label.poll.inbox "Zjišťovat v doručené poště žádosti, změny a zrušení.">
+<!ENTITY label.poll.inbox.interval "Četnost (v sekundách) zjišťování nových zpráv:">
+<!ENTITY label.poll.calendar.interval "Četnost (v sekundách) zjišťování změn v kalendáři:">
+
+<!ENTITY label.nomeetingrequestsettings "Nemůžete nastavovat schůzku protože jste nevybrali hlavní kalendář pro e-mailovou schránku">
+
+<!ENTITY label.autorespond.meetingrequest "Automaticky odpovídat na nové pozvánky že ">
+
+<!ENTITY menuitem.label.ec-autorespond-answer.tentative "Možná se zúčastním">
+<!ENTITY menuitem.label.ec-autorespond-answer.accepted "Zúčastním se">
+<!ENTITY menuitem.label.ec-autorespond-answer.declined "Nezúčastním se">
+
+<!ENTITY label.autoremove.invitation_cancellation1 "Automaticky odebrat pozvánku a související zprávu o zrušení pokud jste doposud neodpověděli.">
+<!ENTITY label.autoremove.invitation_cancellation2 "Automaticky odebrat potvrzené pozvání pokud obdržíte zprávu o zrušení.">
+
+<!ENTITY label.autoremove.invitation_response1 "V případě schůzek které neorganizujete automaticky odebírat odpovědi ostatních na pozvánku.">
+
+<!ENTITY label.doautorespond.meetingrequest.message "Namísto dotazování se co odpovědět rovnou posílat následující zprávu.">
+<!ENTITY label.autorespond.meetingrequest.message "Vaše zpráva:">
+
+<!ENTITY treecol.label.userid "Identifikátor uživatele">
+<!ENTITY treecol.label.email "E-mail">
+
+
+<!ENTITY ecsettings.tab.offlineCachingproperties "Ukládání do mezipaměti pro práci při odpojení">
+
+<!ENTITY label.offlineCacheproperties.cachingStartDate "Datum zahájení ukládání do mezipaměti:">
+<!ENTITY label.offlineCacheproperties.cachingEndDate "Datum ukončení ukládání do mezipaměti:">
+<!ENTITY label.offlineCacheproperties.totalEvents "Celkový počet událostí v mezipaměti:">
+<!ENTITY label.offlineCacheproperties.totalTasks "Celkový počet úkolů v mezipaměti:">
+
+<!ENTITY label.offlineCacheproperties.monthsBeforeStartDate "Kolik měsíců před dneškem uchovávat položky v mezipaměti:">
+<!ENTITY label.offlineCacheproperties.monthsBeforeEndDate "Kolik měsíců ode dneška uchovávat položky v mezipaměti:">
+
+<!ENTITY button.offlineCacheproperties.clearCache "Vyčistit data z mezipaměti pro práci při odpojení">
+<!ENTITY ecsettings.tab.autoprocessingproperties "Automatické zpracování">
+<!ENTITY ecsettings.tab.mailitemsProperties "Nastavení EWS (pošta)">
+
+<!ENTITY label.syncmailitems.interval "Odložit synchronizaci položek zpráv (štítky, atd.)">
+<!ENTITY label.autoprocessingproperties.deletecancelleditems "Automaticky odstraňovat zrušené události">
+<!ENTITY label.autoprocessingproperties.markeventtentative "Automaticky označovat události jako předběžné a posílat odpovědi organizátorovi">
+<!ENTITY label.syncmailitems.active "Udržovat synchronizaci položek zpráv (štítky, atd.)">
+
+<!ENTITY label.syncfollowup.deactivtate "Vypnout navazující úkol">
+ 

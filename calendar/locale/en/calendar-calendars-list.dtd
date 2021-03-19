@@ -1,0 +1,5 @@
+<!ENTITY calendar.context.exchange.convert.label "Convert to Exchange 2007/2010 Calendar and Tasks Add-on">
+<!ENTITY calendar.context.exchange.properties.label "Exchange (EWS) properties">
+<!ENTITY calendar.context.exchange.oof.settings.label "Out of office settings">
+<!ENTITY calendar.context.exchange.clone.settings.label "Clone settings to new calendar">
+<!ENTITY calendar.context.exchange.delegate.calendar.settings.label "Delegate calendar">

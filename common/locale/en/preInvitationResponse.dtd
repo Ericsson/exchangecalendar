@@ -1,0 +1,14 @@
+<!ENTITY dialog.exchWebService.preInvitationResponse.title "How do you want to react?">
+<!ENTITY label.acceptbutton "OK">
+<!ENTITY label.cancelbutton "Cancel">
+
+<!ENTITY label.calendarName "Calendar:">
+<!ENTITY label.itemTitle "Subject:">
+<!ENTITY label.itemStart "Start time:">
+<!ENTITY label.itemResponse "Your response:">
+<!ENTITY label.meetingOrganiser "Organizer:">
+
+<!ENTITY radio.label.exchWebService.preInvitationResponse.edit "Edit the response before sending.">
+<!ENTITY radio.label.exchWebService.preInvitationResponse.sendnow "Send the response now.">
+<!ENTITY radio.label.exchWebService.preInvitationResponse.donotsend "Don't send a response.">
+

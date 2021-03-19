@@ -1,0 +1,56 @@
+<!ENTITY ecautodiscover "Use Exchange's autodiscovery function.">
+<!ENTITY ecfolderbase.label "Folder base:">
+<!ENTITY ecfolderpath.label "Path below folder base:">
+<!ENTITY ecfolderidofshare.label "Share Folder ID:">
+<!ENTITY exchWebServices.SharedFolderID.label "Shared display name:">
+
+<!ENTITY menuitem.label.ecfolderbase.calendar "Calendar folder">
+<!ENTITY menuitem.label.ecfolderbase.publicfoldersroot "Public folders">
+<!ENTITY menuitem.label.ecfolderbase.inbox "Mail inbox folder">
+<!ENTITY menuitem.label.ecfolderbase.voicemail "Voice mail folder">
+<!ENTITY menuitem.label.ecfolderbase.msgfolderroot "Message folder root">
+<!ENTITY menuitem.label.ecfolderbase.root "Root of the mailbox">
+<!ENTITY menuitem.label.ecfolderbase.tasks "Tasks folder">
+
+<!ENTITY menuitem.label.ecfolderbase.contacts "Contacts folder">
+<!ENTITY menuitem.label.ecfolderbase.deleteditems "Deleted items folder">
+<!ENTITY menuitem.label.ecfolderbase.drafts "Drafts folder">
+<!ENTITY menuitem.label.ecfolderbase.journal "Journal folder">
+<!ENTITY menuitem.label.ecfolderbase.notes "Notes folder">
+<!ENTITY menuitem.label.ecfolderbase.outbox "Mail outbox folder">
+<!ENTITY menuitem.label.ecfolderbase.sentitems "Sent items folder">
+<!ENTITY menuitem.label.ecfolderbase.junkemail "Junk email folder">
+<!ENTITY menuitem.label.ecfolderbase.searchfolders "Search folders folder">
+<!ENTITY menuitem.label.ecfolderbase.version2010 "-- Options below are only for Exchange 2010 --">
+<!ENTITY menuitem.label.ecfolderbase.recoverableitemsroot "Dumpster root folder">
+<!ENTITY menuitem.label.ecfolderbase.recoverableitemsdeletions "Dumpster deletions folder">
+<!ENTITY menuitem.label.ecfolderbase.recoverableitemsversion "Dumpster versions folder">
+<!ENTITY menuitem.label.ecfolderbase.recoverableitemspurges "Dumpster purges folder">
+<!ENTITY menuitem.label.ecfolderbase.archiveroot "Root archive folder">
+<!ENTITY menuitem.label.ecfolderbase.archivemsgfolderroot "Root archive message folder">
+<!ENTITY menuitem.label.ecfolderbase.archivedeleteditems "Archive deleted items folder">
+<!ENTITY menuitem.label.ecfolderbase.archiverecoverableitemsroot "Archive recoverable items root folder">
+<!ENTITY menuitem.label.ecfolderbase.Archiverecoverableitemsdeletions "Archive recoverable items deletions folder">
+<!ENTITY menuitem.label.ecfolderbase.Archiverecoverableitemsversions "Archive recoverable items versions folder">
+<!ENTITY menuitem.label.ecfolderbase.Archiverecoverableitemspurges "Archive recoverable items purges folder">
+
+<!ENTITY button.label.autodiscovercheck "Perform autodiscovery">
+<!ENTITY button.label.serverandmailboxcheck "Check server and mailbox">
+<!ENTITY button.label.servercheck "Check server and account">
+
+<!ENTITY ecmailbox.label "Primary email address:">
+<!ENTITY ecmailbox.tooltip "If you do not specify a mailbox you will only have access to public folders.">
+<!ENTITY ecwindowsuser.label "Username:">
+<!ENTITY ecwindowsdomain.label "Domain name:">
+<!ENTITY ecwindowspassword.label "Password:">
+
+<!ENTITY button.label.folderpathcheck "Check">
+<!ENTITY button.label.folderbrowse "Browse">
+
+<!ENTITY exchWebServices.UserAvailability.label "Only user availability status for the mailbox's calendar will be visible.">
+
+<!ENTITY exchWebServices.exchtype.label "Exchange type">
+<!ENTITY exchWebServices.hostexch.label "Hosted Exchange">
+<!ENTITY exchWebServices.365exch.label "Microsoft Office 365">
+<!ENTITY exchWebServices.detail.label "Details">
+ 

@@ -1,0 +1,55 @@
+<!ENTITY ecautodiscover "Exchange’in otomatik keşif işlevini kullan.">
+<!ENTITY ecfolderbase.label "Klasör tabanı:">
+<!ENTITY ecfolderpath.label "Klasör tabanının altındaki yol:">
+<!ENTITY ecfolderidofshare.label "Paylaşılan Klasör Kimliği:">
+<!ENTITY exchWebServices.SharedFolderID.label "Paylaşılan görünüm adı:">
+
+<!ENTITY menuitem.label.ecfolderbase.calendar "Takvim klasörü">
+<!ENTITY menuitem.label.ecfolderbase.publicfoldersroot "Ortak klasörler">
+<!ENTITY menuitem.label.ecfolderbase.inbox "Posta kutusu klasörü">
+<!ENTITY menuitem.label.ecfolderbase.voicemail "Sesli mesaj klasörü">
+<!ENTITY menuitem.label.ecfolderbase.msgfolderroot "İleti klasörü kökü">
+<!ENTITY menuitem.label.ecfolderbase.root "Posta kutusunun kökü">
+<!ENTITY menuitem.label.ecfolderbase.tasks "Görevler klasörü">
+
+<!ENTITY menuitem.label.ecfolderbase.contacts "Kişiler klasörü">
+<!ENTITY menuitem.label.ecfolderbase.deleteditems "Silinmiş öğeler klasörü">
+<!ENTITY menuitem.label.ecfolderbase.drafts "Taslaklar klasörü">
+<!ENTITY menuitem.label.ecfolderbase.journal "Günlükleme klasörü">
+<!ENTITY menuitem.label.ecfolderbase.notes "Notlar klasörü">
+<!ENTITY menuitem.label.ecfolderbase.outbox "Gönderilecek postalar klasörü">
+<!ENTITY menuitem.label.ecfolderbase.sentitems "Gidenler klasörü">
+<!ENTITY menuitem.label.ecfolderbase.junkemail "Gereksiz posta klasörü">
+<!ENTITY menuitem.label.ecfolderbase.searchfolders "Klasör Arama klasörü">
+<!ENTITY menuitem.label.ecfolderbase.version2010 "-- Aşağıdaki seçenekler yalnızca Exchange2010 için geçerlidir --">
+<!ENTITY menuitem.label.ecfolderbase.recoverableitemsroot "Çöp kutusu taban klasörü">
+<!ENTITY menuitem.label.ecfolderbase.recoverableitemsdeletions "Çöp kutusu silinenler klasörü">
+<!ENTITY menuitem.label.ecfolderbase.recoverableitemsversion "Çöp kutusu sürümler klasörü">
+<!ENTITY menuitem.label.ecfolderbase.recoverableitemspurges "Çöp kutusu temizleme klasörü">
+<!ENTITY menuitem.label.ecfolderbase.archiveroot "Arşivleme kök klasörü">
+<!ENTITY menuitem.label.ecfolderbase.archivemsgfolderroot "Arşivdeki iletiler kök klasörü">
+<!ENTITY menuitem.label.ecfolderbase.archivedeleteditems "Arşivdeki silinmişler klasörü">
+<!ENTITY menuitem.label.ecfolderbase.archiverecoverableitemsroot "Arşivdeki kurtarılabilirler kök klasörü">
+<!ENTITY menuitem.label.ecfolderbase.Archiverecoverableitemsdeletions "Arşivdeki kurtarılabilir silinmişler klasörü">
+<!ENTITY menuitem.label.ecfolderbase.Archiverecoverableitemsversions "Arşivdeki kurtarılabilir sürümler klasörü">
+<!ENTITY menuitem.label.ecfolderbase.Archiverecoverableitemspurges "Arşivdeki kurtarılabilir temizleme klasörü">
+
+<!ENTITY button.label.autodiscovercheck "Otomatik keşif yap">
+<!ENTITY button.label.serverandmailboxcheck "Sunucu ve posta kutusunu denetle">
+<!ENTITY button.label.servercheck "Sunucu ve hesabı denetle">
+
+<!ENTITY ecmailbox.label "Birincil e-posta adresi:">
+<!ENTITY ecmailbox.tooltip "Eğer bir posta kutusu belirtmezseniz, yalnızca ortak klasörlere erişiminiz olacak.">
+<!ENTITY ecwindowsuser.label "Kullanıcı adı:">
+<!ENTITY ecwindowsdomain.label "Alan adı:">
+<!ENTITY ecwindowspassword.label "Parola:">
+
+<!ENTITY button.label.folderpathcheck "Denetle">
+<!ENTITY button.label.folderbrowse "Gözat">
+
+<!ENTITY exchWebServices.UserAvailability.label "Yalnızca posta kutusuna ait takvimin kullanıcı müsaitliği durumu görünür olacak.">
+
+<!ENTITY exchWebServices.exchtype.label "Exchange Çeşiti">
+<!ENTITY exchWebServices.hostexch.label "Sunucuda Ağırlanan Exchange">
+<!ENTITY exchWebServices.365exch.label "Microsoft Office365">
+<!ENTITY exchWebServices.detail.label "Detaylar">

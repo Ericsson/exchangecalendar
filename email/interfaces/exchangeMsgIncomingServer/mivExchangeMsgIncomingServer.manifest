@@ -1,5 +1,0 @@
-interfaces mivExchangeMsgIncomingServer.xpt
-component {79d87edc-020e-48d4-8c04-b894edab4bd2} mivExchangeMsgIncomingServer.js
-contract @mozilla.org/messenger/server;1?type=exchangeWebServiceMail {79d87edc-020e-48d4-8c04-b894edab4bd2}
-
-

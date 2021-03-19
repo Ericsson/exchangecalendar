@@ -1,0 +1,7 @@
+<!ENTITY exchWebService.owner.label "Vlastník:">
+<!ENTITY exchWebService.totalWork.label "Práce celkem:">
+<!ENTITY exchWebService.actualWork.label "Stávající práce:">
+<!ENTITY exchWebService.mileage.label "Postup:">
+<!ENTITY exchWebService.billingInformation.label "Účtovací údaje:">
+<!ENTITY exchWebService.companies.label "Společnost:">
+

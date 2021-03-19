@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: GPL 3.0
+ *
+ * The contents of this file are subject to the General Public License
+ * 3.0 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ * http://www.gnu.org/licenses/gpl.html
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ *  Exchange 2007/2010 Contacts.
+ *  For Thunderbird.
+ *
+ * Author: Michel Verbraak (info@1st-setup.nl)
+ * Website: http://www.1st-setup.nl/wordpress/?page_id=xx
+ * email: exchangecontacts@extensions.1st-setup.nl
+ *
+ *
+ * ***** BEGIN LICENSE BLOCK *****/
+-->
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE dialog
+[
+    <!ENTITY % dtd1 SYSTEM "chrome://exchangecontacts/locale/exchangeContactSettings.dtd" > %dtd1;
+]>
+<?xul-overlay href="chrome://exchangecommon/content/exchangeSettingsOverlay.xul"?>
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="exchWebService_ContactSettings_dialog"
+        title="Exchange Contact Settings"
+        buttons="accept,cancel"
+        buttonlabelaccept="&label.acceptbutton;"
+        buttonlabelcancel="&label.cancelbutton;"
+        ondialogaccept="return tmpExchangeContactSettings.onSave();"
+        onload="tmpExchangeContactSettings.onLoad();">
+    <script type="application/javascript"
+            src="chrome://exchangecontacts/content/exchangeContactSettings.js" />
+    <hbox>
+        <label value="&label.ecExchangeSettings.title;" />
+        <textbox id="exchWebService_contact_description" />
+    </hbox>
+    <hbox>
+        <label value="&exchangeWebService.preference.contacts.pollinterval;" />
+        <textbox id="exchangeWebService_preference_contacts_pollinterval"
+                 preference="extensions.1st-setup.core.debuglevel"
+                 increment="1"
+                 min="1"
+                 type="number" />
+    </hbox>
+    <checkbox label="&exchWebService.add.globaladdresslist.label;"
+              id="exchWebService-add-globaladdresslist" />
+    <vbox id="exchWebService-exchange-settings"></vbox>
+</dialog>

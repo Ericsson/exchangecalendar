@@ -1,0 +1,5 @@
+<!ENTITY calendar.context.exchange.convert.label "Přídavek pro převod Exchange 2007/2010/2013 kalendářů a úkolů">
+<!ENTITY calendar.context.exchange.properties.label "Vlastnosti Exchange (EWS)">
+<!ENTITY calendar.context.exchange.oof.settings.label "Nastavení pro Mimo kancelář">
+<!ENTITY calendar.context.exchange.clone.settings.label "Klonovat nastavení do nového kalendáře">
+<!ENTITY calendar.context.exchange.delegate.calendar.settings.label "Delegovat kalendář">

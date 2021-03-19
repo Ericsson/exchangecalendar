@@ -1,0 +1,18 @@
+content exchangeemailtag content/
+
+overlay chrome://messenger/content/messenger.xul chrome://exchangeemailtag/content/emailtag.xul
+
+locale exchangeemailtag en    locale/en/
+
+locale exchangeemailtag cs-CZ locale/cs_CZ/
+locale exchangeemailtag de    locale/de/
+locale exchangeemailtag en-US locale/en_US/
+locale exchangeemailtag fr-FR locale/fr_FR/
+locale exchangeemailtag it-IT locale/it_IT/
+locale exchangeemailtag ja-JP locale/ja_JP/
+locale exchangeemailtag nl    locale/nl/
+locale exchangeemailtag pl    locale/pl/
+locale exchangeemailtag ru    locale/ru/
+locale exchangeemailtag sk    locale/sk/
+locale exchangeemailtag sv    locale/sv/
+locale exchangeemailtag tr    locale/tr/

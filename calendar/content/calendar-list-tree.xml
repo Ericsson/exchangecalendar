@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+<!DOCTYPE overlay SYSTEM "chrome://calendar/locale/calendar.dtd">
+<bindings id="exchange-calendar-list-tree-bindings"
+          xmlns="http://www.mozilla.org/xbl"
+          xmlns:xbl="http://www.mozilla.org/xbl"
+          xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+    <binding id="exchange-calendar-list-tree"
+             extends="chrome://calendar/content/widgets/calendar-list-tree.xml#full-calendar-list-tree">
+
+        <content>
+            <xul:tree anonid="tree"
+                      xbl:inherits="hidecolumnpicker"
+                      hidecolumnpicker="true"
+                      seltype="single"
+                      flex="1">
+                <xul:treecols anonid="treecols"
+                              xbl:inherits="hideheader"
+                              hideheader="true">
+                    <xul:treecol anonid="checkbox-treecol"
+                                 xbl:inherits="cycler,hideheader"
+                                 cycler="true"
+                                 hideheader="true"
+                                 width="17" />
+                    <xul:treecol anonid="color-treecol"
+                                 xbl:inherits="cycler,hideheader"
+                                 hideheader="true"
+                                 width="16" />
+                    <xul:treecol anonid="calendarname-treecol"
+                                 xbl:inherits="cycler,hideheader"
+                                 hideheader="true"
+                                 label="&calendar.unifinder.tree.calendarname.label;"
+                                 flex="1" />
+                    <xul:treecol anonid="exchange-status-treecol"
+                                 xbl:inherits="cycler,hideheader"
+                                 hideheader="true"
+                                 width="20" />
+                    <xul:treecol anonid="status-treecol"
+                                 xbl:inherits="cycler,hideheader"
+                                 hideheader="true"
+                                 width="18" />
+                    <children includes="treecol" />
+                    <xul:treecol anonid="scrollbar-spacer"
+                                 xbl:inherits="cycler,hideheader"
+                                 fixed="true"
+                                 hideheader="true">
+                        <!-- This is a very elegant workaround to make sure the last column
+                 is not covered by the scrollbar in case of an overflow. This
+                 treecol needs to be here last -->
+                        <xul:slider anonid="scrollbar-slider"
+                                    orient="vertical" />
+                    </xul:treecol>
+                </xul:treecols>
+                <xul:treechildren anonid="treechildren"
+                                  xbl:inherits="tooltip=childtooltip,context=childcontext"
+                                  tooltip="_child"
+                                  context="_child"
+                                  ondragstart="onDragStart(event);"
+                                  onoverflow="displayScrollbarSpacer(true)"
+                                  onunderflow="displayScrollbarSpacer(false)">
+                                  
+                    <children includes="tooltip|menupopup" />
+                </xul:treechildren>
+            </xul:tree>
+        </content>
+        <implementation>
+            <constructor>
+<![CDATA[
+        Components.utils.import("resource://calendar/modules/calUtils.jsm");
+        let calMgr = cal.getCalendarManager();
+        calMgr.addObserver(this.calMgrObserver);
+
+      ]]>
+            </constructor>
+            <destructor>
+<![CDATA[
+        let calMgr = cal.getCalendarManager();
+        calMgr.removeObserver(this.calMgrObserver);
+        this.calMgrObserver.listTree = null;
+      ]]>
+            </destructor>
+            <method name="getRowProperties">
+                <parameter name="aRow" />
+                <parameter name="aProps" />
+                <body>
+<![CDATA[
+          let calendar = this.getCalendar(aRow);
+          let composite = this.compositeCalendar;
+
+          if (aProps) {
+                  // Set up the composite calendar status
+                  if (composite.getCalendarById(calendar.id)) {
+                      aProps.AppendElement(cal.getAtomFromService("checked"));
+                  } else {
+                      aProps.AppendElement(cal.getAtomFromService("unchecked"));
+                  }
+
+                  // Set up the calendar id
+                  aProps.AppendElement(cal.getAtomFromService("id-" + calendar.id));
+
+                  // Get the calendar color
+                  let color = (calendar.getProperty("color") || "").substr(1);
+
+                  // Set up the calendar color (background)
+                  let bgColorProp = "color-" + (color || "default");
+                  aProps.AppendElement(cal.getAtomFromService(bgColorProp));
+
+                  // Set a property to get the contrasting text color (foreground)
+                  let fgColorProp = cal.getContrastingTextColor(color || "a8c2e1");
+                  aProps.AppendElement(cal.getAtomFromService(fgColorProp));
+
+                  if (calendar.type == "exchangecalendar") {
+                          let exchangeCurrentStatus = calendar.getProperty("exchangeCurrentStatus");
+                          if ((!Components.isSuccessCode(exchangeCurrentStatus)) || (calendar.getProperty("disabled"))) {
+                              aProps.AppendElement(cal.getAtomFromService("exchangeCommError"));
+                          } else  {
+                              aProps.AppendElement(cal.getAtomFromService("exchangeCommOk"));
+                          }
+                  }
+
+                  let currentStatus = calendar.getProperty("currentStatus");
+                  if (!Components.isSuccessCode(currentStatus)) {
+                      // 'readfailed' is supposed to "win" over 'readonly', meaning that
+                      // if reading from a calendar fails there is no further need to also display
+                      // information about 'readonly' status
+                      aProps.AppendElement(cal.getAtomFromService("readfailed"));
+                  } else if (calendar.readOnly) {
+                      aProps.AppendElement(cal.getAtomFromService("readonly"));
+                  }
+
+                  // Set up the disabled state
+                  if (!this.ignoreDisabledState && calendar.getProperty("disabled")) {
+                      aProps.AppendElement(cal.getAtomFromService("disabled"));
+                  } else {
+                      aProps.AppendElement(cal.getAtomFromService("enabled"));
+                  }
+                }
+                else {
+                  let properties = [];
+
+                  // Set up the composite calendar status
+                  properties.push(composite.getCalendarById(calendar.id) ? "checked" : "unchecked");
+
+                  // Set up the calendar id
+                  properties.push("id-" + calendar.id);
+
+                  // Get the calendar color
+                  let color = (calendar.getProperty("color") || "").substr(1);
+
+                  // Set up the calendar color (background)
+                  properties.push("color-" + (color || "default"));
+
+                  // Set a property to get the contrasting text color (foreground)
+                  properties.push(cal.getContrastingTextColor(color || "a8c2e1"));
+
+                  if (calendar.type == "exchangecalendar") {
+                          let exchangeCurrentStatus = calendar.getProperty("exchangeCurrentStatus");
+                          if ((!Components.isSuccessCode(exchangeCurrentStatus)) || (calendar.getProperty("disabled"))) {
+                              properties.push("exchangeCommError");
+                          } else  {
+                              properties.push("exchangeCommOk");
+                          }
+                  }
+
+                  let currentStatus = calendar.getProperty("currentStatus");
+                  if (!Components.isSuccessCode(currentStatus)) {
+                      // 'readfailed' is supposed to "win" over 'readonly', meaning that
+                      // if reading from a calendar fails there is no further need to also display
+                      // information about 'readonly' status
+                      properties.push("readfailed");
+                  } else if (calendar.readOnly) {
+                      properties.push("readonly");
+                  }
+
+                  // Set up the disabled state
+                  properties.push(!this.ignoreDisabledState && calendar.getProperty("disabled") ?
+                                  "disabled" : "enabled");
+
+                  return properties.join(" ");
+                }
+        ]]>
+                </body>
+            </method>
+            <field name="calObserver">
+<![CDATA[
+      ({ listTree: this,
+
+        QueryInterface: XPCOMUtils.generateQI([Components.interfaces.calIObserver]),
+
+        // calIObserver. Note that each registered calendar uses this observer
+        onStartBatch: function cMO_onStartBatch() { },
+        onEndBatch: function cMO_onEndBatch() { },
+        onLoad: function cMO_onLoad() { },
+
+        onAddItem: function cMO_onAddItem(aItem) { },
+        onModifyItem: function cMO_onModifyItem(aNewItem, aOldItem) { },
+        onDeleteItem: function cMO_onDeleteItem(aDeletedItem) { },
+        onError: function cMO_onError(aCalendar, aErrNo, aMessage) { },
+
+        onPropertyChanged: function cMO_onPropertyChanged(aCalendar,
+                                                          aName,
+                                                          aValue,
+                                                          aOldValue) {
+            switch (aName) {
+                case "color":
+                    // TODO See other TODO in this file about updateStyleSheetForViews
+                    if ("updateStyleSheetForViews" in window) {
+                        updateStyleSheetForViews(aCalendar);
+                    }
+                    this.listTree.updateCalendarColor(aCalendar);
+                    // Fall through, update item in any case
+                case "name":
+                case "currentStatus":
+                case "readOnly":
+                case "exchangeCurrentStatus":
+                case "disabled":
+                    this.listTree.updateCalendar(aCalendar);
+                    // Fall through, update commands in any cases.
+            }
+        },
+
+        onPropertyDeleting: function cMO_onPropertyDeleting(aCalendar,
+                                                            aName) {
+            // Since the old value is not used directly in onPropertyChanged,
+            // but should not be the same as the value, set it to a different
+            // value.
+            this.onPropertyChanged(aCalendar, aName, null, null);
+        }
+      })
+      ]]>
+            </field>
+        </implementation>
+    </binding>
+</bindings>

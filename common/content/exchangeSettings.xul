@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: GPL 3.0
+ *
+ * The contents of this file are subject to the General Public License
+ * 3.0 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ * http://www.gnu.org/licenses/gpl.html
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * ## Exchange 2007/2010 Calendar and Tasks Provider.
+ * ## For Thunderbird with the Lightning add-on.
+ *
+ * This work is a combination of the Storage calendar, part of the default Lightning add-on, and 
+ * the "Exchange Data Provider for Lightning" add-on currently, october 2011, maintained by Simon Schubert.
+ * Primarily made because the "Exchange Data Provider for Lightning" add-on is a continuation 
+ * of old code and this one is build up from the ground. It still uses some parts from the 
+ * "Exchange Data Provider for Lightning" project.
+ *
+ * Author: Michel Verbraak (info@1st-setup.nl)
+ * Website: http://www.1st-setup.nl/wordpress/?page_id=133
+ * email: exchangecalendar@extensions.1st-setup.nl
+ *
+ *
+ * This code uses parts of the Microsoft Exchange Calendar Provider code on which the
+ * "Exchange Data Provider for Lightning" was based.
+ * The Initial Developer of the Microsoft Exchange Calendar Provider Code is
+ *   Andrea Bittau <a.bittau@cs.ucl.ac.uk>, University College London
+ * Portions created by the Initial Developer are Copyright (C) 2009
+ * the Initial Developer. All Rights Reserved.
+ *
+ * ***** BEGIN LICENSE BLOCK *****/
+-->
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE dialog
+[
+    <!ENTITY % dtd1 SYSTEM "chrome://exchangecommon/locale/exchangeSettings.dtd" > %dtd1;
+]>
+<?xul-overlay href="chrome://exchangecommon/content/exchangeSettingsOverlay.xul"?>
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="exchWebService_ExchangeSettings_dialog"
+        title="&ecsettings.title; "
+        buttons="accept,cancel"
+        buttonlabelaccept="&label.acceptbutton;"
+        buttonlabelcancel="&label.cancelbutton;"
+        ondialogaccept="tmpOfflineCacheSettings.onSave();return tmpExchangeSettings.onSave();"
+        onload="tmpExchangeSettings.onLoad();">
+    <script type="application/javascript"
+            src="chrome://exchangecommon/content/exchangeSettings.js" />
+    <script type="application/javascript"
+            src="chrome://exchangecommon/content/offlineCacheSettings.js" />
+    <commandset>
+        <command id="exchWebService_cmd_poll_inbox"
+                 oncommand="tmpExchangeSettings.doPollInboxChanged(this);" />
+        <command id="exchWebService_cmd_autorespond"
+                 oncommand="tmpExchangeSettings.doAutoRespondChanged(this);" />
+        <command id="exchWebService_cmd_offlineCache"
+                 oncommand="tmpOfflineCacheSettings.doCheckOfflineCacheChanged(this);" />
+    </commandset>
+    <hbox>
+        <label value="&label.ecExchangeSettings.title;" />
+        <label id="exchWebService_ExchangeSettings-title" />
+    </hbox>
+    <tabbox flex="1">
+        <tabs onselect="tmpExchangeSettings.doTabChanged(this);">
+            <tab label="&ecsettings.tab.adsettings;"
+                 selected="true" />
+            <!--                    <tab label="&ecsettings.tab.meetingrequestsettings;" hidden="true"/>  -->
+            <tab label="&ecsettings.tab.calendarfolderproperties;" />
+            <tab label="&ecsettings.tab.offlineCachingproperties;" />
+            <tab label="&ecsettings.tab.autoprocessingproperties;" />
+            <tab label="&ecsettings.tab.mailitemsProperties;" />
+        </tabs>
+        <tabpanels flex="1">
+            <tabpanel id="exchWebService-adsettings">
+                <vbox>
+                    <hbox id="exchWebService-poll-calendar-interval-hbox">
+
+                        <label value="&label.poll.calendar.interval;" />
+                        <textbox id="exchWebService-poll-calendar-interval"
+                                 increment="10"
+                                 min="10"
+                                 type="number"
+                                 value="10" />
+                    </hbox>
+                    <vbox id="exchWebService-exchange-settings"
+                          flex="1"></vbox>
+                </vbox>
+            </tabpanel>
+            <!--
+                        <tabpanel id="exchWebService-meetingrequestsettings">
+                                <vbox id="vbox-exchWebService-meetingrequestsettings" hidden="false">
+                                        <checkbox id="exchWebService-poll-inbox" label="&label.poll.inbox;"
+                                                checked="true" command="exchWebService_cmd_poll_inbox" />
+                                        <hbox id="exchWebService-poll-inbox-interval-hbox">
+                                                <label value="&label.poll.inbox.interval;" />
+                                                <textbox id="exchWebService-poll-inbox-interval"
+                                                        increment="1" min="3" type="number" value="3" />
+                                        </hbox>
+
+                                        <separator />
+
+                                        <hbox>
+                                                <checkbox id="exchWebService-autorespond-meetingrequest"
+                                                        label="&label.autorespond.meetingrequest;" checked="true"
+                                                        command="exchWebService_cmd_autorespond" />
+                                                <menulist label="(Make a choice)" id="exchWebService-autorespond-answer"
+                                                        value="1">
+                                                        <menupopup>
+                                                                <menuitem label="&menuitem.label.ec-autorespond-answer.tentative;"
+                                                                        value="TENTATIVE" />
+                                                                <menuitem label="&menuitem.label.ec-autorespond-answer.accepted;"
+                                                                        value="ACCEPTED" />
+                                                                <menuitem label="&menuitem.label.ec-autorespond-answer.declined;"
+                                                                        value="DECLINED" />
+                                                        </menupopup>
+                                                </menulist>
+                                        </hbox>
+                                        <checkbox id="exchWebService-doautorespond-meetingrequest-message"
+                                                label="&label.doautorespond.meetingrequest.message;" checked="false" />
+                                        <hbox align="left">
+                                                <label value="&label.autorespond.meetingrequest.message;" />
+                                                <textbox id="exchWebService-autorespond-meetingrequest-message"
+                                                        multiline="true" label="messageResponseBody" rows="5" />
+                                        </hbox>
+
+                                        <separator />
+
+                                        <checkbox id="exchWebService-autoremove-invitation_cancellation1"
+                                                label="&label.autoremove.invitation_cancellation1;" checked="true" />
+                                        <checkbox id="exchWebService-autoremove-invitation_cancellation2"
+                                                label="&label.autoremove.invitation_cancellation2;" checked="false" />
+
+                                        <separator />
+
+                                        <checkbox id="exchWebService-autoremove-invitation_response1"
+                                                label="&label.autoremove.invitation_response1;" checked="false" />
+
+                                </vbox>
+                                <vbox id="vbox-exchWebService-nomeetingrequestsettings" hidden="true">
+                                        <description style="white-space: pre;">&label.nomeetingrequestsettings;
+                                        </description>
+                                </vbox>
+                        </tabpanel>
+-->
+            <tabpanel id="exchWebService-folderproperties">
+                <hbox flex="1">
+                    <vbox id="vbox-exchWebService-folderproperties">
+
+                        <label id="exchWebService-folderproperties-xml"
+                               value="Details:" />
+                        <grid flex="1">
+                            <columns>
+                                <column />
+                                <column flex="1" />
+                            </columns>
+                            <rows>
+                                <row align="center">
+                                    <label value="Exchange server version:" />
+                                    <label id="exchWebServices-ServerVersionInfo"
+                                           value="" />
+                                </row>
+                                <row align="center">
+                                    <label value="Displayname:" />
+                                    <label id="exchWebServices-CalendarFolder-DisplayName"
+                                           value="" />
+                                </row>
+                                <row align="center">
+                                    <label value="Total item count:" />
+                                    <label id="exchWebServices-CalendarFolder-TotalCount"
+                                           value="" />
+                                </row>
+                                <row align="center">
+                                    <label value="Child folder count:" />
+                                    <label id="exchWebServices-CalendarFolder-ChildFolderCount"
+                                           value="" />
+                                </row>
+                            </rows>
+                        </grid>
+                        <separator />
+                        <label value="Effective rights:" />
+                        <grid flex="1">
+                            <columns>
+                                <column />
+                                <column flex="1" />
+                            </columns>
+                            <rows>
+                                <row align="center">
+                                    <label value="CreateAssociated:" />
+                                    <label id="exchWebServices-CalendarFolder-EffectiveRights-CreateAssociated"
+                                           value="" />
+                                </row>
+                                <row align="center">
+                                    <label value="CreateContents:" />
+                                    <label id="exchWebServices-CalendarFolder-EffectiveRights-CreateContents"
+                                           value="" />
+                                </row>
+                                <row align="center">
+                                    <label value="CreateHierarchy:" />
+                                    <label id="exchWebServices-CalendarFolder-EffectiveRights-CreateHierarchy"
+                                           value="" />
+                                </row>
+                                <row align="center">
+                                    <label value="Delete:" />
+                                    <label id="exchWebServices-CalendarFolder-EffectiveRights-Delete"
+                                           value="" />
+                                </row>
+                                <row align="center">
+                                    <label value="Modify:" />
+                                    <label id="exchWebServices-CalendarFolder-EffectiveRights-Modify"
+                                           value="" />
+                                </row>
+                                <row align="center">
+                                    <label value="Read:" />
+                                    <label id="exchWebServices-CalendarFolder-EffectiveRights-Read"
+                                           value="" />
+                                </row>
+                            </rows>
+                        </grid>
+                        <tree id="exchWebServicesPermissionsTree"
+                              flex="1"
+                              seltype="single"
+                              onselect="tmpExchangeSettings.doOnSelectUserId(this);"
+                              sortResource="UserId"
+                              sortDirection="natural"
+                              rows="5">
+                            <treecols>
+                                <treecol id="exchWebService_permissonTree_userId"
+                                         label="&treecol.label.userid;"
+                                         primary="true"
+                                         flex="2"
+                                         fixed="false" />
+                                <treecol id="exchWebService_permissonTree_email"
+                                         label="&treecol.label.email;"
+                                         primary="false"
+                                         flex="1"
+                                         fixed="false" />
+                            </treecols>
+                            <treechildren />
+                        </tree>
+                        <label value="Select user rights:" />
+                        <grid flex="1">
+                            <columns>
+                                <column />
+                                <column flex="1" />
+                            </columns>
+                            <rows>
+                                <row align="center">
+                                    <label value="CanCreateItems:" />
+                                    <label id="exchWebServices-UserId-EffectiveRights-CanCreateItems"
+                                           value="" />
+                                </row>
+                                <row align="center">
+                                    <label value="CanCreateSubFolders:" />
+                                    <label id="exchWebServices-UserId-EffectiveRights-CanCreateSubFolders"
+                                           value="" />
+                                </row>
+                                <row align="center">
+                                    <label value="IsFolderOwner:" />
+                                    <label id="exchWebServices-UserId-EffectiveRights-IsFolderOwner"
+                                           value="" />
+                                </row>
+                                <row align="center">
+                                    <label value="IsFolderVisible:" />
+                                    <label id="exchWebServices-UserId-EffectiveRights-IsFolderVisible"
+                                           value="" />
+                                </row>
+                                <row align="center">
+                                    <label value="IsFolderContact:" />
+                                    <label id="exchWebServices-UserId-EffectiveRights-IsFolderContact"
+                                           value="" />
+                                </row>
+                                <row align="center">
+                                    <label value="EditItems:" />
+                                    <label id="exchWebServices-UserId-EffectiveRights-EditItems"
+                                           value="" />
+                                </row>
+                                <row align="center">
+                                    <label value="DeleteItems:" />
+                                    <label id="exchWebServices-UserId-EffectiveRights-DeleteItems"
+                                           value="" />
+                                </row>
+                                <row align="center">
+                                    <label value="ReadItems:" />
+                                    <label id="exchWebServices-UserId-EffectiveRights-ReadItems"
+                                           value="" />
+                                </row>
+                                <row align="center">
+                                    <label value="CalendarPermissionLevel:" />
+                                    <label id="exchWebServices-UserId-EffectiveRights-CalendarPermissionLevel"
+                                           value="" />
+                                </row>
+                            </rows>
+                        </grid>
+                    </vbox>
+                </hbox>
+            </tabpanel>
+            <tabpanel id="exchWebService-offlineCache-properties">
+                <vbox flex="1">
+                    <groupbox id="exchWebService-offlineCacheproperties-detaisgroupbox">
+
+                        <caption label="Details:" />
+                        <vbox>
+                            <hbox>
+                                <checkbox label="Cache"
+                                          id="exchWebService-offlineCacheproperties-cacheState"
+                                          command="exchWebService_cmd_offlineCache"
+                                          disabled="true" />
+                            </hbox>
+                        </vbox>
+                        <vbox id="exchWebService-offlineCacheproperties-detaisvbox"
+                              collapsed="true">
+                            <hbox>
+                                <label id="exchWebService-offlineCacheproperties-cachingStartDate"
+                                       value="&label.offlineCacheproperties.cachingStartDate;" />
+                                <label id="exchWebService-offlineCacheproperties-cachingStartDateValue"
+                                       value="no data" />
+                            </hbox>
+                            <hbox>
+                                <label id="exchWebService-offlineCacheproperties-cachingEndDate"
+                                       value="&label.offlineCacheproperties.cachingEndDate;" />
+                                <label id="exchWebService-offlineCacheproperties-cachingEndDateValue"
+                                       value="no data" />
+                            </hbox>
+                            <hbox>
+                                <label id="exchWebService-offlineCacheproperties-totalEvents"
+                                       value="&label.offlineCacheproperties.totalEvents;" />
+                                <label id="exchWebService-offlineCacheproperties-totalEventsValue"
+                                       value="0" />
+                            </hbox>
+                            <hbox>
+                                <label id="exchWebService-offlineCacheproperties-totalTasks"
+                                       value="&label.offlineCacheproperties.totalTasks;" />
+                                <label id="exchWebService-offlineCacheproperties-totalTasksValue"
+                                       value="0" />
+                            </hbox>
+                            <hbox>
+                                <label id="exchWebService-memoryCache-totalItemsLabel"
+                                       value="Items in memoryCache:" />
+                                <label id="exchWebService-memoryCache-totalItems"
+                                       value="0" />
+                            </hbox>
+                        </vbox>
+                    </groupbox>
+                    <groupbox id="exchWebService-offlineCacheproperties-maintainancegroupbox"
+                              collapsed="true">
+                        <caption label="Maintainance:" />
+                        <vbox>
+                            <hbox>
+                                <button label="&button.offlineCacheproperties.clearCache;"
+                                        id="exchWebService-offlineCacheproperties-clearCach"
+                                        command="exchWebService_offlineCacheproperties_cmd_clearCache" />
+                            </hbox>
+                        </vbox>
+                    </groupbox>
+                    <groupbox id="exchWebService-offlineCacheproperties-preferencesgroupbox"
+                              collapsed="true">
+                        <caption label="Preferences:" />
+                        <vbox>
+                            <hbox>
+                                <label value="&label.offlineCacheproperties.monthsBeforeStartDate;"
+                                       id="exchWebService-offlineCacheproperties-monthsBeforeStartDate-label" />
+                                <textbox id="exchWebService-offlineCacheproperties-monthsBeforeToday"
+                                         increment="1"
+                                         min="1"
+                                         max="999"
+                                         type="number" />
+                            </hbox>
+                            <hbox>
+                                <label value="&label.offlineCacheproperties.monthsBeforeEndDate;"
+                                       id="exchWebService-offlineCacheproperties-monthsBeforeEndDate-label" />
+                                <textbox id="exchWebService-offlineCacheproperties-monthsAfterToday"
+                                         increment="1"
+                                         min="1"
+                                         max="999"
+                                         type="number" />
+                            </hbox>
+                        </vbox>
+                    </groupbox>
+                </vbox>
+            </tabpanel>
+            <tabpanel id="exchWebService-autoprocessing-properties">
+
+                <vbox flex="1">
+                    <groupbox id="exchWebService-autoprocessingproperties-detaisgroupbox">
+
+                        <caption label="Preferences:" />
+                        <vbox>
+                            <hbox>
+                                <checkbox label="&label.autoprocessingproperties.deletecancelleditems;"
+                                          id="exchWebService-autoprocessingproperties-deletecancelleditems"
+                                          disabled="false" />
+                            </hbox>
+                        </vbox>
+                        <vbox>
+                            <hbox>
+                                <checkbox label="&label.autoprocessingproperties.markeventtentative;"
+                                          id="exchWebService-autoprocessingproperties-markeventtentative"
+                                          disabled="false" />
+                            </hbox>
+                        </vbox>
+                    </groupbox>
+                </vbox>
+            </tabpanel>
+            <tabpanel id="exchWebService-mail-properties">
+                <vbox flex="1">
+                    <!-- Add Preferece for calendar related  mail sync -->
+                    <groupbox id="exchWebService-mail-properties-calendar">
+
+                        <caption label="Preferences:" />
+                        <vbox>
+                            <hbox>
+                                <label value="&label.syncmailitems.interval;" />
+                                <separator />
+                                <textbox id="exchWebService-syncMailItems-Interval"
+                                         increment="1"
+                                         min="15"
+                                         type="number"
+                                         value="15" />
+                                <separator />
+                            </hbox>
+                            <hbox>
+                                <checkbox label="&label.syncmailitems.active;"
+                                          id="exchWebService-syncMailItems-active"
+                                          disabled="false" />
+                            </hbox>
+                        </vbox>
+                    </groupbox>
+                    <!-- Add Preferece for task related  mail sync -->
+                    <groupbox id="exchWebService-mail-properties-task">
+
+                        <caption label="Preferences:" />
+                        <vbox>
+                            <hbox>
+                                <checkbox label="&label.syncfollowup.deactivtate;"
+                                          id="exchWebService-followup-deactivtate"
+                                          disabled="false" />
+                            </hbox>
+                        </vbox>
+                    </groupbox>
+                </vbox>
+            </tabpanel>
+        </tabpanels>
+    </tabbox>
+    <commandset>
+        <command id="exchWebService_offlineCacheproperties_cmd_prefenceChanged"
+                 oncommand="tmpOfflineCacheSettings.doChangePreferenceforCaching();" />
+        <command id="exchWebService_offlineCacheproperties_cmd_clearCache"
+                 oncommand="tmpOfflineCacheSettings.doClearCache();" />
+    </commandset>
+</dialog>

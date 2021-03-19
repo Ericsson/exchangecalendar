@@ -1,0 +1,15 @@
+ <!ENTITY rtews.selectaccountdesc "Vyberte e-mailový účet pro který nastavit. Je třeba aby se jednalo o účet na Microsoft Exchange">
+ <!ENTITY rtews.accconfigured "Účet je už nastavený">
+ <!ENTITY rtews.dicoverdesc "URL adresu Microsoft Exchange Server (EWS) je možné zjistit automaticky nebo zadat ručně">
+ <!ENTITY rtews.dicoverdesc2 "Ručně nastavíte zadáním URL adresu do kolonky níže.">
+ <!ENTITY rtews.autodiscover "Automatické zjištění">
+ <!ENTITY rtews.doautodicover "Nezjišťovat automaticky">
+ <!ENTITY rtews.manual "Ruční">
+ <!ENTITY rtews.test "Kliknutím sem ověřte URL adresu EWS">
+ <!ENTITY rtews.msexchewsurl "URL adresa Microsoft Exchange EWS ověřena. Kliknutím na Dokončit ukončete nastavování">
+ <!ENTITY rtews.selectaccount "Vyberte účet">
+ <!ENTITY rtews.configure.label "Nastavit…">
+ <!ENTITY rtews.rtforexch "Štítkování na dálku pro Microsoft Exchange">
+ <!ENTITY rtews.confirmAccDetail "Potvrďte následující podrobnosti účtu">
+ <!ENTITY rtews.username "Uživatelské jméno">
+ <!ENTITY rtews.domain "Doména">

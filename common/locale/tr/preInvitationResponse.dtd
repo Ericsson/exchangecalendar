@@ -1,0 +1,14 @@
+<!ENTITY dialog.exchWebService.preInvitationResponse.title "Nasıl yanıt vereceksiniz?">
+<!ENTITY label.acceptbutton "Tamam">
+<!ENTITY label.cancelbutton "İptal">
+
+<!ENTITY label.calendarName "Takvim:">
+<!ENTITY label.itemTitle "Konu:">
+<!ENTITY label.itemStart "Başlama zamanı:">
+<!ENTITY label.itemResponse "Yanıtın:">
+<!ENTITY label.meetingOrganiser "Düzenleyici:">
+
+<!ENTITY radio.label.exchWebService.preInvitationResponse.edit "Göndermeden once yanıtını düzenle.">
+<!ENTITY radio.label.exchWebService.preInvitationResponse.sendnow "Yanıtı şimdi gönder.">
+<!ENTITY radio.label.exchWebService.preInvitationResponse.donotsend "Yanıt gönderme.">
+

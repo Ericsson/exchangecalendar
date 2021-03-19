@@ -1,0 +1,22 @@
+<!ENTITY label.acceptbutton "Подтвердить изменение">
+<!ENTITY label.cancelbutton "Отменить изменение">
+
+<!ENTITY description.invitationResponse "Подтвердить изменение вашего ответа о встрече.">
+
+<!ENTITY label.calendarName "Календарь:">
+<!ENTITY label.itemTitle "Тема:">
+<!ENTITY label.itemStart "Время начала:">
+<!ENTITY label.itemResponse "Ваш ответ:">
+<!ENTITY label.meetingOrganiser "Организатор:">
+
+<!ENTITY label.messageReponseBody "Сообщение ответа:">
+
+<!ENTITY menuitem.label.ec-autorespond-answer.tentative "Я мог бы участвовать">
+<!ENTITY menuitem.label.ec-autorespond-answer.accepted "Я приму участие">
+<!ENTITY menuitem.label.ec-autorespond-answer.declined "Я не буду участвовать">
+
+
+
+<!ENTITY label.proposenewtime.title "Propose new time (>= Exchange2013)">
+<!ENTITY label.proposenewtime.start "Start time">
+<!ENTITY label.proposenewtime.end "End time">

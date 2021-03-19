@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/css" href="chrome://exchangecommon/skin/priority-display.css"?>
+<overlay xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+    <script src="chrome://exchangecommon/content/priority-display.js" />
+    <tree id="threadTree">
+        <treecols id="threadCols">
+            <treecol id="priorityCol"
+                     name="priorityCol"
+                     persist="hidden ordinal width"
+                     fixed="true"
+                     width="23"
+                     class="treecol-image priorityColumnHeaderIcon"
+                     currentView="unthreaded" />
+            <splitter class="tree-splitter" />
+        </treecols>
+    </tree>
+</overlay>

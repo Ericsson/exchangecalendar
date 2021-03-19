@@ -1,0 +1,25 @@
+
+<!ENTITY  label.delegateCalendar.cancelbutton "Annulla">
+<!ENTITY  label.delegateCalendar.userEmail "Indirizzo di posta elettronica">
+<!ENTITY  label.delegateCalendar.deliveryMeetingRerquestControl "Recapita richieste riunione">
+
+<!ENTITY  menuitem.delegateCalendar.deliverMeetingRequestslist.delegateOnly "Solo ai delegati">
+<!ENTITY  menuitem.delegateCalendar.deliverMeetingRequestslist.delegateAndMe "Ai delegati e a me">
+<!ENTITY  menuitem.delegateCalendar.deliverMeetingRequestslist.delegateAndInfo "Ai delegati e inviami le notifiche">
+
+<!ENTITY  label.delegateCalendar.permission "Autorizzazioni">
+<!ENTITY  menuitem.delegateCalendar.permission.author "Autore">
+<!ENTITY  menuitem.delegateCalendar.permission.editor "Editor">
+<!ENTITY  menuitem.delegateCalendar.permission.reviewer "Revisore">
+<!ENTITY  menuitem.delegateCalendar.permission.none "Nessuno">
+
+<!ENTITY  label.delegateCalendar.permission.receiveInvitationCopy "Ricevi copie dei messaggi riunione" >
+<!ENTITY  label.delegateCalendar.permission.viewPrivateItems "Visualizza elementi privati" >
+
+
+<!ENTITY  delegateCalendar.permission.description.author "Leggi e crea elementi nella cartella Calendario." >
+<!ENTITY  delegateCalendar.permission.description.editor "Leggi, crea e modifica elementi nella cartella Calendario." >
+<!ENTITY  delegateCalendar.permission.description.reviewer "Leggi elementi nella cartella Calendario." >
+<!ENTITY  delegateCalendar.permission.description.none "Nessuna autorizzazione di accesso alla cartella Calendario." >
+
+<!ENTITY  delegateCalendar.permission.details.label "Dettagli autorizzazioni: " >

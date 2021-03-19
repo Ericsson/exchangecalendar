@@ -1,0 +1,6 @@
+<!ENTITY exchWebService.owner.label "Sahip:">
+<!ENTITY exchWebService.totalWork.label "Toplam iş:">
+<!ENTITY exchWebService.actualWork.label "Gerçekleşen iş:">
+<!ENTITY exchWebService.mileage.label "Mil olarka uzaklık:">
+<!ENTITY exchWebService.billingInformation.label "Faturalama bilgileri:">
+<!ENTITY exchWebService.companies.label "Şirket:">

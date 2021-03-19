@@ -1,0 +1,26 @@
+<!ENTITY title.oofsettings "Opzioni Fuori sede">
+<!ENTITY label.acceptbutton "Salva">
+<!ENTITY label.cancelbutton "Chiudi">
+<!ENTITY label.oofsettings.title "Opzioni Fuori sede per:">
+
+<!ENTITY label.oofstatus "Stato Fuori sede:">
+
+<!ENTITY label.externalaudience "Persone esterne a cui inviare messaggi Fuori sede: ">
+<!ENTITY menuitem.label.exchWebService-oof-externalaudience.none "Nessuno">
+<!ENTITY menuitem.label.exchWebService-oof-externalaudience.known "Solo persone nel mio elenco contatti">
+<!ENTITY menuitem.label.exchWebService-oof-externalaudience.all "Tutti">
+
+<!ENTITY button.label.internal "Messaggio interno">
+<!ENTITY button.label.external "Messaggio esterno">
+<!ENTITY label.internalreply "Messaggio che sarà inviato alle persone nella propria impresa:">
+<!ENTITY label.externalreply "Messaggio che sarà inviato alle persone al di fuori della propria impresa:">
+
+<!ENTITY menuitem.label.exchWebService-oof-status.disabled "Disabilitato">
+<!ENTITY menuitem.label.exchWebService-oof-status.enabled "Abilitato">
+
+<!ENTITY checkbox.label.exchWebService-oof-scheduled "Abilitato solo nell'intervallo temporale specificato:">
+<!ENTITY label.hbox-oof-scheduled-startTime "Ora di inizio:">
+<!ENTITY label.hbox-oof-scheduled-endTime "Ora di fine:">
+
+
+

@@ -1,0 +1,9 @@
+<!ENTITY title.sendupdateto "Komu chcete poslat tuto aktualizaci?">
+<!ENTITY label.acceptbutton "Spustit">
+<!ENTITY label.cancelbutton "Storno">
+<!ENTITY label.calendaritem.title "Poslat aktualizaci pro schůzku:">
+
+<!ENTITY radio.label.sendtonone "Neposlat nikomu.">
+<!ENTITY radio.label.sendtoall "Poslat všem pozvaným.">
+<!ENTITY radio.label.sendtochanged "Poslat pouze přidaným nebo odebraným osobám.">
+

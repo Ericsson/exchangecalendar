@@ -1,0 +1,5 @@
+<!ENTITY calendar.context.exchange.convert.label "Converti a componente aggiuntivo Calendario e Attività Exchange 2007/2010">
+<!ENTITY calendar.context.exchange.properties.label "Proprietà Exchange (EWS)">
+<!ENTITY calendar.context.exchange.oof.settings.label "Opzioni Fuori sede">
+<!ENTITY calendar.context.exchange.clone.settings.label "Clona opzioni in un nuovo calendario">
+<!ENTITY calendar.context.exchange.delegate.calendar.settings.label "Delega calendario">

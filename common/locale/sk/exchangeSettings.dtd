@@ -1,0 +1,54 @@
+<!ENTITY label.acceptbutton "Save and reset">
+<!ENTITY label.cancelbutton "Cancel">
+<!ENTITY ecsettings.title "EWS calendar and mail settings">
+<!ENTITY ecsettings.tab.adsettings "Exchange/Windows AD">
+<!ENTITY ecsettings.tab.meetingrequestsettings "Meeting requests">
+<!ENTITY ecsettings.tab.calendarfolderproperties "Folder properties">
+
+<!ENTITY label.ecExchangeSettings.title "Settings for calendar:">
+
+<!ENTITY label.poll.inbox "Poll inbox for requests, changes and cancellations.">
+<!ENTITY label.poll.inbox.interval "Frequency (in seconds) to poll inbox:">
+<!ENTITY label.poll.calendar.interval "Frequency (in seconds) to poll calendar:">
+
+<!ENTITY label.nomeetingrequestsettings "You cannot set a meeting request because you did not select the main calendar for the mailbox">
+
+<!ENTITY label.autorespond.meetingrequest "Automatically respond to a new invitation with ">
+
+<!ENTITY menuitem.label.ec-autorespond-answer.tentative "I might attend">
+<!ENTITY menuitem.label.ec-autorespond-answer.accepted "I will attend">
+<!ENTITY menuitem.label.ec-autorespond-answer.declined "I will not attend">
+
+<!ENTITY label.autoremove.invitation_cancellation1 "Automatically remove the invitation and accompanying cancelation message if you did not yet respond to the invitation request.">
+<!ENTITY label.autoremove.invitation_cancellation2 "Automatically remove a confirmed invitation when you receive a cancelation message.">
+
+<!ENTITY label.autoremove.invitation_response1 "Automatically remove a response from others to a meeting invitation of which you are not the organizer.">
+
+<!ENTITY label.doautorespond.meetingrequest.message "Send the following message with responses instead of asking for a message.">
+<!ENTITY label.autorespond.meetingrequest.message "Your message:">
+
+<!ENTITY treecol.label.userid "User ID">
+<!ENTITY treecol.label.email "Email">
+
+
+<!ENTITY ecsettings.tab.offlineCachingproperties "Offline caching">
+
+<!ENTITY label.offlineCacheproperties.cachingStartDate "Start date of caching:">
+<!ENTITY label.offlineCacheproperties.cachingEndDate "End date of caching:">
+<!ENTITY label.offlineCacheproperties.totalEvents "Total number of events cached:">
+<!ENTITY label.offlineCacheproperties.totalTasks "Total number of tasks cached:">
+
+<!ENTITY label.offlineCacheproperties.monthsBeforeStartDate "Number of months to cache items prior to today:">
+<!ENTITY label.offlineCacheproperties.monthsBeforeEndDate "Number of months to cache items after today:">
+
+<!ENTITY button.offlineCacheproperties.clearCache "Clear offline cached data">
+<!ENTITY ecsettings.tab.autoprocessingproperties "Automatic processing">
+<!ENTITY ecsettings.tab.mailitemsProperties "EWS settings (mail)">
+
+<!ENTITY label.syncmailitems.interval "Delay syncing mail items (tags, etc.)">
+<!ENTITY label.autoprocessingproperties.deletecancelleditems "Automatically remove canceled events">
+<!ENTITY label.autoprocessingproperties.markeventtentative "Automatically mark event as tentative and send response to organizer">
+<!ENTITY label.syncmailitems.active "Keep enabled syncing mail items (tags, etc.)">
+
+<!ENTITY label.syncfollowup.deactivtate "Disable followup task">
+ 

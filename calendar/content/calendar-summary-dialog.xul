@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: GPL 3.0
+ *
+ * The contents of this file are subject to the General Public License
+ * 3.0 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ * http://www.gnu.org/licenses/gpl.html
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * ## Exchange 2007/2010 Calendar and Tasks Provider.
+ * ## For Thunderbird with the Lightning add-on.
+ *
+ * Author: Michel Verbraak (info@1st-setup.nl)
+ * Website: http://www.1st-setup.nl/wordpress/?page_id=133
+ * email: exchangecalendar@extensions.1st-setup.nl
+ *
+ *
+ * This code uses parts of the Microsoft Exchange Calendar Provider code on which the
+ * "Exchange Data Provider for Lightning" was based.
+ * The Initial Developer of the Microsoft Exchange Calendar Provider Code is
+ *   Andrea Bittau <a.bittau@cs.ucl.ac.uk>, University College London
+ * Portions created by the Initial Developer are Copyright (C) 2009
+ * the Initial Developer. All Rights Reserved.
+ *
+ * ***** BEGIN LICENSE BLOCK *****/
+-->
+<?xml-stylesheet type="text/css" href="chrome://exchangecommon/skin/calendar-summary-dialog.css"?>
+<!DOCTYPE dialog
+[
+    <!ENTITY % eventDialogDTD SYSTEM "chrome://calendar/locale/calendar-event-dialog.dtd">
+    %eventDialogDTD;
+        <!ENTITY % summaryDialogDTD SYSTEM "chrome://exchangecalendar/locale/calendar-summary-dialog.dtd">
+    %summaryDialogDTD;
+]>
+<?xul-overlay href="chrome://exchangecommon/content/attachments-view.xul"?>
+<overlay id="exchWebService-calendar-summary-dialog"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+    <dialog id="calendar-summary-dialog"
+            windowtype="Calendar:EventSummaryDialog"
+            buttons="accept,cancel"
+            buttonlabelextra1="&forward.invite.label;"
+            ondialogextra1="tmpEventSummaryDialog.onForward();"
+            persist="screenX screenY width height"
+            xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+        <script type="application/javascript"
+                src="chrome://exchangecalendar/content/calendar-summary-dialog.js" />
+        <box id="item-general-box"
+             orient="vertical">
+            <box orient="horizontal">
+                <grid flex="1">
+                    <rows>
+                        <row id="reminder-row"
+                             hidden="false" />
+                    </rows>
+                </grid>
+            </box>
+        </box>
+        <box id="item-description-box"
+             flex="1">
+            <browser id="exchWebService-body-editor"
+                     class="exchWebService-browser-class"
+                     type="content-targetable"
+                     insertafter="item-description"
+                     onclick="return tmpEventSummaryDialog.onClick(event);"
+                     flex="1" />
+            <commandset id="itemCommands"></commandset>
+            <popupset id="event-dialog-popupset"></popupset>
+            <spacer class="default-spacer"
+                    id="exchWebService-attachment-summary-space"
+                    hidden="true" />
+            <calendar-caption label="&event.attachments.label;"
+                              control="item-description"
+                              id="exchWebService-attachment-summary-caption"
+                              hidden="true" />
+            <box orient="horizontal"
+                 flex="1"
+                 id="exchWebService-attachment-summary-box"
+                 hidden="true">
+                <spacer class="default-spacer" />
+                <listbox id="exchWebService-attachment-link"
+                         rows="3"
+                         flex="1" />
+            </box>
+        </box>
+        <box id="item-attendees"
+             hidden="true"
+             orient="vertical">
+            <spacer id="required-attendee-spacer"
+                    class="default-spacer"
+                    hidden="true" />
+            <calendar-caption id="required-attendee-caption"
+                              label="&required.attendee.label;"
+                              control="item-required-attendee-listbox"
+                              hidden="true" />
+            <box orient="horizontal"
+                 id="item-required-attendee"
+                 hidden="true">
+                <spacer class="default-spacer" />
+                <listbox id="item-required-attendee-listbox"
+                         rows="4"
+                         flex="1"
+                         disabled="true">
+                    <listcols>
+                        <listcol id="item-attendee-left-col"
+                                 flex="1" />
+                        <listcol id="item-attendee-right-col"
+                                 flex="1" />
+                    </listcols>
+                    <listitem>
+                        <listcell class="listcell-iconic status-icon"
+                                  crop="end"
+                                  hidden="true" />
+                        <listcell class="listcell-iconic status-icon"
+                                  crop="end"
+                                  hidden="true" />
+                    </listitem>
+                </listbox>
+            </box>
+            <spacer id="optional-attendee-spacer"
+                    class="default-spacer"
+                    hidden="true" />
+            <calendar-caption id="optional-attendee-caption"
+                              label="&optional.attendee.label;"
+                              control="item-optional-attendee-listbox"
+                              hidden="true" />
+            <box orient="horizontal"
+                 id="item-optional-attendee"
+                 hidden="true">
+                <spacer class="default-spacer" />
+                <listbox id="item-optional-attendee-listbox"
+                         rows="4"
+                         flex="1"
+                         disabled="true">
+                    <listcols>
+                        <listcol id="item-attendee-left-col"
+                                 flex="1" />
+                        <listcol id="item-attendee-right-col"
+                                 flex="1" />
+                    </listcols>
+                    <listitem>
+                        <listcell class="listcell-iconic status-icon"
+                                  crop="end"
+                                  hidden="true" />
+                        <listcell class="listcell-iconic status-icon"
+                                  crop="end"
+                                  hidden="true" />
+                    </listitem>
+                </listbox>
+            </box>
+        </box>
+    </dialog>
+</overlay>

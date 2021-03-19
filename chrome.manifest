@@ -1,77 +1,70 @@
-content exchangecalendar chrome/content/
-skin exchangecalendar fugue chrome/skins/unix/
-skin exchangecalendar fugue chrome/skins/win/ os=WINNT
-skin exchangecalendar fugue chrome/skins/winaero/ os=WINNT osversion>=6
-skin exchangecalendar fugue chrome/skins/mac/ os=Darwin
-skin exchangecalendar-common fugue chrome/skins/common/
-resource exchangecalendar components/
-resource interfaces interfaces/
+content exchangecommon common/content/
 
-overlay chrome://calendar/content/calendarCreation.xul chrome://exchangecalendar/content/ecCalendarCreation.xul
-overlay chrome://calendar/content/calendar-calendars-list.xul chrome://exchangecalendar/content/calendar-calendars-list.xul
-overlay chrome://messenger/content/messenger.xul chrome://exchangecalendar/content/progress_panel.xul
-overlay chrome://calendar/content/calendar-task-view.xul chrome://exchangecalendar/content/messenger_task_delegation.xul
-overlay chrome://lightning/content/lightning-standalone.xul chrome://exchangecalendar/content/progress_panel.xul
-overlay chrome://calendar/content/calendar-event-dialog.xul chrome://exchangecalendar/content/calendar-event-dialog.xul
-overlay chrome://calendar/content/calendar-event-dialog-reminder.xul chrome://exchangecalendar/content/calendar-event-dialog-reminder.xul
-overlay chrome://calendar/content/calendar-summary-dialog.xul chrome://exchangecalendar/content/calendar-summary-dialog.xul
-overlay chrome://calendar/content/calendar-properties-dialog.xul chrome://exchangecalendar/content/calendar-properties-dialog.xul
-overlay chrome://messenger/content/messenger.xul chrome://exchangecalendar/content/sharedCalendarParser.xul application={3550f703-e582-4d05-9a08-453d09bdfdc6}
-overlay chrome://messenger/content/messenger.xul chrome://exchangecalendar/content/check4lightning.xul
-overlay chrome://messenger/content/preferences/preferences.xul  chrome://exchangecalendar/content/messenger-overlay-preferences.xul
-overlay chrome://messenger/content/preferences/preferences.xul  chrome://exchangecalendar/content/manageEWSAccounts.xul
-overlay chrome://messenger/content/preferences/preferences.xul  chrome://exchangecalendar/content/debugPreferences.xul
-overlay chrome://messenger/content/preferences/preferences.xul  chrome://exchangecalendar/content/cachePreferences.xul
-overlay chrome://messenger/content/preferences/preferences.xul  chrome://exchangecalendar/content/otherPreferences.xul
-overlay chrome://calendar/content/calendar-task-view.xul  chrome://exchangecalendar/content/calendar-task-view.xul
-overlay chrome://communicator/content/pref/preferences.xul chrome://exchangecalendar/content/suite-overlay-preferences.xul application={92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}
-overlay chrome://communicator/content/pref/preferences.xul chrome://exchangecalendar/content/extra-suite-preferences.xul application={92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}
+skin exchangecommon fugue common/theme/unix/
+skin exchangecommon fugue common/theme/win/ os=WINNT
+skin exchangecommon fugue common/theme/winaero/ os=WINNT osversion>=6
+skin exchangecommon fugue common/theme/mac/ os=Darwin
+skin exchangecommon-common fugue common/theme/common/
 
-overlay chrome://calendar/content/calendar-common-sets.xul chrome://exchangecalendar/content/calendar-common-sets.xul
-overlay chrome://calendar/content/calendar-event-dialog-attendees.xul chrome://exchangecalendar/content/calendar-event-dialog-attendees.xul
-overlay chrome://messenger/content/messenger.xul chrome://exchangecalendar/content/OutOfOfficeMenu.xul
-overlay chrome://messenger/content/messengercompose/messengercompose.xul chrome://exchangecalendar/content/addressingWidgetOverlay.xul
-overlay chrome://messenger/content/preferences/preferences.xul  chrome://exchangecalendar/content/timezonePreference.xul
-overlay chrome://messenger/content/messenger.xul  chrome://exchangecalendar/content/lightningtimezoneOverlay.xul
-overlay	chrome://messenger/content/preferences/preferences.xul	chrome://exchangecalendar/content/extra-messenger-preferences.xul
-overlay chrome://messenger/content/messenger.xul  chrome://exchangecalendar/content/priority-display.xul 
-overlay chrome://messenger/content/messenger.xul  chrome://exchangecalendar/content/invite-style.xul
-overlay chrome://messenger/content/folderProps.xul  chrome://exchangecalendar/content/folderPropsOverlay.xul
-overlay chrome://messenger/content/messenger.xul chrome://exchangecalendar/content/rtews-overlay.xul
+resource exchangecommon common/exchangeapi/
+resource exchangecommoninterfaces common/interface/
 
-locale exchangecalendar nl locale/exchangecalendar/nl/
-locale exchangecalendar en-US locale/exchangecalendar/en-US/
-locale exchangecalendar fr-FR locale/exchangecalendar/fr-FR/
-locale exchangecalendar de locale/exchangecalendar/de/
-locale exchangecalendar ja-JP locale/exchangecalendar/ja-JP/
-locale exchangecalendar sv locale/exchangecalendar/sv/
-locale exchangecalendar ru locale/exchangecalendar/ru/
 
-manifest interfaces/exchangeCalendar/mivExchangeCalendar.manifest
+overlay chrome://messenger/content/messenger.xul chrome://exchangecommon/content/progress_panel.xul
 
-manifest interfaces/global/mivFunctions.manifest
-manifest interfaces/exchangeAccountManager/mivExchangeAccountManager.manifest
-manifest interfaces/exchangeStatistics/mivExchangeStatistics.manifest
-manifest interfaces/exchangeTimeZones/mivExchangeTimeZones.manifest
-manifest interfaces/exchangeBadCertListener2/mivExchangeBadCertListener2.manifest
-manifest interfaces/xml2jxon/mivIxml2jxon.manifest
-manifest interfaces/xml2jxon/mivNameSpaces.manifest
-manifest interfaces/xml2jxon/mivTagNames.manifest
-manifest interfaces/updater/mivUpdater.manifest
-manifest interfaces/exchangeLoadBalancer/mivExchangeLoadBalancer.manifest
-manifest interfaces/exchangeAuthPromptProvider/mivExchangeAuthPromptProvider.manifest
-manifest interfaces/exchangeAuthPrompt2/mivExchangeAuthPrompt2.manifest
+overlay chrome://lightning/content/lightning-standalone.xul chrome://exchangecommon/content/progress_panel.xul
 
-manifest interfaces/exchangeAttendee/mivExchangeAttendee.manifest
-manifest interfaces/exchangeBaseItem/mivExchangeBaseItem.manifest
-manifest interfaces/exchangeEvent/mivExchangeEvent.manifest
-manifest interfaces/exchangeTodo/mivExchangeTodo.manifest
+overlay chrome://messenger/content/messenger.xul chrome://exchangecommon/content/sharedCalendarParser.xul application={3550f703-e582-4d05-9a08-453d09bdfdc6}
+overlay chrome://messenger/content/messenger.xul chrome://exchangecommon/content/check4lightning.xul
+overlay chrome://messenger/content/preferences/preferences.xul  chrome://exchangecommon/content/messenger-overlay-preferences.xul
+overlay chrome://messenger/content/preferences/preferences.xul  chrome://exchangecommon/content/manageEWSAccounts.xul
+overlay chrome://messenger/content/preferences/preferences.xul  chrome://exchangecommon/content/debugPreferences.xul
+overlay chrome://messenger/content/preferences/preferences.xul  chrome://exchangecommon/content/cachePreferences.xul
+overlay chrome://messenger/content/preferences/preferences.xul  chrome://exchangecommon/content/otherPreferences.xul
+overlay chrome://communicator/content/pref/preferences.xul chrome://exchangecommon/content/suite-overlay-preferences.xul application={92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}
+overlay chrome://communicator/content/pref/preferences.xul chrome://exchangecommon/content/extra-suite-preferences.xul application={92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}
 
-manifest interfaces/exchangeAddressBook/exchangeAddressBook.manifest
+overlay chrome://messenger/content/messenger.xul chrome://exchangecommon/content/OutOfOfficeMenu.xul
+overlay chrome://messenger/content/messengercompose/messengercompose.xul chrome://exchangecommon/content/addressingWidgetOverlay.xul
+overlay chrome://messenger/content/preferences/preferences.xul  chrome://exchangecommon/content/timezonePreference.xul
+overlay chrome://messenger/content/messenger.xul  chrome://exchangecommon/content/lightningtimezoneOverlay.xul
+overlay	chrome://messenger/content/preferences/preferences.xul	chrome://exchangecommon/content/extra-messenger-preferences.xul
+overlay chrome://messenger/content/messenger.xul  chrome://exchangecommon/content/priority-display.xul
+overlay chrome://messenger/content/messenger.xul  chrome://exchangecommon/content/invite-style.xul
+overlay chrome://messenger/content/folderProps.xul  chrome://exchangecommon/content/folderPropsOverlay.xul
 
-manifest interfaces/exchangeRecurrenceInfo/mivExchangeRecurrenceInfo.manifest
-manifest interfaces/exchangeLightningNotifier/mivExchangeLightningNotifier.manifest
+locale exchangecommon en common/locale/en/
 
-manifest interfaces/exchangeAutoCompleteSearch/mivExchangeAutoCompleteSearch.manifest
-manifest interfaces/exchangeAutoCompleteResult/mivExchangeAutoCompleteResult.manifest
+locale exchangecommon cs-CZ common/locale/cs_CZ/
+locale exchangecommon de common/locale/de/
+locale exchangecommon en-US common/locale/en_US/
+locale exchangecommon fr-FR common/locale/fr_FR/
+locale exchangecommon it-IT common/locale/it_IT/
+locale exchangecommon ja-JP common/locale/ja_JP/
+locale exchangecommon nl common/locale/nl/
+locale exchangecommon pl common/locale/pl/
+locale exchangecommon ru common/locale/ru/
+locale exchangecommon sk common/locale/sk/
+locale exchangecommon sv common/locale/sv/
+locale exchangecommon tr common/locale/tr/
+
+manifest common/interface/global/mivFunctions.manifest
+manifest common/interface/exchangeAccountManager/mivExchangeAccountManager.manifest
+manifest common/interface/exchangeStatistics/mivExchangeStatistics.manifest
+manifest common/interface/exchangeBadCertListener2/mivExchangeBadCertListener2.manifest
+manifest common/interface/xml2jxon/mivIxml2jxon.manifest
+manifest common/interface/xml2jxon/mivNameSpaces.manifest
+manifest common/interface/xml2jxon/mivTagNames.manifest
+manifest common/interface/updater/mivUpdater.manifest
+manifest common/interface/exchangeLoadBalancer/mivExchangeLoadBalancer.manifest
+manifest common/interface/exchangeAuthPromptProvider/mivExchangeAuthPromptProvider.manifest
+manifest common/interface/exchangeAuthPrompt2/mivExchangeAuthPrompt2.manifest
+
+manifest common/interface/exchangeBaseItem/mivExchangeBaseItem.manifest
+
+manifest addressbook/exchangeAddressBook.manifest
+
+manifest calendar/exchangeCalendar.manifest
+
+manifest common/interface/exchangeLightningNotifier/mivExchangeLightningNotifier.manifest
 

@@ -1,0 +1,56 @@
+<!ENTITY ecautodiscover "Utilizza funzionalità ricerca automatica di Exchange.">
+<!ENTITY ecfolderbase.label "Cartella base:">
+<!ENTITY ecfolderpath.label "Percorso entro la cartella base:">
+<!ENTITY ecfolderidofshare.label "ID cartella condivisa:">
+<!ENTITY exchWebServices.SharedFolderID.label "Nome visualizzato cartella condivisa:">
+
+<!ENTITY menuitem.label.ecfolderbase.calendar "Cartella Calendario">
+<!ENTITY menuitem.label.ecfolderbase.publicfoldersroot "Cartelle pubbliche">
+<!ENTITY menuitem.label.ecfolderbase.inbox "Cartella Posta in arrivo">
+<!ENTITY menuitem.label.ecfolderbase.voicemail "Cartella Segreteria telefonica">
+<!ENTITY menuitem.label.ecfolderbase.msgfolderroot "Radice cartella messaggi">
+<!ENTITY menuitem.label.ecfolderbase.root "Radice casella di posta">
+<!ENTITY menuitem.label.ecfolderbase.tasks "Cartella Attività">
+
+<!ENTITY menuitem.label.ecfolderbase.contacts "Cartella Contatti">
+<!ENTITY menuitem.label.ecfolderbase.deleteditems "Cartella Elementi eliminati">
+<!ENTITY menuitem.label.ecfolderbase.drafts "Cartella Bozze">
+<!ENTITY menuitem.label.ecfolderbase.journal "Cartella Diario">
+<!ENTITY menuitem.label.ecfolderbase.notes "Cartella Note">
+<!ENTITY menuitem.label.ecfolderbase.outbox "Cartella Posta in uscita">
+<!ENTITY menuitem.label.ecfolderbase.sentitems "Cartella Posta inviata">
+<!ENTITY menuitem.label.ecfolderbase.junkemail "Cartella Posta indesiderata">
+<!ENTITY menuitem.label.ecfolderbase.searchfolders "Cartella Ricerca cartelle">
+<!ENTITY menuitem.label.ecfolderbase.version2010 "-- Le opzioni sottostanti sono valide solo per Exchange 2010 --">
+<!ENTITY menuitem.label.ecfolderbase.recoverableitemsroot "Cartella radice Elementi ripristinabili">
+<!ENTITY menuitem.label.ecfolderbase.recoverableitemsdeletions "Cartella Eliminazioni in Elementi ripristinabili">
+<!ENTITY menuitem.label.ecfolderbase.recoverableitemsversion "Cartella Versioni in Elementi ripristinabili">
+<!ENTITY menuitem.label.ecfolderbase.recoverableitemspurges "Cartella Elimina in Elementi ripristinabili">
+<!ENTITY menuitem.label.ecfolderbase.archiveroot "Cartella radice Archivio">
+<!ENTITY menuitem.label.ecfolderbase.archivemsgfolderroot "Cartella radice messaggi Archivio">
+<!ENTITY menuitem.label.ecfolderbase.archivedeleteditems "Cartella Elementi eliminati Archivio">
+<!ENTITY menuitem.label.ecfolderbase.archiverecoverableitemsroot "Cartella radice Elementi ripristinabili - Archivio">
+<!ENTITY menuitem.label.ecfolderbase.Archiverecoverableitemsdeletions "Cartella Eliminazioni in Elementi ripristinabili - Archivio">
+<!ENTITY menuitem.label.ecfolderbase.Archiverecoverableitemsversions "Cartella Versioni in Elementi ripristinabili - Archivio">
+<!ENTITY menuitem.label.ecfolderbase.Archiverecoverableitemspurges "Cartella Elimina in Elementi ripristinabili - Archivio">
+
+<!ENTITY button.label.autodiscovercheck "Esegui ricerca automatica">
+<!ENTITY button.label.serverandmailboxcheck "Controlla server e casella di posta">
+<!ENTITY button.label.servercheck "Controlla server e account">
+
+<!ENTITY ecmailbox.label "Indirizzo di posta elettronica principale:">
+<!ENTITY ecmailbox.tooltip "Non specificando una casella di posta si sarà in grado di accedere solamente alle cartelle pubbliche.">
+<!ENTITY ecwindowsuser.label "Nome utente:">
+<!ENTITY ecwindowsdomain.label "Nome dominio:">
+<!ENTITY ecwindowspassword.label "Password:">
+
+<!ENTITY button.label.folderpathcheck "Controlla">
+<!ENTITY button.label.folderbrowse "Sfoglia">
+
+<!ENTITY exchWebServices.UserAvailability.label "Per il calendario della casella di posta sarà visibile unicamente lo stato di disponibilità utente.">
+
+<!ENTITY exchWebServices.exchtype.label "Tipo Exchange">
+<!ENTITY exchWebServices.hostexch.label "Exchange hosted">
+<!ENTITY exchWebServices.365exch.label "Microsoft Office 365">
+<!ENTITY exchWebServices.detail.label "Dettagli">
+

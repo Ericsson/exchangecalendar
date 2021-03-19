@@ -1,0 +1,11 @@
+<!ENTITY label.acceptbutton "Kaydet">
+<!ENTITY label.cancelbutton "İptal Et">
+
+<!ENTITY ecsettings.tab.adsettings "Exchange/Windows AD">
+<!ENTITY ecsettings.tab.meetingrequestsettings "Toplantı talebi">
+
+<!ENTITY label.ecExchangeSettings.title "Listedeki isim:">
+<!ENTITY exchangeWebService.preference.contacts.pollinterval "Güncelleme aralığı (saniye):">
+
+<!ENTITY exchWebService.add.globaladdresslist.label "Arama sonuçlarına küresel adres listesini ekle.">
+

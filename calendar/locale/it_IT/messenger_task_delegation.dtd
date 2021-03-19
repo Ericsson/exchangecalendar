@@ -1,0 +1,6 @@
+<!ENTITY exchWebService.task.delegation.owner.name "Proprietario attività">
+<!ENTITY exchWebService.task.delegation.delegator.name "Delegato attività">
+<!ENTITY exchWebService.task.delegation.accept.button "Accetta">
+<!ENTITY exchWebService.task.delegation.decline.button "Rifiuta">
+<!ENTITY exchWebService.task.delegation.lastUpdateDate "Ultima modifica">
+

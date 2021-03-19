@@ -1,0 +1,54 @@
+<!ENTITY label.acceptbutton "Salva e reimposta">
+<!ENTITY label.cancelbutton "Annulla">
+<!ENTITY ecsettings.title "Opzioni Calendario e Posta EWS">
+<!ENTITY ecsettings.tab.adsettings "Exchange/AD Windows">
+<!ENTITY ecsettings.tab.meetingrequestsettings "Richieste riunione">
+<!ENTITY ecsettings.tab.calendarfolderproperties "Proprietà cartella">
+
+<!ENTITY label.ecExchangeSettings.title "Opzioni per il calendario:">
+
+<!ENTITY label.poll.inbox "Esegui il polling della Posta in arrivo per gestire richieste, modifiche e annullamenti.">
+<!ENTITY label.poll.inbox.interval "Frequenza di polling Posta in arrivo (in secondi):">
+<!ENTITY label.poll.calendar.interval "Frequenza di polling Calendario (in secondi):">
+
+<!ENTITY label.nomeetingrequestsettings "Impossibile impostare la richiesta riunione perché non si è selezionato il calendario principale per la casella di posta">
+
+<!ENTITY label.autorespond.meetingrequest "Rispondi automaticamente a un nuovo invito con ">
+
+<!ENTITY menuitem.label.ec-autorespond-answer.tentative "Forse parteciperò">
+<!ENTITY menuitem.label.ec-autorespond-answer.accepted "Parteciperò">
+<!ENTITY menuitem.label.ec-autorespond-answer.declined "Non parteciperò">
+
+<!ENTITY label.autoremove.invitation_cancellation1 "Rimuovi automaticamente l'invito e il messaggio di annullamento abbinato se non si è ancora risposto all'invito.">
+<!ENTITY label.autoremove.invitation_cancellation2 "Rimuovi automaticamente un invito confermato quando si riceve un messaggio di annullamento.">
+
+<!ENTITY label.autoremove.invitation_response1 "Rimuovi automaticamente una risposta di terzi a un invito di cui non si è l'organizzatore.">
+
+<!ENTITY label.doautorespond.meetingrequest.message "Invia il seguente messaggio con le risposte anziché richiedere un messaggio.">
+<!ENTITY label.autorespond.meetingrequest.message "Messaggio:">
+
+<!ENTITY treecol.label.userid "Nome utente">
+<!ENTITY treecol.label.email "Indirizzo di posta elettronica">
+
+
+<!ENTITY ecsettings.tab.offlineCachingproperties "Cache non in linea">
+
+<!ENTITY label.offlineCacheproperties.cachingStartDate "Data di inizio cache:">
+<!ENTITY label.offlineCacheproperties.cachingEndDate "Data di fine cache:">
+<!ENTITY label.offlineCacheproperties.totalEvents "Numero totale di eventi in cache:">
+<!ENTITY label.offlineCacheproperties.totalTasks "Numero totale di attività in cache:">
+
+<!ENTITY label.offlineCacheproperties.monthsBeforeStartDate "Numero di mesi prima di oggi per cui mantenere gli elementi in cache:">
+<!ENTITY label.offlineCacheproperties.monthsBeforeEndDate "Numero di mesi dopo di oggi per cui mantenere gli elementi in cache:">
+
+<!ENTITY button.offlineCacheproperties.clearCache "Elimina dati nella cache non in linea">
+<!ENTITY ecsettings.tab.autoprocessingproperties "Elaborazione automatica">
+<!ENTITY ecsettings.tab.mailitemsProperties "Opzioni EWS (Posta)">
+
+<!ENTITY label.syncmailitems.interval "Ritarda sincronizzazione elementi di posta (tag, ecc.)">
+<!ENTITY label.autoprocessingproperties.deletecancelleditems "Rimuovi automaticamente eventi annullati">
+<!ENTITY label.autoprocessingproperties.markeventtentative "Contrassegna automaticamente gli eventi come provvisori e invia la risposta all'organizzatore">
+<!ENTITY label.syncmailitems.active "Mantieni attiva la sincronizzazione degli elementi di posta (tag, ecc.)">
+
+<!ENTITY label.syncfollowup.deactivtate "Disabilita Contrassegna attività per il completamento">
+

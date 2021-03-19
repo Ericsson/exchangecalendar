@@ -1,0 +1,16 @@
+<!ENTITY label.acceptbutton "Zavřít">
+
+<!ENTITY exchWebService.manageEWSAccounts.newAccount.button "Přidat účet">
+<!ENTITY exchWebService.manageEWSAccounts.removeAccount.button "Odebrat účet">
+<!ENTITY exchWebService.manageEWSAccounts.saveAccount.button "Uložit nastavení">
+
+<!ENTITY exchWebService.manageEWSAccounts.autodiscover.label "Použít funkci Exchange automatického zjišťování.">
+<!ENTITY exchWebService.manageEWSAccounts.mailbox.label "Název schránky:">
+<!ENTITY exchWebService.manageEWSAccounts.windowsuser.label "Uživatelské jméno:">
+<!ENTITY exchWebService.manageEWSAccounts.windowsdomain.label "Doménový název:">
+<!ENTITY exchWebService.manageEWSAccounts.autodiscover.button "Automaticky zjistit">
+<!ENTITY exchWebService.manageEWSAccounts.servercheck.button "Zkontrolovat server a účet">
+<!ENTITY exchWebService.manageEWSAccounts.name.label "Název:">
+
+<!ENTITY exchWebService.manageEWSAccounts.menuitem "Účty Exchange Web Services">
+

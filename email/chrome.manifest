@@ -1,9 +1,0 @@
-content exchangemail chrome/content/
-skin exchangemail fugue chrome/skins/fugue/
-resource exchangemail components/
-resource exchangemail interfaces/
-
-manifest interfaces/exchangeMsgProtocolInfo/mivExchangeMsgProtocolInfo.manifest
-manifest interfaces/exchangeMsgAccountManagerExtension/mivExchangeMsgAccountManagerExtension.manifest
-manifest interfaces/exchangeMsgIncomingServer/mivExchangeMsgIncomingServer.manifest
-

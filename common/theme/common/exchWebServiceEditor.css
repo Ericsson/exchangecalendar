@@ -1,0 +1,110 @@
+toolbar.embedded-toolbar {
+	-moz-appearance: none !important;
+	background-color: rgba(242, 241, 240, 0.5);
+}
+
+toolbarbutton.bold-button {
+	list-style-image: url("chrome://exchangecommon-common/skin/images/edit-bold.png");
+	height: 32px;
+	width: 32px;
+}
+
+toolbarbutton.italic-button {
+	list-style-image: url("chrome://exchangecommon-common/skin/images/edit-italic.png");
+	height: 32px;
+	width: 32px;
+}
+
+toolbarbutton.underline-button {
+	list-style-image: url("chrome://exchangecommon-common/skin/images/edit-underline.png");
+	height: 32px;
+	width: 32px;
+}
+
+toolbarbutton.indent-button {
+	list-style-image: url("chrome://exchangecommon-common/skin/images/edit-indent.png");
+	height: 32px;
+	width: 32px;
+}
+
+toolbarbutton.outdent-button {
+	list-style-image: url("chrome://exchangecommon-common/skin/images/edit-outdent.png");
+	height: 32px;
+	width: 32px;
+}
+
+toolbarbutton.orderedlist-button {
+	list-style-image: url("chrome://exchangecommon-common/skin/images/edit-list-order.png");
+	height: 32px;
+	width: 32px;
+}
+
+toolbarbutton.unorderedlist-button {
+	list-style-image: url("chrome://exchangecommon-common/skin/images/edit-list.png");
+	height: 32px;
+	width: 32px;
+}
+
+toolbarbutton.decreaseFont-button {
+	list-style-image: url("chrome://exchangecommon-common/skin/images/edit-size-down.png");
+	height: 32px;
+	width: 32px;
+}
+
+toolbarbutton.increaseFont-button {
+	list-style-image: url("chrome://exchangecommon-common/skin/images/edit-size-up.png");
+	height: 32px;
+	width: 32px;
+}
+
+toolbarbutton.align-left-button {
+	list-style-image: url("chrome://exchangecommon-common/skin/images/edit-alignment.png");
+	height: 32px;
+	width: 32px;
+}
+
+toolbarbutton.align-center-button {
+	list-style-image: url("chrome://exchangecommon-common/skin/images/edit-alignment-center.png");
+	height: 32px;
+	width: 32px;
+}
+
+toolbarbutton.align-right-button {
+	list-style-image: url("chrome://exchangecommon-common/skin/images/edit-alignment-right.png");
+	height: 32px;
+	width: 32px;
+}
+
+toolbarbutton.align-justify-button {
+	list-style-image: url("chrome://exchangecommon-common/skin/images/edit-alignment-justify.png");
+	height: 32px;
+	width: 32px;
+}
+
+toolbarbutton.addlink-button {
+	list-style-image: url("chrome://exchangecommon-common/skin/images/chain--plus.png");
+	height: 32px;
+	width: 32px;
+}
+
+toolbarbutton.removelink-button {
+	list-style-image: url("chrome://exchangecommon-common/skin/images/chain--minus.png");
+	height: 32px;
+	width: 32px;
+}
+
+toolbarbutton.editlink-button {
+	list-style-image: url("chrome://exchangecommon-common/skin/images/chain--pencil.png");
+	height: 32px;
+	width: 32px;
+}
+
+editor.exchWebService-editor {
+	background-color: white;
+	border-style: solid;
+	border-width: 1px;
+	border-left-color: silver;
+	border-top-color: silver;
+	border-bottom-color: gray;
+	border-right-color: gray;
+}

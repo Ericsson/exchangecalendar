@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: GPL 3.0
+ *
+ * The contents of this file are subject to the General Public License
+ * 3.0 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ * http://www.gnu.org/licenses/gpl.html
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * ## Exchange 2007/2010 Calendar and Tasks Provider.
+ * ## For Thunderbird with the Lightning add-on.
+ *
+ * This work is a combination of the Storage calendar, part of the default Lightning add-on, and 
+ * the "Exchange Data Provider for Lightning" add-on currently, october 2011, maintained by Simon Schubert.
+ * Primarily made because the "Exchange Data Provider for Lightning" add-on is a continuation 
+ * of old code and this one is build up from the ground. It still uses some parts from the 
+ * "Exchange Data Provider for Lightning" project.
+ *
+ * Author: Michel Verbraak (info@1st-setup.nl)
+ * Website: http://www.1st-setup.nl/wordpress/?page_id=133
+ * email: exchangecalendar@extensions.1st-setup.nl
+ *
+ *
+ * This code uses parts of the Microsoft Exchange Calendar Provider code on which the
+ * "Exchange Data Provider for Lightning" was based.
+ * The Initial Developer of the Microsoft Exchange Calendar Provider Code is
+ *   Andrea Bittau <a.bittau@cs.ucl.ac.uk>, University College London
+ * Portions created by the Initial Developer are Copyright (C) 2009
+ * the Initial Developer. All Rights Reserved.
+ *
+ * ***** BEGIN LICENSE BLOCK *****/
+-->
+<?xml-stylesheet href="chrome://global/skin/" type="text/css" ?>
+<?xml-stylesheet type="text/css" href="chrome://calendar/content/datetimepickers/datetimepickers.css" ?>
+<!DOCTYPE dialog
+[
+    
+<!ENTITY % dtd1 SYSTEM "chrome://exchangecommon/locale/invitationResponse.dtd" > %dtd1; ]>
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="exchWebService_invitationResponse_dialog"
+        title="&description.invitationResponse;"
+        buttons="accept,cancel"
+        buttonlabelaccept="&label.acceptbutton;"
+        buttonlabelcancel="&label.cancelbutton;"
+        ondialogaccept="return exchWebService.invitationResponse.onAccept();"
+        onload="exchWebService.invitationResponse.onLoad();">
+    <script type="application/javascript"
+            src="chrome://exchangecommon/content/invitationResponse.js" />
+    <script type="application/javascript"
+            src="chrome://calendar/content/calendar-ui-utils.js" />
+    <script type="application/javascript"
+            src="chrome://calendar/content/calUtils.js" />
+    <script type="application/javascript"
+            src="chrome://calendar/content/calApplicationUtils.js" />
+    <vbox>
+        <grid>
+            <columns>
+                <column />
+                <column flex="1" />
+            </columns>
+            <rows>
+                <row>
+                    <label value="&label.calendarName;" />
+                    <label id="exchWebService_calendarName" />
+                </row>
+                <row>
+                    <label value="&label.itemTitle;" />
+                    <label id="exchWebService_itemTitle" />
+                </row>
+                <row>
+                    <label value="&label.itemStart;" />
+                    <label id="exchWebService_itemStart" />
+                </row>
+                <row>
+                    <label value="&label.itemResponse;" />
+                    <menulist label="(Make a choice)"
+                              id="exchWebService_itemResponse"
+                              value="1"
+                              oncommand="exchWebService.invitationResponse.doResponseChanged(this);">
+
+                        <menupopup>
+                            <menuitem label="&menuitem.label.ec-autorespond-answer.tentative;"
+                                      value="TENTATIVE" />
+                            <menuitem label="&menuitem.label.ec-autorespond-answer.accepted;"
+                                      value="ACCEPTED" />
+                            <menuitem label="&menuitem.label.ec-autorespond-answer.declined;"
+                                      value="DECLINED" />
+                        </menupopup>
+                    </menulist>
+                </row>
+                <row>
+                    <label value="&label.meetingOrganiser;" />
+                    <label id="exchWebService_meetingOrganiser" />
+                </row>
+            </rows>
+        </grid>
+        <seperator />
+        <checkbox id="exchWebService_propose_time_checkbox"
+                  label="&label.proposenewtime.title;"
+                  oncommand="exchWebService.invitationResponse.onCheckChanged(this);"
+                  checked="false"
+                  pack="start" />
+        <groupbox id="exchWebService_propose_groupbox">
+            <label value="&label.proposenewtime.start;"
+                   id="exchWebService_propose_start_label"
+                   control="exchWebService_propose_start"
+                   class="event-only"
+                   disable-on-readonly="true" />
+            <datetimepicker id="exchWebService_propose_start"
+                            disable-on-readonly="true"
+                            class="event-only"
+                            disabled="true" />
+            <seperator />
+            <label value="&label.proposenewtime.end;"
+                   id="exchWebService_propose_end_label"
+                   control="exchWebService_propose_end"
+                   class="event-only"
+                   disable-on-readonly="true" />
+            <datetimepicker id="exchWebService_propose_end"
+                            class="event-only"
+                            disable-on-readonly="true"
+                            disabled="true" />
+        </groupbox>
+        <seperator />
+        <label value="&label.messageReponseBody;" />
+        <textbox id="exchWebService_messageReponseBody"
+                 multiline="true"
+                 label="messageResponseBody"
+                 rows="5" />
+    </vbox>
+</dialog>

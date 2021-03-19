@@ -1,0 +1,14 @@
+<!ENTITY dialog.exchWebService.preInvitationResponse.title "Jak chcete zareagovat?">
+<!ENTITY label.acceptbutton "Ok">
+<!ENTITY label.cancelbutton "Storno">
+
+<!ENTITY label.calendarName "Kalendář:">
+<!ENTITY label.itemTitle "Předmět:">
+<!ENTITY label.itemStart "Čas zahájení:">
+<!ENTITY label.itemResponse "Vaše odpověď:">
+<!ENTITY label.meetingOrganiser "Organizátor:">
+
+<!ENTITY radio.label.exchWebService.preInvitationResponse.edit "Před odesláním upravit odpověď.">
+<!ENTITY radio.label.exchWebService.preInvitationResponse.sendnow "Odpovědět nyní.">
+<!ENTITY radio.label.exchWebService.preInvitationResponse.donotsend "Neposílat odpověď.">
+

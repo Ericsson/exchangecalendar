@@ -1,0 +1,9 @@
+<!ENTITY toolbar.button.label.addaccount "Přidat složku s kontakty z Exchange">
+<!ENTITY toolbar.button.tooltip.addaccount "Toto přidá novou složku s kontakty z Exchange">
+
+<!ENTITY toolbar.button.label.deleteaccount "Odebrat složku s kontakty z Exchange">
+<!ENTITY toolbar.button.tooltip.deleteaccount "Toto odebere existující složku s kontakty z Exchange">
+
+<!ENTITY deleteExchangeCmd.label "Odebrat složku s kontakty z Exchange">
+
+

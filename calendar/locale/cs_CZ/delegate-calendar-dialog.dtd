@@ -1,0 +1,25 @@
+ 
+<!ENTITY  label.delegateCalendar.cancelbutton "Storno">
+<!ENTITY  label.delegateCalendar.userEmail "E-mail">
+<!ENTITY  label.delegateCalendar.deliveryMeetingRerquestControl "Doručení žádostí o schůzku">
+
+<!ENTITY  menuitem.delegateCalendar.deliverMeetingRequestslist.delegateOnly "Pouze pověření">
+<!ENTITY  menuitem.delegateCalendar.deliverMeetingRequestslist.delegateAndMe "Pověření a já">
+<!ENTITY  menuitem.delegateCalendar.deliverMeetingRequestslist.delegateAndInfo "Pověření a mně poslat oznámení">
+
+<!ENTITY  label.delegateCalendar.permission "Oprávnění">
+<!ENTITY  menuitem.delegateCalendar.permission.author "Autor">
+<!ENTITY  menuitem.delegateCalendar.permission.editor "Editor">
+<!ENTITY  menuitem.delegateCalendar.permission.reviewer "Recenzent">
+<!ENTITY  menuitem.delegateCalendar.permission.none "Žádná">
+
+<!ENTITY  label.delegateCalendar.permission.receiveInvitationCopy "Dostávat kopie zpráv ohledně schůzky" >
+<!ENTITY  label.delegateCalendar.permission.viewPrivateItems "Zobrazit soukromé položky" >
+
+
+<!ENTITY  delegateCalendar.permission.description.author "Číst a vytvářet položky ve složce Kalendář." >
+<!ENTITY  delegateCalendar.permission.description.editor "Číst, vytvářet a upravovat položky ve složce Kalendář." >
+<!ENTITY  delegateCalendar.permission.description.reviewer "Číst položky ve složce Kalendář." >
+<!ENTITY  delegateCalendar.permission.description.none "Žádná oprávnění k přístupu do složky Kalendář." >
+
+<!ENTITY  delegateCalendar.permission.details.label "Podrobnosti o oprávnění: " >

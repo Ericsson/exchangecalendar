@@ -1,0 +1,8 @@
+<!ENTITY title.sendupdateto "Bu güncelleştirmeyi kime göndermek istiyorsun?">
+<!ENTITY label.acceptbutton "Gerçekleştir">
+<!ENTITY label.cancelbutton "İptal et">
+<!ENTITY label.calendaritem.title "Toplantı için güncelleştirme gönder:">
+
+<!ENTITY radio.label.sendtonone "Kimseye gönderme.">
+<!ENTITY radio.label.sendtoall "Davetli olan herkese gönder.">
+<!ENTITY radio.label.sendtochanged "Yalnızca eklenmiş ya da çıkarılmış olan kişilere gönder.">

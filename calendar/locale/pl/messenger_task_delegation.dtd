@@ -1,0 +1,6 @@
+<!ENTITY exchWebService.task.delegation.owner.name "Task owner">
+<!ENTITY exchWebService.task.delegation.delegator.name "Task delegator">
+<!ENTITY exchWebService.task.delegation.accept.button "Accept">
+<!ENTITY exchWebService.task.delegation.decline.button "Decline">
+<!ENTITY exchWebService.task.delegation.lastUpdateDate "Last change on">
+

@@ -1,0 +1,9 @@
+<!ENTITY label.acceptbutton "Select">
+<!ENTITY label.cancelbutton "Cancel">
+
+<!ENTITY description.selectews "Choose an EWS server from the list which is suitable for your current location.">
+<!ENTITY label.selectews "EWS server list:">
+
+
+
+

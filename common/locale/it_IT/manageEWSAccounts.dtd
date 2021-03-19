@@ -1,0 +1,16 @@
+<!ENTITY label.acceptbutton "Chiudi">
+
+<!ENTITY exchWebService.manageEWSAccounts.newAccount.button "Aggiungi account">
+<!ENTITY exchWebService.manageEWSAccounts.removeAccount.button "Rimuovi account">
+<!ENTITY exchWebService.manageEWSAccounts.saveAccount.button "Salva impostazioni">
+
+<!ENTITY exchWebService.manageEWSAccounts.autodiscover.label "Utilizza la funzionalità di ricerca automatica di Exchange.">
+<!ENTITY exchWebService.manageEWSAccounts.mailbox.label "Nome casella di posta:">
+<!ENTITY exchWebService.manageEWSAccounts.windowsuser.label "Nome utente:">
+<!ENTITY exchWebService.manageEWSAccounts.windowsdomain.label "Nome dominio:">
+<!ENTITY exchWebService.manageEWSAccounts.autodiscover.button "Esegui ricerca automatica">
+<!ENTITY exchWebService.manageEWSAccounts.servercheck.button "Controlla server e account">
+<!ENTITY exchWebService.manageEWSAccounts.name.label "Nome:">
+
+<!ENTITY exchWebService.manageEWSAccounts.menuitem "Account Exchange Web Services">
+

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: GPL 3.0
+ *
+ * The contents of this file are subject to the General Public License
+ * 3.0 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ * http://www.gnu.org/licenses/gpl.html
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ *  Exchange 2007/2010 Contacts.
+ *  For Thunderbird.
+ *
+ * Author: Michel Verbraak (info@1st-setup.nl)
+ * Website: http://www.1st-setup.nl/wordpress/?page_id=xx
+ * email: exchangecontacts@extensions.1st-setup.nl
+ *
+ *
+ * ***** BEGIN LICENSE BLOCK *****/
+-->
+<?xml-stylesheet type="text/css" href="chrome://global/skin/"?>
+<?xml-stylesheet type="text/css" href="chrome://exchangecommon/skin/manageEWSAccounts.css"?>
+<!DOCTYPE dialog
+[
+    <!ENTITY % dtd1 SYSTEM "chrome://exchangecommon/locale/manageEWSAccounts.dtd" > %dtd1;
+]>
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+         id="manage-EWS-Accounts-dialog">
+    <script type="application/javascript"
+            src="chrome://exchangecommon/content/manageEWSAccounts.js" />
+    <hbox id="manage-EWS-Accounts-dialog-hbox">
+        <vbox>
+            <listbox id="exchWebService-manageEWSAccounts-accounts-listbox"
+                     flex="1"
+                     onselect="exchWebService.manageEWSAccounts.onSelect()" />
+            <button oncommand="exchWebService.manageEWSAccounts.addNewAccount()"
+                    label="&exchWebService.manageEWSAccounts.newAccount.button;" />
+            <button oncommand="exchWebService.manageEWSAccounts.removeAccount()"
+                    id="exchWebService_manageEWSAccounts_removeAccount_button"
+                    disabled="true"
+                    label="&exchWebService.manageEWSAccounts.removeAccount.button;" />
+        </vbox>
+        <vbox flex="1"
+              id="exchWebService-account-settings">
+            <hbox>
+                <label value="&exchWebService.manageEWSAccounts.name.label;" />
+                <textbox id="exchWebService_manageEWSAccounts_account_name"
+                         disabled="true"
+                         required="true"
+                         oninput="exchWebService.manageEWSAccounts.doNameChanged(this)" />
+            </hbox>
+            <checkbox disabled="true"
+                      label="&exchWebService.manageEWSAccounts.autodiscover.label;"
+                      id="exchWebService_autodiscover"
+                      oncommand="exchWebService.manageEWSAccounts.doAutodiscoverChanged(this);" />
+            <grid flex="1">
+                <columns>
+                    <column />
+                    <column />
+                    <column flex="1" />
+                </columns>
+                <rows>
+                    <row id="exchWebService_serverrow"
+                         align="center">
+                        <label value="Server URL:"
+                               control="ecserver" />
+                        <exchWebService-statusImage id="exchWebService_server_status" />
+                        <vbox>
+                            <textbox id="exchWebService_server"
+                                     disabled="true"
+                                     required="true"
+                                     oninput="exchWebService.manageEWSAccounts.doServerChanged(this);"
+                                     placeholder="https://ews.example.com/ews/exchange.asmx" />
+                        </vbox>
+                    </row>
+                    <row id="exchWebService_mailboxrow"
+                         align="center"
+                         hidden="true">
+                        <label value="&exchWebService.manageEWSAccounts.mailbox.label;"
+                               control="ecmailbox" />
+                        <exchWebService-statusImage id="exchWebService_mailbox_status" />
+                        <hbox>
+                            <textbox id="exchWebService_mailbox"
+                                     disabled="true"
+                                     required="false"
+                                     oninput="exchWebService.manageEWSAccounts.doMailboxChanged(this);"
+                                     placeholder="yourname@example.com" />
+                            <label id="exchWebService_displayname"
+                                   value=""
+                                   flex="1" />
+                        </hbox>
+                    </row>
+                    <row align="center">
+                        <label value="&exchWebService.manageEWSAccounts.windowsuser.label;"
+                               control="ecwindowsuser" />
+                        <exchWebService-statusImage id="exchWebService_windowsuser_status" />
+                        <textbox id="exchWebService_windowsuser"
+                                 disabled="true"
+                                 placeholder="domain\username OR username@fulldomain"
+                                 required="true"
+                                 oninput="exchWebService.manageEWSAccounts.doUserChanged(this);" />
+                    </row>
+                </rows>
+            </grid>
+            <button id="exchWebService_autodiscovercheckbutton"
+                    label="&exchWebService.manageEWSAccounts.autodiscover.button;"
+                    oncommand="exchWebService.manageEWSAccounts.doAutodiscoverCheck();"
+                    hidden="true" />
+            <button id="exchWebService_servercheckbutton"
+                    label="&exchWebService.manageEWSAccounts.servercheck.button;"
+                    oncommand="exchWebService.manageEWSAccounts.doCheckServer();"
+                    hidden="true" />
+            <label id="exchWebService_manageEWSAccounts_message_label"
+                   value=""
+                   hidden="true" />
+            <button id="exchWebService_manageEWSAccounts_save_button"
+                    oncommand="exchWebService.manageEWSAccounts.saveAccount()"
+                    hidden="true"
+                    label="&exchWebService.manageEWSAccounts.saveAccount.button;" />
+        </vbox>
+    </hbox>
+</overlay>

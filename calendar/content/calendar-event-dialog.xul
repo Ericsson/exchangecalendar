@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE dialog
+[
+    <!ENTITY % eventDialogDTD SYSTEM "chrome://calendar/locale/calendar-event-dialog.dtd">
+    %eventDialogDTD;
+    <!ENTITY % dtd1 SYSTEM "chrome://exchangecalendar/locale/attachments-view.dtd" >
+    %dtd1;
+]>
+<?xml-stylesheet type="text/css" href="chrome://exchangecommon/skin/attachments-view.css"?>
+<?xml-stylesheet type="text/css" href="chrome://calendar/skin/calendar-event-dialog.css"?>
+<?xml-stylesheet type="text/css" href="chrome://calendar/content/calendar-event-dialog.css"?>
+<overlay id="exchWebService-calendar-event-dialog"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+    <script type="application/javascript"
+            src="chrome://exchangecalendar/content/calendar-event-dialog.js" />
+    <!-- Commands -->
+    <commandset id="itemCommands">
+        <command id="exchWebService_addAttachmentDialog"
+                 oncommand='sendMessage( {command: "exchWebService_addAttachmentDialog"} );' />
+    </commandset>
+    <!-- Update windows menu -->
+    <toolbox id="event-toolbox">
+        <menubar id="event-menubar">
+            <menu id="options-menu">
+                <menupopup id="options-menupopup">
+                    <menu id="options-attachments-menu"
+                          collapsed="false" />
+                    <menuitem id="exchWebService-options-attachments"
+                              insertafter="options-attendees-menuitem"
+                              label="&exchWebServie.add.attachment.button.label;"
+                              command="exchWebService_addAttachmentDialog"
+                              collapsed="true" />
+                </menupopup>
+            </menu>
+        </menubar>
+    </toolbox>
+    <!-- Update toolbar -->
+    <toolbarpalette id="event-toolbarpalette">
+        <toolbarbutton id="exchWebService-add-attachment-button"
+                       mode="dialog"
+                       class="cal-event-toolbarbutton toolbarbutton-1"
+                       label="&exchWebServie.add.attachment.button.label;"
+                       disable-on-readonly="true"
+                       removable="true"
+                       command="exchWebService_addAttachmentDialog"
+                       hidden="true" />
+    </toolbarpalette>
+    <!-- Add exchangecalendar attachment button
+         Note: defaultset needs to be synced with common-central/calendar/base/content/dialogs/calendar-event-dialog.xul -->
+    <toolbar id="event-toolbar"
+             defaultset="button-saveandclose,button-attendees,button-privacy,button-url,exchWebService-add-attachment-button,button-delete">
+    </toolbar>
+</overlay>

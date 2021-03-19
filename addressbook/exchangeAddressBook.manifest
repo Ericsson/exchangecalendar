@@ -1,0 +1,30 @@
+content exchangecontacts content/
+
+overlay chrome://messenger/content/messenger.xul chrome://exchangecontacts/content/exchangeContactsInit.xul
+overlay chrome://messenger/content/addressbook/addressbook.xul chrome://exchangecontacts/content/addressbookOverlay.xul
+overlay chrome://messenger/content/addressbook/abCardOverlay.xul chrome://exchangecontacts/content/abCardOverlay.xul
+
+resource exchangeaddress exchangeapi/
+
+manifest interface/exchangeAbCard/mivExchangeAbCard.manifest
+manifest interface/exchangeAbDirFactory/exchangeAbDirFactory.manifest
+manifest interface/exchangeAbDistListDirectory/exchangeAbDistListDirectory.manifest
+manifest interface/exchangeAbFolderDirectory/exchangeAbFolderDirectory.manifest
+manifest interface/exchangeAbRootDirectory/exchangeAbRootDirectory.manifest
+manifest interface/exchangeAutoCompleteSearch/mivExchangeAutoCompleteSearch.manifest
+manifest interface/exchangeAutoCompleteResult/mivExchangeAutoCompleteResult.manifest
+
+locale exchangecontacts en    locale/en/
+
+locale exchangecontacts cs-CZ locale/cs_CZ/
+locale exchangecontacts de    locale/de/
+locale exchangecontacts en-US locale/en_US/
+locale exchangecontacts fr-FR locale/fr_FR/
+locale exchangecontacts it-IT locale/it_IT/
+locale exchangecontacts ja-JP locale/ja_JP/
+locale exchangecontacts nl    locale/nl/
+locale exchangecontacts pl    locale/pl/
+locale exchangecontacts ru    locale/ru/
+locale exchangecontacts sk    locale/sk/
+locale exchangecontacts sv    locale/sv/
+locale exchangecontacts tr    locale/tr/

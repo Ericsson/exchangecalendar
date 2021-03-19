@@ -1,0 +1,53 @@
+<!ENTITY label.acceptbutton "Kaydet">
+<!ENTITY label.cancelbutton "İptal et">
+<!ENTITY ecsettings.title "EWS Takvim ve Posta ayarları">
+<!ENTITY ecsettings.tab.adsettings "Exchange/Windows AD">
+<!ENTITY ecsettings.tab.meetingrequestsettings "Toplantı teklifleri">
+<!ENTITY ecsettings.tab.calendarfolderproperties "Klasör özellikleri">
+
+<!ENTITY label.ecExchangeSettings.title "Takvim ayarları:">
+
+<!ENTITY label.poll.inbox "Teklifler, değişiklikler ve iptaller için posta kutusunu yokla.">
+<!ENTITY label.poll.inbox.interval "Posta kutusu yoklama sıklığı (saniye):">
+<!ENTITY label.poll.calendar.interval "Takvim yoklama sıklığı (saniye):">
+
+<!ENTITY label.nomeetingrequestsettings "Toplantı teklifi ayarlayamazsınız, çünkü posta kutunuzun ana takvimini seçmediniz">
+
+<!ENTITY label.autorespond.meetingrequest "Yeni davetlere bu automatic yanıtı ver: ">
+
+<!ENTITY menuitem.label.ec-autorespond-answer.tentative "Belki katılabilirim">
+<!ENTITY menuitem.label.ec-autorespond-answer.accepted "Katılacağım">
+<!ENTITY menuitem.label.ec-autorespond-answer.declined "Katılmayacağım">
+
+<!ENTITY label.autoremove.invitation_cancellation1 "Davetiyeye yanıt vermediyseniz, daveti ve beraberindeki iptal iletisini automatic olarak sil.">
+<!ENTITY label.autoremove.invitation_cancellation2 "İptal iletisi alırsanız, onaylanmış daveti otomatik olarak sil.">
+
+<!ENTITY label.autoremove.invitation_response1 "Düzenleyicisi olmadığınız bir toplantının davetine başkaları tarafından gönderilmiş olan yanıtları otomatik olarak sil.">
+
+<!ENTITY label.doautorespond.meetingrequest.message "Yanıtınızda, bir ileti istemek yerine, şu iletiyi gönderiniz.">
+<!ENTITY label.autorespond.meetingrequest.message "İletiniz:">
+
+<!ENTITY treecol.label.userid "Kullanıcı Kimliği">
+<!ENTITY treecol.label.email "Eposta">
+
+
+<!ENTITY ecsettings.tab.offlineCachingproperties "Çevrimdışı Önbellekleme">
+
+<!ENTITY label.offlineCacheproperties.cachingStartDate "Önbelleklemeye başlama tarihi:">
+<!ENTITY label.offlineCacheproperties.cachingEndDate "Önbelleklemeyi bitirme tarihi:">
+<!ENTITY label.offlineCacheproperties.totalEvents "Önbelleklenen olay sayısı:">
+<!ENTITY label.offlineCacheproperties.totalTasks "Önbelleklenen görev sayısı:">
+
+<!ENTITY label.offlineCacheproperties.monthsBeforeStartDate "Bugünden önce önbelleklenen ay sayısı:">
+<!ENTITY label.offlineCacheproperties.monthsBeforeEndDate "Bugünden sonra önbelleklenecek ay sayısı:">
+
+<!ENTITY button.offlineCacheproperties.clearCache "Çevrimdışı önbelleklenmiş verileri temizle">
+<!ENTITY ecsettings.tab.autoprocessingproperties "Otomatik İşlemleme">
+<!ENTITY ecsettings.tab.mailitemsProperties "EWS Ayarları (Posta)">
+
+<!ENTITY label.syncmailitems.interval "Postayla ilişkili öğeleri (etiketler vs.) eşitlemeyi geciktir">
+<!ENTITY label.autoprocessingproperties.deletecancelleditems "İptal edilmiş olayları otomatik olarak sil">
+<!ENTITY label.autoprocessingproperties.markeventtentative "Olayları otomatikman Kesin değil olarak işaretle ve düzenleyene yanıt gönder">
+ 
+<!ENTITY label.syncmailitems.active "Postayla ilişkili öğeleri (etiketler vs.) eşitlemeyi aktif tut">
+<!ENTITY label.syncfollowup.deactivtate "Görev takip edilmesini devredışı bırak">

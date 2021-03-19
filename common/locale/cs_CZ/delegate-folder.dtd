@@ -1,0 +1,45 @@
+ 
+<!ENTITY  label.delegatefolder.cancelbutton "Storno">
+<!ENTITY  label.delegatefolder.userEmail "E-mail">
+ 
+<!ENTITY  label.delegatefolder.permissionLevel "Úroveň oprávnění">
+<!ENTITY  label.delegatefolder.userboxcolumn1 "Uživatel"> 
+<!ENTITY  label.delegatefolder.userboxcolumn2 "Oprávnění"> 
+
+<!ENTITY  menuitem.delegatefolder.permission.author "Autor">
+<!ENTITY  menuitem.delegatefolder.permission.editor "Editor">
+<!ENTITY  menuitem.delegatefolder.permission.reviewer "Recenzent">
+<!ENTITY  menuitem.delegatefolder.permission.none "Žádná">
+<!ENTITY  menuitem.delegatefolder.permission.owner "Vlastník" > 
+<!ENTITY  menuitem.delegatefolder.permission.publishingEditor "Publikující editor" >
+<!ENTITY  menuitem.delegatefolder.permission.publishingAuthor "Publikující autor" >
+<!ENTITY  menuitem.delegatefolder.permission.noneditingAuthor "Nic neupravující autor" >
+<!ENTITY  menuitem.delegatefolder.permission.contributor "Přispěvatel" >
+<!ENTITY  menuitem.delegatefolder.permission.custom "Vlastní" >
+                            
+<!ENTITY  delegatefolder.permission.description.author "Číst a vytvářet položky ve složce." >
+<!ENTITY  delegatefolder.permission.description.editor "Číst, vytvářet a upravovat položky ve složce." >
+<!ENTITY  delegatefolder.permission.description.reviewer "Číst položky ve složce." >
+<!ENTITY  delegatefolder.permission.description.none "Žádná přístupová práva ke složce." >
+
+ <!ENTITY  delegatefolder.permission.details.caption "Oprávnění "> 
+
+<!ENTITY  delegatefolder.tab.msg.label  "Pro tento e-mailový účet nebyl nalezen žádný kalendář nebo úkoly.">
+<!ENTITY  delegatefolder.tab.name  "Sdílení Exchange složky">
+
+<!ENTITY  delegatefolder.permissions.none  "Žádné">
+<!ENTITY  delegatefolder.permissions.own  "Vlastní položky">
+<!ENTITY  delegatefolder.permissions.all  "Všechny položky">
+<!ENTITY  delegatefolder.permissions.full  "Veškeré podrobnosti">
+
+<!ENTITY  delegatefolder.permissions.cancreateitems  "Vytvářet položky">
+<!ENTITY  delegatefolder.permissions.cancreatesubfolders  "Vytvářet podsložky">
+<!ENTITY  delegatefolder.permissions.isfolderowner  "Vlastník složky">
+<!ENTITY  delegatefolder.permissions.isfoldervisible  "Složka viditelná">
+<!ENTITY  delegatefolder.permissions.isfoldercontact  "Kontakt složky">
+<!ENTITY  delegatefolder.permissions.edititems  "Upravovat položky">
+<!ENTITY  delegatefolder.permissions.deleteitems  "Mazat položky">
+<!ENTITY  delegatefolder.permissions.readitems  "Číst položky">  
+ 
+<!ENTITY  delegatefolder.permissions.true  "Ano">
+<!ENTITY  delegatefolder.permissions.false  "Ne">

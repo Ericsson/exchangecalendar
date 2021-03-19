@@ -1,0 +1,13 @@
+calendar-list-tree > tree > treechildren::-moz-tree-image(exchange-status-treecol, exchangeCommError) {
+	list-style-image: url(chrome://exchangecommon-common/skin/images/plug-disconnect-prohibition.png);
+	-moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+
+calendar-list-tree > tree > treechildren::-moz-tree-image(exchange-status-treecol, exchangeCommOk) {
+	list-style-image: url(chrome://exchangecommon-common/skin/images/plug-connect.png);
+	-moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+
+calendar-list-tree[type="exchange"] {
+	-moz-binding: url(chrome://exchangecalendar/content/calendar-list-tree.xml#exchange-calendar-list-tree);
+}

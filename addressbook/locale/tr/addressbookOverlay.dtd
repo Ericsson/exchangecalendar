@@ -1,0 +1,9 @@
+<!ENTITY toolbar.button.label.addaccount "Exchange kişiler klasörü ekle">
+<!ENTITY toolbar.button.tooltip.addaccount "Bu, yeni bir Exchange kişiler klasörü ekleyecektir">
+
+<!ENTITY toolbar.button.label.deleteaccount "Exchange kişiler klasörünü kaldır">
+<!ENTITY toolbar.button.tooltip.deleteaccount "Bu, bulunmakta olan bir Exchange kişiler klasörünü kaldıracaktır">
+
+<!ENTITY deleteExchangeCmd.label "Exchange kişiler klasörünü kaldır">
+
+

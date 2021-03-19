@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: GPL 3.0
+ *
+ * The contents of this file are subject to the General Public License
+ * 3.0 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ * http://www.gnu.org/licenses/gpl.html
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ *  Exchange 2007/2010 Contacts.
+ *  For Thunderbird.
+ *
+ * Author: Deepak Kumar
+ * email: deepk2u@gmail.com
+ *
+ *
+ * ***** BEGIN LICENSE BLOCK *****/
+-->
+<!DOCTYPE dialog
+[
+  <!ENTITY % dtd1 SYSTEM "chrome://calendar/locale/global.dtd" > %dtd1;
+  <!ENTITY % dtd2 SYSTEM "chrome://calendar/locale/calendar.dtd" > %dtd2;
+  <!ENTITY % dtd3 SYSTEM "chrome://calendar/locale/calendar-event-dialog.dtd"> %dtd3;
+]>
+<bindings xmlns="http://www.mozilla.org/xbl"
+          xmlns:xbl="http://www.mozilla.org/xbl"
+          xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+    <binding id="attendees-list"
+             extends="chrome://calendar/content/calendar-event-dialog-attendees.xml#attendees-list">
+
+        <content>
+            <xul:listbox anonid="listbox"
+                         seltype="multiple"
+                         class="listbox-noborder"
+                         rows="-1"
+                         flex="1">
+                <xul:listcols>
+                    <xul:listcol />
+                    <xul:listcol />
+                    <xul:listcol flex="1" />
+                </xul:listcols>
+                <xul:listitem anonid="item"
+                              class="addressingWidgetItem"
+                              allowevents="true">
+                    <xul:listcell class="addressingWidgetCell"
+                                  align="center"
+                                  pack="center">
+                        <xul:image id="attendeeCol1#1"
+                                   anonid="rolestatus-icon" />
+                    </xul:listcell>
+                    <xul:listcell class="addressingWidgetCell">
+                        <xul:image id="attendeeCol2#1"
+                                   anonid="usertype-icon"
+                                   class="usertype-icon"
+                                   onclick="this.parentNode.select();" />
+                    </xul:listcell>
+                    <xul:listcell class="addressingWidgetCell">
+                        <xul:textbox id="attendeeCol3#1"
+                                     anonid="input"
+                                     class="plain textbox-addressingWidget uri-element"
+                                     type="autocomplete"
+                                     flex="1"
+                                     autocompletesearch="addrbook ldap exchangeAutoCompleteSearch"
+                                     autocompletesearchparam="{}"
+                                     timeout="300"
+                                     maxrows="4"
+                                     completedefaultindex="true"
+                                     forcecomplete="true"
+                                     minresultsforpopup="1"
+                                     onblur="if (this.localName === 'textbox') document.getBindingParent(this).onBlurInput(event);"
+                                     ignoreblurwhilesearching="true"
+                                     oninput="this.setAttribute('dirty', 'true');">
+                        </xul:textbox>
+                    </xul:listcell>
+                </xul:listitem>
+            </xul:listbox>
+        </content>
+        <implementation>
+            <method name="onInitialize">
+                <body>
+<![CDATA[
+                                          var args = window.arguments[0];
+                                          var organizer = args.organizer;
+                                          var attendees = args.attendees;
+                                          var calendar = args.calendar;
+
+                                          this.mIsReadOnly = calendar.readOnly;
+
+                                          // assume we're the organizer [in case that the calendar
+                                          // does not support the concept of identities].
+                                          var organizerID = ((organizer && organizer.id)
+                                                             ? organizer.id
+                                                             : calendar.getProperty("organizerId"));
+
+
+                                          var listbox =
+                                              document.getAnonymousElementByAttribute(
+                                                  this, "anonid", "listbox");
+                                          var template =
+                                              document.getAnonymousElementByAttribute(
+                                                  this, "anonid", "item");
+                                          template.focus();
+
+                                          if (this.mIsReadOnly || this.mIsInvitation) {
+                                            listbox.setAttribute("disabled", "true");
+                                          }
+
+                                          // TODO: the organizer should show up in the attendee list, but this information
+                                          // should be based on the organizer contained in the appropriate field of calIItemBase.
+                                          // This is currently not supported, since we're still missing calendar identities.
+                                          if (organizerID && organizerID != "") {
+                                              if (!organizer) {
+                                                  organizer = this.createAttendee();
+                                                  organizer.id = organizerID;
+                                                  organizer.role = "CHAIR";
+                                                  organizer.participationStatus = "ACCEPTED";
+                                              } else {
+                                                  if (!organizer.id) {
+                                                      organizer.id = organizerID;
+                                                  }
+                                                  if (!organizer.role) {
+                                                      organizer.role = "CHAIR";
+                                                  }
+                                                  if (!organizer.participationStatus) {
+                                                      organizer.participationStatus = "ACCEPTED";
+                                                  }
+                                              }
+                                              if (!organizer.commonName || !organizer.commonName.length) {
+                                                  organizer.commonName = calendar.getProperty("organizerCN");
+                                              }
+                                              organizer.isOrganizer = true;
+                                              this.appendAttendee(organizer, listbox, template, true);
+                                          }
+
+                                          var numRowsAdded = 0;
+                                          if (attendees.length > 0) {
+                                              for each (var attendee in attendees) {
+                                                  this.appendAttendee(attendee, listbox, template, false);
+                                                  numRowsAdded++;
+                                              }
+                                          }
+                                          if (numRowsAdded === 0) {
+                                              this.appendAttendee(null, listbox, template, false);
+                                          }
+
+                                          // detach the template item from the listbox, but hold the reference.
+                                          // until this function returns we add at least a single copy of this template back again.
+                                          listbox.removeChild(template);
+
+                                          this.addDirectoryServerObserver();
+
+                                          this.setFocus(this.mMaxAttendees);
+                                ]]>
+                </body>
+            </method>
+            <method name="addDirectoryServerObserver">
+                <body>
+<![CDATA[
+                    if (this.mPrefs) {
+                        this.mPrefs.addObserver(
+                                "ldap_2.autoComplete.useDirectory",
+                                this.mDirectoryServerObserver,
+                                false);
+                        this.mPrefs.addObserver(
+                                "ldap_2.autoComplete.directoryServer",
+                                this.mDirectoryServerObserver,
+                                false);
+                    }
+                    ]]>
+                </body>
+            </method>
+        </implementation>
+    </binding>
+</bindings>

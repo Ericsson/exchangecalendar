@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE 
+prefwindow SYSTEM "chrome://exchangecommon/locale/extra-priority.dtd">
+<?xml-stylesheet type="text/css" href="chrome://exchangecommon/skin/extras-preferences.css"?>
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+    <prefwindow id="MailPreferences">
+        <prefpane id="extra-pane"
+                  label="&prefwindow.title;">
+            <preferences>
+                <preference id="extensions.extras.Iconify"
+                            name="extensions.extras.Iconify"
+                            type="bool" />
+                <preference id="extensions.extras.ShadeHigh"
+                            name="extensions.extras.ShadeHigh"
+                            type="bool" />
+                <preference id="extensions.extras.ShadeLow"
+                            name="extensions.extras.ShadeLow"
+                            type="bool" />
+                <preference id="extensions.extras.tagImportant"
+                            name="extensions.extras.tagImportant"
+                            type="bool" />
+                <preference id="extensions.extras.HighestColor"
+                            name="extensions.extras.HighestColor"
+                            type="unichar" />
+                <preference id="extensions.extras.HighColor"
+                            name="extensions.extras.HighColor"
+                            type="unichar" />
+                <preference id="extensions.extras.LowColor"
+                            name="extensions.extras.LowColor"
+                            type="unichar" />
+                <preference id="extensions.extras.LowestColor"
+                            name="extensions.extras.LowestColor"
+                            type="unichar" />
+            </preferences>
+            <tabbox flex="1">
+                <tabs>
+                    <tab label="&general.label;" />
+                </tabs>
+                <tabpanels flex="1">
+                    <tabpanel flex="1">
+                        <vbox>
+                            <checkbox id="iconify-checkbox"
+                                      preference="extensions.extras.Iconify"
+                                      label="&iconify.label;" />
+                            <checkbox id="shade-high-checkbox"
+                                      preference="extensions.extras.ShadeHigh"
+                                      label="&shadeHigh.label;" />
+                            <checkbox id="shade-low-checkbox"
+                                      preference="extensions.extras.ShadeLow"
+                                      label="&shadeLow.label;" />
+                            <checkbox id="mark-imp-checkbox"
+                                      preference="extensions.extras.tagImportant"
+                                      label="&tagImportant.label;" />
+                        </vbox>
+                        <hbox>
+                            <groupbox flex="1">
+                                <caption label="&pref.color;" />
+                                <hbox align="center"
+                                      style="margin-top: 5px">
+                                    <label value="&highestColor.label;"
+                                           control="foregroundtextmenu" />
+                                    <spacer flex="1" />
+                                    <colorpicker type="button"
+                                                 palettename="standard"
+                                                 preference="extensions.extras.HighestColor" />
+                                </hbox>
+                                <hbox align="center"
+                                      style="margin-top: 5px">
+                                    <label value="&lowestColor.label;"
+                                           control="unvisitedlinkmenu" />
+                                    <spacer flex="1" />
+                                    <colorpicker type="button"
+                                                 palettename="standard"
+                                                 preference="extensions.extras.LowestColor" />
+                                </hbox>
+                                <separator class="thin" />
+                            </groupbox>
+                            <groupbox flex="1">
+                                <caption label="" />
+                                <hbox align="center"
+                                      style="margin-top: 5px">
+                                    <label value="&highColor.label;"
+                                           control="backgroundmenu" />
+                                    <spacer flex="1" />
+                                    <colorpicker type="button"
+                                                 palettename="standard"
+                                                 preference="extensions.extras.HighestColor" />
+                                </hbox>
+                                <hbox align="center"
+                                      style="margin-top: 5px">
+                                    <label value="&lowColor.label;"
+                                           control="visitedlinkmenu" />
+                                    <spacer flex="1" />
+                                    <colorpicker type="button"
+                                                 palettename="standard"
+                                                 preference="extensions.extras.LowestColor" />
+                                </hbox>
+                                <separator class="thin" />
+                                <hbox align="center"></hbox>
+                            </groupbox>
+                        </hbox>
+                    </tabpanel>
+                </tabpanels>
+            </tabbox>
+        </prefpane>
+    </prefwindow>
+</overlay>

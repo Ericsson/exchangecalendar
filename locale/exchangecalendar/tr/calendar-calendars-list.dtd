@@ -1,5 +1,0 @@
-<!ENTITY calendar.context.exchange.convert.label "Exchange 2007/2010 Takvim and Görev Eklentisine Dönüştür”>
-<!ENTITY calendar.context.exchange.properties.label "Exchange (EWS) Özellikleri“>
-<!ENTITY calendar.context.exchange.oof.settings.label “İşyeri Dışında ayarları”>
-<!ENTITY calendar.context.exchange.clone.settings.label “Ayarları yeni takvime kopyala">
-<!ENTITY calendar.context.exchange.delegate.calendar.settings.label “Takvime erişim yetkisi aktar”>

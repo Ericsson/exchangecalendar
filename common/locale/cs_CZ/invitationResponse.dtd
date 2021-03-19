@@ -1,0 +1,19 @@
+<!ENTITY label.acceptbutton "Potvrdit změnu">
+<!ENTITY label.cancelbutton "Zrušit změnu">
+
+<!ENTITY description.invitationResponse "Potvrďte změny ve vaší odpovědi na setkání.">
+
+<!ENTITY label.calendarName "Kalendář:">
+<!ENTITY label.itemTitle "Předmět:">
+<!ENTITY label.itemStart "Čas zahájení:">
+<!ENTITY label.itemResponse "Vaše odpověď:">
+<!ENTITY label.meetingOrganiser "Organizátor:">
+
+<!ENTITY label.messageReponseBody "Odpovědní zpráva:">
+
+<!ENTITY menuitem.label.ec-autorespond-answer.tentative "Možná se zúčastním">
+<!ENTITY menuitem.label.ec-autorespond-answer.accepted "Zúčastním se">
+<!ENTITY menuitem.label.ec-autorespond-answer.declined "Nezúčastním se">
+
+
+

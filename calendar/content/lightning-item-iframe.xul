@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: GPL 3.0
+ *
+ * The contents of this file are subject to the General Public License
+ * 3.0 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ * http://www.gnu.org/licenses/gpl.html
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * ## Exchange 2007/2010 Calendar and Tasks Provider.
+ * ## For Thunderbird with the Lightning add-on.
+ *
+ * Author: Michel Verbraak (info@1st-setup.nl)
+ * Website: http://www.1st-setup.nl/wordpress/?page_id=133
+ * email: exchangecalendar@extensions.1st-setup.nl
+ *
+ *
+ * This code uses parts of the Microsoft Exchange Calendar Provider code on which the
+ * "Exchange Data Provider for Lightning" was based.
+ * The Initial Developer of the Microsoft Exchange Calendar Provider Code is
+ *   Andrea Bittau <a.bittau@cs.ucl.ac.uk>, University College London
+ * Portions created by the Initial Developer are Copyright (C) 2009
+ * the Initial Developer. All Rights Reserved.
+ *
+ * ***** BEGIN LICENSE BLOCK *****/
+-->
+<!-- CSS for the HTML content editor -->
+<?xml-stylesheet type="text/css" href="chrome://exchangecommon/skin/itemBodyEditor.css"?>
+<?xml-stylesheet type="text/css" href="chrome://exchangecommon/skin/exchWebServiceEditor.css"?>
+<!-- Attachment overlay -->
+<?xul-overlay href="chrome://exchangecommon/content/attachments-view.xul"?>
+<!DOCTYPE dialog
+[
+
+<!ENTITY % eventDialogDTD SYSTEM "chrome://calendar/locale/calendar-event-dialog.dtd">
+    %eventDialogDTD;
+
+<!ENTITY % dtd1 SYSTEM "chrome://exchangecalendar/locale/lightning-item-iframe.dtd" >
+    %dtd1;
+]>
+<overlay id="exchangecalendar-lightning-item-iframe.xul"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+    <!-- Manage special Exchange items and provide attendee speicific dialog -->
+    <script type="application/javascript"
+            src="chrome://exchangecalendar/content/lightning-item-iframe.js" />
+    <!-- These rows correspond to the full form under the toolbar -->
+    <rows id="event-grid-rows">
+        <!-- If the current element is a Task and is an Exchange one, add a label to show the current owner of the task. -->
+        <row id="exchWebService-owner-row"
+             insertafter="event-grid-title-row"
+             align="center"
+             collapsed="true">
+            <label value="&exchWebService.owner.label;" />
+            <label id="exchWebService-owner-label"
+                   value="" />
+        </row>
+        <!-- When other calendar is selected, we have to clean the current dialog if the new calendar is not an Exchange one -->
+        <row id="event-grid-category-color-row">
+            <hbox id="event-grid-category-box">
+                <menulist id="item-calendar"
+                          oncommand="exchToolsEventDialog.selectedCalendarChanged(this); tmpAttachment.selectedCalendarChanged(this);" />
+            </hbox>
+        </row>
+        <!-- Exchange task details (hidden by defaults, displayed only by javascript) -->
+        <separator id="exchWebService-details-separator"
+                   insertafter="event-grid-todo-status-row"
+                   class="groove"
+                   hidden="true" />
+        <row id="exchWebService-details-row1"
+             insertafter="exchWebService-details-separator"
+             align="center"
+             collapsed="true">
+            <label value="&exchWebService.totalWork.label;"
+                   disable-on-readonly="true" />
+            <hbox align="center">
+                <textbox id="exchWebService-totalWork-count"
+                         type="number"
+                         increment="10"
+                         min="0"
+                         size="3"
+                         value="0"
+                         disable-on-readonly="true" />
+                <label value="&exchWebService.mileage.label;"
+                       disable-on-readonly="true" />
+                <textbox id="exchWebService-mileage-count"
+                         value=""
+                         disable-on-readonly="true" />
+            </hbox>
+        </row>
+        <row id="exchWebService-details-row2"
+             insertafter="exchWebService-details-row1"
+             align="center"
+             collapsed="true">
+            <label value="&exchWebService.actualWork.label;"
+                   disable-on-readonly="true" />
+            <hbox align="center">
+                <textbox id="exchWebService-actualWork-count"
+                         type="number"
+                         increment="10"
+                         min="0"
+                         size="3"
+                         value="0"
+                         disable-on-readonly="true" />
+                <label value="&exchWebService.billingInformation.label;"
+                       disable-on-readonly="true" />
+                <textbox id="exchWebService-billingInformation-count"
+                         value=""
+                         disable-on-readonly="true" />
+            </hbox>
+        </row>
+        <row id="exchWebService-details-row3"
+             insertafter="exchWebService-details-row2"
+             align="center"
+             collapsed="true">
+            <label value="&exchWebService.companies.label;"
+                   disable-on-readonly="true" />
+            <textbox id="exchWebService-companies-count"
+                     value=""
+                     disable-on-readonly="true" />
+        </row>
+    </rows>
+    <tabbox xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+            id="event-grid-tabbox">
+        <tabpanels id="event-grid-tabpanels">
+            <!-- Add HTML text editor for Exchange tasks -->
+            <tabpanel id="event-grid-tabpanel-description">
+                <itemBodyEditor id="exchWebService-body-editor"
+                                flex="1"
+                                insertafter="item-description"
+                                disable-on-readonly="true"
+                                collapsed="true" />
+            </tabpanel>
+        </tabpanels>
+    </tabbox>
+</overlay>
